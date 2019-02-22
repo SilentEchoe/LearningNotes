@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningHard", "LearningHard\LearningHard.csproj", "{E45C04C3-38BC-485C-9F51-DA9AA950E2B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entrust", "Entrust\Entrust.csproj", "{362A96DB-8719-40BA-B77B-973AD87B204A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entrust", "Entrust\Entrust.csproj", "{362A96DB-8719-40BA-B77B-973AD87B204A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genericity", "Genericity\Genericity.csproj", "{24192BDC-63D8-4A52-90FF-A09EF0A1CFFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{362A96DB-8719-40BA-B77B-973AD87B204A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{362A96DB-8719-40BA-B77B-973AD87B204A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{362A96DB-8719-40BA-B77B-973AD87B204A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24192BDC-63D8-4A52-90FF-A09EF0A1CFFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24192BDC-63D8-4A52-90FF-A09EF0A1CFFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24192BDC-63D8-4A52-90FF-A09EF0A1CFFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24192BDC-63D8-4A52-90FF-A09EF0A1CFFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
