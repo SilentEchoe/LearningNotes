@@ -6,7 +6,7 @@ namespace Screenshot
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+           
         }
     }
 }
