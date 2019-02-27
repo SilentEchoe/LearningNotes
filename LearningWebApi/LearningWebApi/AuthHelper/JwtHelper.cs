@@ -11,10 +11,12 @@ namespace LearningWebApi.AuthHelper
 {
     public class JwtHelper
     {
-        public static string secretKey { get; set; } = "sdfsdfsrty45634kkhllghtdgdfss345t678fs";
 
-        // public static string IssueJWT(TokenModelJWT tokenModel ) { }
-
+        /// <summary>
+        /// 颁发JWT字符串
+        /// </summary>
+        /// <param name="tokenModel"></param>
+        /// <returns></returns>
         public static string IssueJWT(TokenModelJWT tokenModel)
         {
             var dateTime = DateTime.UtcNow;
@@ -59,32 +61,32 @@ namespace LearningWebApi.AuthHelper
             return encodedJwt;
         }
 
-
-        //解析
+        /// <summary>
+        /// 解析
+        /// </summary>
+        /// <param name="jwtStr"></param>
+        /// <returns></returns>
         public static TokenModelJWT SerializeJWT(string jwtStr)
         {
             var jwtHandler = new JwtSecurityTokenHandler();
-            JwtSecurityToken jwtSecurityToken = jwtHandler.ReadJwtToken(jwtStr);
-            object role = new object();
+            JwtSecurityToken jwtToken = jwtHandler.ReadJwtToken(jwtStr);
+            object role = new object(); ;
             try
             {
-                jwtSecurityToken.Payload.TryGetValue("Role", out role);
+                jwtToken.Payload.TryGetValue(ClaimTypes.Role, out role);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
             }
-
             var tm = new TokenModelJWT
             {
-                Uid = (jwtSecurityToken.Id).ObjToInt(),
+                Uid = (jwtToken.Id).ObjToInt(),
                 Role = role != null ? role.ObjToString() : "",
             };
             return tm;
-
         }
-
     }
 
     /// <summary>

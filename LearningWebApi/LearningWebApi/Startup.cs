@@ -1,11 +1,13 @@
 ﻿using LearningWebApi.AuthHelper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Collections.Generic;
+using System.IO;
 
 namespace LearningWebApi
 {
@@ -34,6 +36,10 @@ namespace LearningWebApi
                     TermsOfService = "None",
                     Contact = new Contact { Name = "LearningWebApi", Email = "", Url = "https://www.jianshu.com/u/94102b59cc2a" }
                 });
+
+                var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
+                var xmlPath = Path.Combine(basePath, "Blog.Core.xml");//这个就是刚刚配置的xml文件名
+                c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
 
 
                 #region Token绑定到ConfigureServices
@@ -70,17 +76,16 @@ namespace LearningWebApi
             });
             #endregion
 
+          
 
 
-            // services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
           
-
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -94,11 +99,8 @@ namespace LearningWebApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
             });
-            #endregion
-
-            app.UseMiddleware<JwtTokenAuth>();
-
-
+            #endregion         
+          
             app.UseMvc();
         }
     }
