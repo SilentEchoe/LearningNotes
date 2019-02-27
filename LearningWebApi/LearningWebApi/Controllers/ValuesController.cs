@@ -50,30 +50,20 @@ namespace LearningWebApi.Controllers
 
         [HttpGet]
         [Route("Token2")]
-        public JsonResult GetJWTstr(long id = 1, string sub = "Admin")
+        public string GetJWTstr(long id = 1, string sub = "Admin")
         {
-            TokenModelJWT tokenModel = new TokenModelJWT();
-            tokenModel.Uid = id;
-            tokenModel.Role = sub;
+            TokenModelJWT tokenModel = new TokenModelJWT
+            {
+                Uid = id,
+                Role = sub
+            };
 
             string jwtStr = JwtHelper.IssueJWT(tokenModel);
-            JObject jo = (JObject)JsonConvert.DeserializeObject(jwtStr);
-            return jo;
+            return jwtStr;
 
         }
 
-        /// <summary>
-        /// 成功
-        /// </summary>
-        /// <param name="obj">对象</param>
-        /// <returns></returns>
-        public JsonResult renderSuccess(Object obj)
-        {
-            Result result = new Result();
-            result.setSuccess(true);
-            result.setObj(obj);
-            return Json(result);
-        }
+       
 
     }
 }

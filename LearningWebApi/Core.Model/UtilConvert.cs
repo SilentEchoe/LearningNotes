@@ -27,8 +27,7 @@ namespace LearningWebApi
         /// <returns></returns>
         public static int ObjToInt(this object thisValue, int errorValue)
         {
-            int reval = 0;
-            if (thisValue != null && thisValue != DBNull.Value && int.TryParse(thisValue.ToString(), out reval))
+            if (thisValue != null && thisValue != DBNull.Value && int.TryParse(thisValue.ToString(), out int reval))
             {
                 return reval;
             }
@@ -41,8 +40,7 @@ namespace LearningWebApi
         /// <returns></returns>
         public static double ObjToMoney(this object thisValue)
         {
-            double reval = 0;
-            if (thisValue != null && thisValue != DBNull.Value && double.TryParse(thisValue.ToString(), out reval))
+            if (thisValue != null && thisValue != DBNull.Value && double.TryParse(thisValue.ToString(), out double reval))
             {
                 return reval;
             }
@@ -56,8 +54,7 @@ namespace LearningWebApi
         /// <returns></returns>
         public static double ObjToMoney(this object thisValue, double errorValue)
         {
-            double reval = 0;
-            if (thisValue != null && thisValue != DBNull.Value && double.TryParse(thisValue.ToString(), out reval))
+            if (thisValue != null && thisValue != DBNull.Value && double.TryParse(thisValue.ToString(), out double reval))
             {
                 return reval;
             }
@@ -91,8 +88,7 @@ namespace LearningWebApi
         /// <returns></returns>
         public static Decimal ObjToDecimal(this object thisValue)
         {
-            Decimal reval = 0;
-            if (thisValue != null && thisValue != DBNull.Value && decimal.TryParse(thisValue.ToString(), out reval))
+            if (thisValue != null && thisValue != DBNull.Value && decimal.TryParse(thisValue.ToString(), out decimal reval))
             {
                 return reval;
             }
@@ -106,8 +102,7 @@ namespace LearningWebApi
         /// <returns></returns>
         public static Decimal ObjToDecimal(this object thisValue, decimal errorValue)
         {
-            Decimal reval = 0;
-            if (thisValue != null && thisValue != DBNull.Value && decimal.TryParse(thisValue.ToString(), out reval))
+            if (thisValue != null && thisValue != DBNull.Value && decimal.TryParse(thisValue.ToString(), out decimal reval))
             {
                 return reval;
             }

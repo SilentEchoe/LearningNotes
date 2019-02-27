@@ -45,42 +45,42 @@ namespace Core.Common
             this.success = success;
         }
 
-        public Boolean isSuccess()
+        public bool IsSuccess()
         {
             return success;
         }
 
-        public void setSuccess(Boolean success)
+        public void SetSuccess(Boolean success)
         {
             this.success = success;
         }
 
-        public string getMsg()
+        public string GetMsg()
         {
             return msg;
         }
 
-        public void setMsg(string msg)
+        public void SetMsg(string msg)
         {
             this.msg = msg;
         }
 
-        public Object getObj()
+        public object GetObj()
         {
             return obj;
         }
 
-        public void setObj(Object obj)
+        public void SetObj(Object obj)
         {
             this.obj = obj;
         }
 
-        public int getCode()
+        public int GetCode()
         {
             return code;
         }
 
-        public void setCode(int code)
+        public void SetCode(int code)
         {
             this.code = code;
         }

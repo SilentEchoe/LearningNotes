@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Collections.Generic;
 using System.IO;
@@ -21,6 +22,10 @@ namespace LearningWebApi
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// ConfigureServices 方法
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
@@ -34,13 +39,18 @@ namespace LearningWebApi
                     Title = "Blog.Core API",
                     Description = "框架说明文档",
                     TermsOfService = "None",
-                    Contact = new Contact { Name = "LearningWebApi", Email = "", Url = "https://www.jianshu.com/u/94102b59cc2a" }
+                    Contact = new Swashbuckle.AspNetCore.Swagger.Contact { Name = "Blog.Core", Email = "Blog.Core@xxx.com", Url = "https://www.jianshu.com/u/94102b59cc2a" }
                 });
 
-                var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "Learning.Core.xml");//这个就是刚刚配置的xml文件名
-                c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
+                //就是这里
 
+                #region 读取xml信息
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var xmlPath = Path.Combine(basePath, "Learning.Core.xml");//这个就是刚刚配置的xml文件名
+                var xmlModelPath = Path.Combine(basePath, "Core.Model.xml");//这个就是Model层的xml文件名
+                c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
+                c.IncludeXmlComments(xmlModelPath);
+                #endregion
 
                 #region Token绑定到ConfigureServices
                 //添加header验证信息
@@ -57,10 +67,9 @@ namespace LearningWebApi
                 });
                 #endregion
 
+
             });
-
             #endregion
-
 
             #region Token服务注册
             services.AddSingleton<IMemoryCache>(factory =>
@@ -75,11 +84,6 @@ namespace LearningWebApi
                 options.AddPolicy("AdminOrClient", policy => policy.RequireRole("Admin", "Client").Build());
             });
             #endregion
-
-          
-
-
-             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -89,18 +93,19 @@ namespace LearningWebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                #region Swagger
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
+                });
+                #endregion
+
             }
 
-          
 
-            #region Swagger
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
-            });
-            #endregion         
-          
+            app.UseMiddleware<JwtTokenAuth>();
+
             app.UseMvc();
         }
     }
