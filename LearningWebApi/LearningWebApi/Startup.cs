@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using LearningWebApi.AuthHelper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
@@ -85,6 +86,8 @@ namespace LearningWebApi
                 app.UseDeveloperExceptionPage();
             }
 
+          
+
             #region Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -92,6 +95,9 @@ namespace LearningWebApi
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
             });
             #endregion
+
+            app.UseMiddleware<JwtTokenAuth>();
+
 
             app.UseMvc();
         }
