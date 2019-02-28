@@ -41,7 +41,7 @@ namespace LearningWebApi.AuthHelper
 
         /// <summary>
         /// 解析
-        /// </summary>
+        /// </summary> 
         /// <param name="jwtStr"></param>
         /// <returns></returns>
         public static TokenModelJWT SerializeJWT(string jwtStr)
