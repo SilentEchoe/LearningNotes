@@ -2,7 +2,7 @@
 
 namespace DBCommon
 {
-    public class Class1
+    public class CacheManager
     {
     }
 }
