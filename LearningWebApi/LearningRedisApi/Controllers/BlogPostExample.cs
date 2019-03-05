@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Models;
 using ServiceStack.Redis;
 
 namespace LearningRedisApi.Controllers
@@ -7,7 +10,7 @@ namespace LearningRedisApi.Controllers
     {
         readonly RedisClient redis = new RedisClient("localhost");
 
-        [SetUp]
+      
         public void OnBeforeEachTest()
         {
             redis.FlushAll();
@@ -92,11 +95,7 @@ namespace LearningRedisApi.Controllers
         },
     };
 
-            yangUser.BlogIds.Add(yangBlog.Id);
-            yangBlog.BlogPostIds.AddRange(blogPosts.Where(x => x.BlogId == yangBlog.Id).Map(x => x.Id));
-
-            zhangUser.BlogIds.Add(zhangBlog.Id);
-            zhangBlog.BlogPostIds.AddRange(blogPosts.Where(x => x.BlogId == zhangBlog.Id).Map(x => x.Id));
+            
 
             redisUsers.Store(yangUser);
             redisUsers.Store(zhangUser);

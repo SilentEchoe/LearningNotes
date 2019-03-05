@@ -3,14 +3,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BlogPostExample
 {
-    [TestFixture, Explicit, Category("Integration")]
-    public class BlogPostExample
+    [TestClass]
+    public class UnitTest1
     {
-        [SetUp]
-        public void OnBeforeEachTest()
+        [TestMethod]
+        public void TestMethod1()
         {
-            redis.FlushAll();
-            InsertTestData();
         }
     }
 }
