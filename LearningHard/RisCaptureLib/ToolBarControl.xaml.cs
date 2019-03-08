@@ -51,18 +51,12 @@ namespace RisCaptureLib
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
-            if (OnCancel != null)
-            {
-                OnCancel();
-            }
+            OnCancel?.Invoke();
         }
 
         private void buttonComplete_Click(object sender, RoutedEventArgs e)
         {
-            if (OnOK != null)
-            {
-                OnOK();
-            }
+            OnOK?.Invoke();
         }
     }
 }
