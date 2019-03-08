@@ -13,15 +13,15 @@ namespace Genericity
             //Console.WriteLine(Compare<string>.compareGeneric("abc","a"));
             //Console.Read();
 
-            testGeneric();
-            testNonGeneric();
+            TestGeneric();
+            TestNonGeneric();
             Console.Read();
 
         }
 
 
         // 测试泛型类型操作的运行时间
-        public static void testGeneric()
+        public static void TestGeneric()
         {
 
             //Stopwatch 对象用来测量运行时间
@@ -51,7 +51,7 @@ namespace Genericity
         }
 
         // 测试非泛型类型操作的运行时间
-        public static void testNonGeneric()
+        public static void TestNonGeneric()
         {
 
             //Stopwatch 对象用来测量运行时间

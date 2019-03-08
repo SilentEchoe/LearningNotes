@@ -16,11 +16,10 @@ namespace Entrust
         public void OnBirthdayComing(string msg)
         {
             // 判断是否绑定了事件处理方法
-            if (MarryEvent != null)
-            {
+         
                 //触发事件
                 MarryEvent(this, new MarryEventArgs(msg));
-            }
+           
         }
 
     }

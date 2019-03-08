@@ -603,9 +603,11 @@ namespace CSharpWin_JD.CaptureImage
                     backColor,
                     angle))
             {
-                Blend blend = new Blend();
-                blend.Positions = new float[] { 0f, .3f, .5f, .7f, 1f };
-                blend.Factors = new float[] { 1f, .3f, 0f, .3f, 1f };
+                Blend blend = new Blend
+                {
+                    Positions = new float[] { 0f, .3f, .5f, .7f, 1f },
+                    Factors = new float[] { 1f, .3f, 0f, .3f, 1f }
+                };
                 brush.Blend = blend;
                 using (Pen pen = new Pen(brush))
                 {
