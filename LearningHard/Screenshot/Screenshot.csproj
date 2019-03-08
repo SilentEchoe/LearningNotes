@@ -97,9 +97,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaptureImageTool\CaptureImageTool.csproj">
-      <Project>{13e62362-5d00-418f-83ff-99b2699746d7}</Project>
-      <Name>CaptureImageTool</Name>
+    <ProjectReference Include="..\RisCaptureLib\RisCaptureLib.csproj">
+      <Project>{605c4849-410b-4554-9b0d-ab7f25dd3ffa}</Project>
+      <Name>RisCaptureLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
