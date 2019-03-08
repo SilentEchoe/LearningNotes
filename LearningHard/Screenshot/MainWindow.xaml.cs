@@ -1,6 +1,7 @@
 ﻿using CSharpWin_JD.CaptureImage;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace Screenshot
 {
@@ -20,9 +21,9 @@ namespace Screenshot
             if (capture.ShowDialog() == DialogResult)
             {
                 Image image = capture.Image;
-                pictureBox1.Width = image.Width;
-                pictureBox1.Height = image.Height;
-                pictureBox1.Image = image;
+                //pictureBox1.Width = image.Width;
+                //pictureBox1.Height = image.Height;
+                //pictureBox1.Image = image;
             }
         }
     }
