@@ -22,7 +22,8 @@ namespace RisCaptureLib
         ToolBarControl toolBarContrl = null;
         //截图保存图片
         private Bitmap m_bmpLayerCurrent;
-
+        //获取程序所在路径
+        string filePath = AppDomain.CurrentDomain.BaseDirectory;
 
         public MaskWindow(ScreenCaputre screenCaputreOwner)
         {
@@ -33,7 +34,7 @@ namespace RisCaptureLib
 
         private void Ini()
         {
-            
+
             //ini normal properties
             //Topmost = true;
             WindowStyle = WindowStyle.None;
@@ -70,7 +71,7 @@ namespace RisCaptureLib
             base.OnMouseDown(e);
 
             //鼠标右键双击取消
-            if(e.RightButton == MouseButtonState.Pressed && e.ClickCount>=2)
+            if (e.RightButton == MouseButtonState.Pressed && e.ClickCount >= 2)
             {
                 CancelCaputre();
             }
@@ -86,17 +87,26 @@ namespace RisCaptureLib
 
         protected override void OnMouseMove(System.Windows.Input.MouseEventArgs e)
         {
-            base.OnMouseMove(e);
-            if(timeOutTimmer != null && timeOutTimmer.Enabled)
+            try
             {
-                timeOutTimmer.Stop();
-                timeOutTimmer.Start();
+                base.OnMouseMove(e);
+                if (timeOutTimmer != null && timeOutTimmer.Enabled)
+                {
+                    timeOutTimmer.Stop();
+                    timeOutTimmer.Start();
+                }
+                //设置左上角label和右下角toolbar鼠标跟随
+                Rect temRect = innerCanvas.GetSelectionRegion();
+                label.Content = "Selected area size：" + temRect.Width + "×" + temRect.Height + "Wide：" + temRect.Width + "High：" + temRect.Height;
+                Canvas.SetLeft(label, temRect.X);
+                Canvas.SetTop(label, temRect.Y - 25);
             }
-            //设置左上角label和右下角toolbar鼠标跟随
-            Rect temRect = innerCanvas.GetSelectionRegion();
-            label.Content = "选中区域大小：" + temRect.Width + "×" + temRect.Height + "宽：" + temRect.Width + "高：" + temRect.Height;
-            Canvas.SetLeft(label, temRect.X);
-            Canvas.SetTop(label, temRect.Y - 25);
+            catch (Exception)
+            {
+
+              
+            }
+
             //Canvas.SetLeft(label, temRect.X + temRect.Width - 75);
             //Canvas.SetTop(label, temRect.Y + temRect.Height);
         }
@@ -127,13 +137,13 @@ namespace RisCaptureLib
 
         private void CreatToolBar(System.Windows.Point location)
         {
-            if (toolBarContrl == null)
-            {
-                toolBarContrl = new ToolBarControl();
-                innerCanvas.Children.Add(toolBarContrl);
-                Canvas.SetLeft(toolBarContrl, location.X - 75);
-                Canvas.SetTop(toolBarContrl, location.Y);
-            }
+            //if (toolBarContrl == null)
+            //{
+            toolBarContrl = new ToolBarControl();
+            innerCanvas.Children.Add(toolBarContrl);
+            Canvas.SetLeft(toolBarContrl, location.X - 75);
+            Canvas.SetTop(toolBarContrl, location.Y);
+            //}
             toolBarContrl.OnOK += OKAction;
             toolBarContrl.OnCancel += CancelAction;
             toolBarContrl.OnSaveCapture += SaveCaptureAction;
@@ -148,7 +158,7 @@ namespace RisCaptureLib
         {
             base.OnKeyDown(e);
 
-            if(e.Key == Key.Escape)
+            if (e.Key == Key.Escape)
             {
                 CancelCaputre();
             }
@@ -162,7 +172,7 @@ namespace RisCaptureLib
 
         internal void OnShowMaskFinished(Rect maskRegion)
         {
-            
+
         }
 
         internal void ClipSnapshot(Rect clipRegion)
@@ -198,25 +208,27 @@ namespace RisCaptureLib
             return null;
         }
 
+        //保存图片
         private void SaveCaptureAction()
         {
             m_bmpLayerCurrent = innerCanvas.GetSnapBitmap();
-            if(m_bmpLayerCurrent == null)
+            if (m_bmpLayerCurrent == null)
             {
                 return;
             }
-            System.Windows.Forms.SaveFileDialog saveDlg = new System.Windows.Forms.SaveFileDialog();
-            string mydocPath = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            SaveFileDialog saveDlg = new SaveFileDialog();
+            string mydocPath = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             saveDlg.InitialDirectory = mydocPath/* + "\\"*/;
             saveDlg.Filter = "Bitmap(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg";
             saveDlg.FilterIndex = 2;
-            saveDlg.FileName = "截图";
+
+            saveDlg.FileName = DateTime.Now.Date.Millisecond.ToString();
             if (saveDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 switch (saveDlg.FilterIndex)
                 {
                     case 1:
-                        m_bmpLayerCurrent.Clone(new System.Drawing.Rectangle(0, 0, m_bmpLayerCurrent.Width, m_bmpLayerCurrent.Height),
+                        m_bmpLayerCurrent.Clone(new Rectangle(0, 0, m_bmpLayerCurrent.Width, m_bmpLayerCurrent.Height),
                             System.Drawing.Imaging.PixelFormat.Format24bppRgb).Save(saveDlg.FileName,
                             System.Drawing.Imaging.ImageFormat.Bmp);
                         break;
@@ -230,7 +242,7 @@ namespace RisCaptureLib
         }
 
 
-        internal System.Drawing.Bitmap CopyBitmapFromScreenSnapshot(Rect region)
+        internal Bitmap CopyBitmapFromScreenSnapshot(Rect region)
         {
             var sourceRect = region.ToRectangle();
             var destRect = new Rectangle(0, 0, sourceRect.Width, sourceRect.Height);
@@ -258,11 +270,11 @@ namespace RisCaptureLib
                     timeOutTimmer = new Timer();
                     timeOutTimmer.Tick += OnTimeOutTimmerTick;
                 }
-                timeOutTimmer.Interval = timeOutSecond*1000;
+                timeOutTimmer.Interval = timeOutSecond * 1000;
                 timeOutTimmer.Start();
             }
 
-            if(innerCanvas != null)
+            if (innerCanvas != null)
             {
                 innerCanvas.DefaultSize = defaultSize;
             }
@@ -272,7 +284,7 @@ namespace RisCaptureLib
 
         }
 
-        private void OnTimeOutTimmerTick(object sender, System.EventArgs e)
+        private void OnTimeOutTimmerTick(object sender, EventArgs e)
         {
             timeOutTimmer.Stop();
             CancelCaputre();
@@ -280,22 +292,70 @@ namespace RisCaptureLib
 
         public void DrawShowSize(Rect rec)
         {
-            if(rec == Rect.Empty)
+            if (rec == Rect.Empty)
             {
                 return;
             }
             var wX = rec.Width;
             var hY = rec.Height;
-            label.Content = "选中区域大小：" + wX + "×" + hY + "宽：" + wX + "高：" + hY;
-
+            label.Content = wX + "×" + hY + "Wide：" + wX + "High：" + hY;
+           // CreatToolBar(rec);
         }
+
+        private void CreatToolBar(Rect rect)
+        {
+            //if (toolBarContrl == null)
+            //{
+            toolBarContrl = new ToolBarControl();
+            innerCanvas.Children.Add(toolBarContrl);
+            Canvas.SetLeft(toolBarContrl, rect.X - 175);
+            Canvas.SetTop(toolBarContrl, rect.Y);
+            //}
+            toolBarContrl.OnOK += OKAction;
+            toolBarContrl.OnCancel += CancelAction;
+            toolBarContrl.OnSaveCapture += SaveCaptureAction;
+        }
+
 
         // 确定按钮事件
         public void OKAction()
         {
-            
+
             innerCanvas.finishAction();
+
         }
+
+        //保存图片
+        private string SaveCaptureActionByOk()
+        {
+            try
+            {
+                m_bmpLayerCurrent = innerCanvas.GetSnapBitmap();
+                if (m_bmpLayerCurrent == null)
+                    return null;
+
+                long t = GetTimestamp();
+                filePath = filePath + t + ".png";
+                m_bmpLayerCurrent.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+                return filePath;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+
+        }
+
+        // 时间戳
+        protected long GetTimestamp()
+        {
+
+            TimeSpan cha = (DateTime.Now - TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1)));
+            long t = (long)cha.TotalMilliseconds;
+            return t;
+        }
+
 
         public void CancelAction()
         {
