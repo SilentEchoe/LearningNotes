@@ -21,9 +21,7 @@ namespace Test
 
         private static async Task RequestAsync()
         {
-            var client = HttpApiClient.Create<IMyWebApi>();
-            var user = new UserInfo { Account = "laojiu", Password = "123456" };
-            var user1 = await client.GetUserByAccountAsync();
+          
              
 
         }
