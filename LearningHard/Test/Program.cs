@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
+using WebApiClient;
 
 namespace Test
 {
@@ -8,13 +10,28 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            string password = "wappfeisu";
-            string md5 = GetMd5Hash(password);
-            Console.WriteLine();
+            //string password = "wappfeisu";
+            //string md5 = GetMd5Hash(password);
+            //Console.WriteLine();
+
+            RequestAsync().Wait();
+
         }
 
-        // using System.Security.Cryptography;
-        public static string GetMd5Hash(string input)
+
+        private static async Task RequestAsync()
+        {
+            var client = HttpApiClient.Create<IMyWebApi>();
+            var user = new UserInfo { Account = "laojiu", Password = "123456" };
+            var user1 = await client.GetUserByAccountAsync();
+             
+
+        }
+
+
+
+            // using System.Security.Cryptography;
+            public static string GetMd5Hash(string input)
         {
             if (input == null)
             {
