@@ -18,7 +18,7 @@ namespace ProgressBar
             InitializeComponent();
         }
 
-        bool isupdate = true;
+        bool isUpdate = true;
 
         public delegate void Entrust(string str);//委托   
         private delegate void SetPos(int ipos, string vinfo);//代理
@@ -26,10 +26,11 @@ namespace ProgressBar
         {
             //把方法赋值给委托
 
-
+            // 创建更新方法的线程
             Entrust callback = new Entrust(CallBack); 
             Thread fThread = new Thread(update);
 
+            // 创建计时的线程
             Entrust mainFun = new Entrust(CallBack); 
             Thread mThread = new Thread(runTime);
 
@@ -58,14 +59,14 @@ namespace ProgressBar
         }
 
 
-
+        // 执行计数
         private void runTime(object obj)
         {
             int sum = 0;
             while (true)
             {
                 sum++;
-                if (isupdate) { 
+                if (isUpdate) { 
                     Thread.Sleep(1000);
                     SetTextMesssage(sum, "\r\n");  }              
                 else                
@@ -80,7 +81,7 @@ namespace ProgressBar
         // 结束时修改更新状态，通知线程2结束
         private void CallBack(string str)
         {
-            isupdate = false;
+            isUpdate = false;
             MessageBox.Show("线程结束"+str);
 
         }
