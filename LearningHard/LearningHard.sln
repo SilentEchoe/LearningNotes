@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RisCaptureLib", "RisCapture
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiClient", "WebApiClient\WebApiClient.csproj", "{DDE6281B-1026-46CC-B66A-7FD9D1611423}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryClass", "FactoryClass\FactoryClass.csproj", "{F4FA2FBE-29D7-430F-812E-1059C89C4A40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressBar", "ProgressBar\ProgressBar.csproj", "{02552CBF-508C-41C1-9C16-FE8FEAF32E86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{DDE6281B-1026-46CC-B66A-7FD9D1611423}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE6281B-1026-46CC-B66A-7FD9D1611423}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDE6281B-1026-46CC-B66A-7FD9D1611423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4FA2FBE-29D7-430F-812E-1059C89C4A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4FA2FBE-29D7-430F-812E-1059C89C4A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4FA2FBE-29D7-430F-812E-1059C89C4A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4FA2FBE-29D7-430F-812E-1059C89C4A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02552CBF-508C-41C1-9C16-FE8FEAF32E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02552CBF-508C-41C1-9C16-FE8FEAF32E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02552CBF-508C-41C1-9C16-FE8FEAF32E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02552CBF-508C-41C1-9C16-FE8FEAF32E86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

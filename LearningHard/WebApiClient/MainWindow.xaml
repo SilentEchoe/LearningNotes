@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WebApiClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="207,178,0,0" VerticalAlignment="Top" Width="75" Click="Button_ClickAsync"/>
+        <Button Content="解压" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_ClickAsync"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="168,152,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

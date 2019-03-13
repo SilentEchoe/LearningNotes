@@ -6,7 +6,7 @@ namespace WebApiClient
 
 
    
-    public interface IMyWebApi 
+     interface IMyWebApi 
     {
        
 

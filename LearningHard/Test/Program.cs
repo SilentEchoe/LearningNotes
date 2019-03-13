@@ -10,21 +10,14 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            //string password = "wappfeisu";
-            //string md5 = GetMd5Hash(password);
-            //Console.WriteLine();
-
-            RequestAsync().Wait();
-
-        }
-
-
-        private static async Task RequestAsync()
-        {
           
-             
+
+         
 
         }
+
+
+       
 
 
 
