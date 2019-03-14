@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryClass", "FactoryClas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressBar", "ProgressBar\ProgressBar.csproj", "{02552CBF-508C-41C1-9C16-FE8FEAF32E86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadLearning", "ThreadLearning\ThreadLearning.csproj", "{6379033E-68F0-42D7-85A4-E64385888296}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{02552CBF-508C-41C1-9C16-FE8FEAF32E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02552CBF-508C-41C1-9C16-FE8FEAF32E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02552CBF-508C-41C1-9C16-FE8FEAF32E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6379033E-68F0-42D7-85A4-E64385888296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6379033E-68F0-42D7-85A4-E64385888296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6379033E-68F0-42D7-85A4-E64385888296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6379033E-68F0-42D7-85A4-E64385888296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
