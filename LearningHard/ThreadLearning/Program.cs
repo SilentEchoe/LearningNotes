@@ -32,13 +32,13 @@ namespace ThreadLearning
             //thread.Abort();
 
 
-            for (int i = 0; i <= 6; i++)
-            {
-                string threadName = "Thread" + i;
-                int sencondstowait = 2 + 2 * i;
-                var t = new Thread(() => SemaphoreSlimTest(threadName, sencondstowait));
-                t.Start();
-            }
+            //for (int i = 0; i <= 6; i++)
+            //{
+            //    string threadName = "Thread" + i;
+            //    int sencondstowait = 2 + 2 * i;
+            //    var t = new Thread(() => SemaphoreSlimTest(threadName, sencondstowait));
+            //    t.Start();
+            //}
 
 
         }
@@ -67,7 +67,7 @@ namespace ThreadLearning
         }
 
         // 使用SemaphoreSlim 限制同一资源的线程数量(4)
-
+        // 限定并发
         static SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(4);
 
         private static void SemaphoreSlimTest(string name , int seconds)
@@ -80,7 +80,7 @@ namespace ThreadLearning
             _semaphoreSlim.Release();
         }
 
-
+        //AutoResetEvent 线程通知
 
 
         static void DoNothing()

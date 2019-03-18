@@ -9,6 +9,7 @@
     <Grid>
         <Button Content="解压" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_ClickAsync"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="168,152,0,0" VerticalAlignment="Top"/>
+        <Button Content="Post请求" HorizontalAlignment="Left" Margin="126,10,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_1" />
 
     </Grid>
 </Window>

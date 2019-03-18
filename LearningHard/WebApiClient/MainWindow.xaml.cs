@@ -46,20 +46,43 @@ namespace WebApiClient
             // 解压
             string path1 = @"D:\a\FSBox.zip";
             string path2 = @"D:\";
-            var a=  fileOperations.UnZip(path1, path2);
+            var a = fileOperations.UnZip(path1, path2);
 
         }
 
 
-        private void postFile()
+        private void PostFile()
         {
-            Uri url = new Uri("");
+            string filePath = "‪D:\a.png";
+            Uri url = new Uri("http://localhost:5000/api/fsapi/file/upload/multi");
             var client = new RestClient(url);
             RestRequest request = new RestRequest(Method.POST);
-            request.AddFile("file", "");
-            request.AddHeader("ACCESS-TOKEN", "");
-            request.AddParameter("", "");
+            request.AddFile("file", filePath);
             IRestResponse response = client.Execute(request);
+           
+            int ceshistatucode = (int)response.StatusCode;
+
+
+        }
+
+
+        public bool Push(string Newfilepath)
+        {
+          
+            var client = new RestClient("http://localhost:5000/api/fsapi/file/upload/multi");
+            var request = new RestRequest(Method.POST);
+            request.AddFile("file", Newfilepath);
+           
+            IRestResponse response = client.Execute(request);
+            int ceshistatucode = (int)response.StatusCode;
+            if ((int)response.StatusCode == 204)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
@@ -74,14 +97,18 @@ namespace WebApiClient
         }
         private void update(object obj)
         {
-           
+
         }
-            //子线程结束后，执行的方法
-            private void CallBack(string str)
+        //子线程结束后，执行的方法
+        private void CallBack(string str)
         {
             //子线程结束后，执行的方法      
-           
+
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Push(@"C:\Users\Lenovo\Desktop\c.txt");
+        }
     }
 }
