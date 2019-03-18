@@ -31,11 +31,27 @@ namespace ThreadLearning
             //// 中止线程thread
             //thread.Abort();
 
+
+            for (int i = 0; i <= 6; i++)
+            {
+                string threadName = "Thread" + i;
+                int sencondstowait = 2 + 2 * i;
+                var t = new Thread(() => SemaphoreSlimTest(threadName, sencondstowait));
+                t.Start();
+            }
+
+
+        }
+
+        // 线程同步
+        // 使用Mutex类
+        private void MutexTest()
+        {
             const string MutexName = "CSharpThreadingCookBook";
 
-            using (var m =new Mutex(false, MutexName))
+            using (var m = new Mutex(false, MutexName))
             {
-                if (!m.WaitOne(TimeSpan.FromSeconds(5),false))
+                if (!m.WaitOne(TimeSpan.FromSeconds(5), false))
                 {
                     Console.WriteLine("Second instance is running");
                 }
@@ -48,11 +64,21 @@ namespace ThreadLearning
 
 
             }
-
-
-
         }
 
+        // 使用SemaphoreSlim 限制同一资源的线程数量(4)
+
+        static SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(4);
+
+        private static void SemaphoreSlimTest(string name , int seconds)
+        {
+            Console.WriteLine($"{name} waits to access a database");
+            _semaphoreSlim.Wait();
+            Console.WriteLine($"{name} was granted an access to a database");
+            Sleep(TimeSpan.FromSeconds(seconds));
+            Console.WriteLine($"{name} is completed");
+            _semaphoreSlim.Release();
+        }
 
 
 
