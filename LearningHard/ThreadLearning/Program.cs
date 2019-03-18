@@ -15,6 +15,7 @@ namespace ThreadLearning
             //// 创建线程执行PrintBumBersWithDelay方法
             //Thread thread = new Thread(PrintBumBersWithDelay);
 
+
             //Thread thread1 = new Thread(DoNothing);
 
             //// 启动线程
@@ -30,10 +31,30 @@ namespace ThreadLearning
             //// 中止线程thread
             //thread.Abort();
 
+            const string MutexName = "CSharpThreadingCookBook";
+
+            using (var m =new Mutex(false, MutexName))
+            {
+                if (!m.WaitOne(TimeSpan.FromSeconds(5),false))
+                {
+                    Console.WriteLine("Second instance is running");
+                }
+                else
+                {
+                    Console.WriteLine("Running");
+                    Console.ReadLine();
+                    m.ReleaseMutex();
+                }
+
+
+            }
 
 
 
         }
+
+
+
 
 
         static void DoNothing()
@@ -60,15 +81,21 @@ namespace ThreadLearning
         static void RunThreads()
         {
             var sample = new ThreadSample();
-            var threadnoe = new Thread(sample.CountNumbers);
-            threadnoe.Name = "ThreadNoe";
-            var threadTwo = new Thread(sample.CountNumbers);
-            threadTwo.Name = "ThreadTwo";
+            var threadnoe = new Thread(sample.CountNumbers)
+            {
+                Name = "ThreadNoe"
+            };
 
             threadnoe.Priority = ThreadPriority.Highest;
-            threadTwo.Priority = ThreadPriority.Lowest;
+            new Thread(sample.CountNumbers)
+            {
+                Name = "ThreadTwo"
+            }.Priority = ThreadPriority.Lowest;
             threadnoe.Start();
-            threadTwo.Start();
+            new Thread(sample.CountNumbers)
+            {
+                Name = "ThreadTwo"
+            }.Start();
 
         }
 
