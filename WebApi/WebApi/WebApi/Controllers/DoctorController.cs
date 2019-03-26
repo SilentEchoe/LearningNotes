@@ -20,7 +20,7 @@ namespace WebApi.Controllers
         {
             IDoctorServices advertisementServices = new DoctorServices();
 
-            return await advertisementServices.Query(d => d.Id == id);
+            return await advertisementServices.Query();
         }
 
     }
