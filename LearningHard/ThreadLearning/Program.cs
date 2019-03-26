@@ -41,6 +41,8 @@ namespace ThreadLearning
             //}
 
 
+        
+
         }
 
         // 线程同步
@@ -81,6 +83,22 @@ namespace ThreadLearning
         }
 
         //AutoResetEvent 线程通知
+        private static AutoResetEvent _workerEvent = new AutoResetEvent(false);
+        private static AutoResetEvent _mainEvent = new AutoResetEvent(false);
+
+        static void Process(int seconds)
+        {
+            Console.WriteLine("Starting a long running work...");
+            Sleep(TimeSpan.FromSeconds(seconds));
+            Console.WriteLine("Work is done!");
+            _workerEvent.Set();
+            Console.WriteLine("Waiting for a main thread to complete its work");
+            _mainEvent.WaitOne();
+            Sleep(TimeSpan.FromSeconds(seconds));
+            Console.WriteLine("Work is done!");
+            _workerEvent.Set(); 
+        }
+
 
 
         static void DoNothing()
