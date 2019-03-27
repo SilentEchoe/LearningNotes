@@ -41,5 +41,7 @@ namespace IServices
 
 
         Task<List<TEntity>> QueryPage(Expression<Func<TEntity, bool>> whereExpression, int intPageIndex = 0, int intPageSize = 20, string strOrderByFileds = null);
+
+        Task<List<TEntity>> GetTestBySqlAsync(string sql);
     }
 }

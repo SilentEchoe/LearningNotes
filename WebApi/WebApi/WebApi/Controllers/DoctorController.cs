@@ -20,7 +20,9 @@ namespace WebApi.Controllers
         {
             IDoctorServices advertisementServices = new DoctorServices();
 
-            return await advertisementServices.Query();
+            return await advertisementServices.GetTestBySqlAsync("SELECT * FROM Doctor");
+
+            //return await advertisementServices.Query();
         }
 
     }

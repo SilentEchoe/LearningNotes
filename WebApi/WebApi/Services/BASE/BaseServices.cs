@@ -1,6 +1,7 @@
 ﻿using IRepository.BASE;
 using IServices;
 using Repository.BASE;
+using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -247,6 +248,15 @@ namespace Services
             return await baseDal.QueryPage(whereExpression,
          intPageIndex = 0, intPageSize, strOrderByFileds);
         }
+
+        public async Task<List<TEntity>> GetTestBySqlAsync(string sql)
+        {
+            return await baseDal.GetTestBySql(sql);
+        }
+
+    
+
+
 
     }
 }

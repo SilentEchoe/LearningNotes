@@ -311,8 +311,29 @@ namespace Repository.BASE
             .ToPageList(intPageIndex, intPageSize));
         }
 
+        /// <summary>
+        /// 功能描述:SQL测试
+        /// 作　　者:wangkai
+        /// </summary>
+        /// <returns>使用SQL查询</returns>
 
 
+        public async Task<List<TEntity>> GetTestBySql(string sql)
+        {
+             return  await Task.Run(() =>db.SqlQueryable<TEntity>(sql).ToList());            
+        }
+
+        // <summary>
+        /// 功能描述:执行事务
+        /// 作　　者:wangkai
+        /// </summary>
+        /// <returns>执行事务</returns>
+        /// 
+
+        public async Task<bool> ExecuteAffair()
+        {
+
+        }
 
     }
 }
