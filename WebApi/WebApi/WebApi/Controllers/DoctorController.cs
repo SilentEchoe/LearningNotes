@@ -14,11 +14,22 @@ namespace WebApi.Controllers
     [Route("api/Doctor")]
     public class DoctorController : Controller
     {
+
+
+
+
+        IDoctorServices advertisementServices;
+
+        public DoctorController(IDoctorServices advertisementServices)
+        {
+            this.advertisementServices = advertisementServices;
+        }
+
+
         [HttpGet("{id}", Name = "Get")]
         public async Task<List<Doctor>> Get(int id)
-
         {
-            IDoctorServices advertisementServices = new DoctorServices();
+            //IDoctorServices advertisementServices = new DoctorServices();
 
             return await advertisementServices.GetTestBySqlAsync("SELECT * FROM Doctor");
 

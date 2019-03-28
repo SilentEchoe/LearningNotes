@@ -324,16 +324,16 @@ namespace Repository.BASE
             return await Task.Run(() => db.SqlQueryable<TEntity>(sql).ToList());
         }
 
-        //public async Task<TEntity> MultilistTest()
-        //{
-        //    return await Task.Run(() => db.Queryable<Doctor, Department>((dt, dp) => new object[] {
-        //    JoinType.Left,dt.DepartmentId==dp.Id})
-        //   .Where(st => st.Id == SqlFunc.Subqueryable<TEntity>().Where(s => s.i == st.Id).Select(s => s.Id))
-        //   .ToList());
+        public async Task<List<Doctor>> MultilistTest()
+        {
+            return await Task.Run(() => db.Queryable<Doctor, Department>((dt, dp) => new object[] {
+            JoinType.Left,dt.DepartmentId==dp.Id})
+           .Where(dt => dt.Id == SqlFunc.Subqueryable<Department>().Select(s => s.Id))
+           .ToList());
 
 
 
-        //}
+        }
 
     }
 }
