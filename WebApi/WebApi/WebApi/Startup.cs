@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -36,7 +37,14 @@ namespace WebApi
             var builder = new ContainerBuilder();
 
             //注册要通过反射创建的组件
-            builder.RegisterType<DoctorServices>().As<IDoctorServices>();
+            //builder.RegisterType<DoctorServices>().As<IDoctorServices>();
+
+            var assemblysServices = Assembly.Load("Services");//要记得!!!这个注入的是实现类层，不是接口层！不是 IServices
+
+            builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces();//指定已扫描程序集中的类型注册为提供所有其实现的接口。
+            var assemblysRepository = Assembly.Load("Repository");//要记得!!!这个注入的是实现类层，不是接口层！不是 IRepository
+
+            builder.RegisterAssemblyTypes(assemblysRepository).AsImplementedInterfaces();
 
             //将services填充到Autofac容器生成器中
             builder.Populate(services);
