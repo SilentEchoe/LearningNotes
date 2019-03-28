@@ -10,6 +10,8 @@ namespace Model.Models
 
         public string DoctorName { get; set; }
 
+        public int DepartmentId { get; set; }
+
         public string Sex { get; set; }
 
         public string HospitalName { get; set; }

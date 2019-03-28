@@ -53,6 +53,12 @@ namespace Repository.sugar
 
         }
 
+        public int CommandTimeOut
+        {
+            get { return CommandTimeOut; }
+            set { CommandTimeOut = value; }
+        }
+
 
         /// <summary>
         /// 功能描述:构造函数
@@ -384,6 +390,12 @@ namespace {Namespace}
             SqlSugarClient sugarClient = GetCustomDB(config);
             return GetCustomEntityDB<T>(sugarClient);
         }
+
+
+      
+
+
+
         #endregion
     }
 }
