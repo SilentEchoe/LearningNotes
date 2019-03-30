@@ -11,17 +11,27 @@ namespace WebApi.Controllers
     public class DoctorController : Controller
     {
         IDoctorServices advertisementServices;
+       
 
         public DoctorController(IDoctorServices advertisementServices)
         {
             this.advertisementServices = advertisementServices;
+            //this doctorServices = doctorServices;
         }
 
 
         [HttpGet("{id}", Name = "Get")]
-        public async Task<List<Doctor>> Get()
-        {         
-            return await advertisementServices.GetTestBySqlAsync("SELECT * FROM Doctor");          
+        public async Task<object> Get()
+        {
+
+            var model = await advertisementServices.GetTestBySqlAsync("Select * from Doctor");
+            return Ok(new
+            {
+                success = true,
+                data = model
+            });
+
+            //return await advertisementServices.GetDoctors();          
         }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace WebApi.AOP
 {
     // 缓存接口
-    interface ICaching
+    public interface ICaching
     {
         object Get(string cacheKey);
 

@@ -25,13 +25,16 @@ namespace WebApi
         {
             services.AddMvc();
 
+            //缓存注入
+            services.AddScoped<ICaching, MemoryCaching>();
+
             var builder = new ContainerBuilder();
 
             //注册要通过反射创建的组件
 
 
             // 注册拦截器
-            builder.RegisterType<LogAOP>();
+            builder.RegisterType<BlogCacheAOP>();
 
 
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;//获取项目路径
@@ -45,7 +48,7 @@ namespace WebApi
                      .AsImplementedInterfaces()
                      .InstancePerLifetimeScope()
                      .EnableInterfaceInterceptors()//引用Autofac.Extras.DynamicProxy;
-                     .InterceptedBy(typeof(LogAOP));//可以直接替换拦截器
+                     .InterceptedBy(typeof(BlogCacheAOP));//可以直接替换拦截器
 
 
 

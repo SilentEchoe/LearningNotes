@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\IRepository\IRepository.csproj" />
     <ProjectReference Include="..\IServices\IServices.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
