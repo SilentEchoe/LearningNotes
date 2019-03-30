@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
+using WebApi.AOP;
+using Autofac.Extras.DynamicProxy;
 namespace WebApi
 {
     public class Startup
@@ -28,12 +29,26 @@ namespace WebApi
 
             //注册要通过反射创建的组件
 
+
+            // 注册拦截器
+            builder.RegisterType<LogAOP>();
+
+
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;//获取项目路径
 
 
             var servicesDllFile = Path.Combine(basePath, "Services.dll");//获取注入项目绝对路径
             var assemblysServices = Assembly.LoadFile(servicesDllFile);//直接采用加载文件的方法        
-            builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces();//指定已扫描程序集中的类型注册为提供所有其实现的接口。
+            //builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces();//指定已扫描程序集中的类型注册为提供所有其实现的接口。
+
+            builder.RegisterAssemblyTypes(assemblysServices)
+                     .AsImplementedInterfaces()
+                     .InstancePerLifetimeScope()
+                     .EnableInterfaceInterceptors()//引用Autofac.Extras.DynamicProxy;
+                     .InterceptedBy(typeof(LogAOP));//可以直接替换拦截器
+
+
+
 
             var repositoryDllFile = Path.Combine(basePath, "Repository.dll");//获取注入项目绝对路径
             var assemblysRepository = Assembly.LoadFile(repositoryDllFile);//直接采用加载文件的方法         

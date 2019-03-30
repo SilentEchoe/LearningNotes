@@ -10,10 +10,6 @@ namespace WebApi.Controllers
     [Route("api/Doctor")]
     public class DoctorController : Controller
     {
-
-
-
-
         IDoctorServices advertisementServices;
 
         public DoctorController(IDoctorServices advertisementServices)
@@ -24,12 +20,8 @@ namespace WebApi.Controllers
 
         [HttpGet("{id}", Name = "Get")]
         public async Task<List<Doctor>> Get()
-        {
-            //IDoctorServices advertisementServices = new DoctorServices();
-
-            return await advertisementServices.GetTestBySqlAsync("SELECT * FROM Doctor");
-
-            //return await advertisementServices.Query();
+        {         
+            return await advertisementServices.GetTestBySqlAsync("SELECT * FROM Doctor");          
         }
 
     }
