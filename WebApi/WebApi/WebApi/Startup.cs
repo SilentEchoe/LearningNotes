@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Reflection;
-using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using IServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Services;
 
 namespace WebApi
 {
@@ -30,29 +24,27 @@ namespace WebApi
         {
             services.AddMvc();
 
-
-            #region AutoFac
-
-            //实例化 AutoFac  容器   
             var builder = new ContainerBuilder();
 
             //注册要通过反射创建的组件
-            //builder.RegisterType<DoctorServices>().As<IDoctorServices>();
 
-            var assemblysServices = Assembly.Load("Services");//要记得!!!这个注入的是实现类层，不是接口层！不是 IServices
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;//获取项目路径
 
+
+            var servicesDllFile = Path.Combine(basePath, "Services.dll");//获取注入项目绝对路径
+            var assemblysServices = Assembly.LoadFile(servicesDllFile);//直接采用加载文件的方法        
             builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces();//指定已扫描程序集中的类型注册为提供所有其实现的接口。
-            var assemblysRepository = Assembly.Load("Repository");//要记得!!!这个注入的是实现类层，不是接口层！不是 IRepository
 
+            var repositoryDllFile = Path.Combine(basePath, "Repository.dll");//获取注入项目绝对路径
+            var assemblysRepository = Assembly.LoadFile(repositoryDllFile);//直接采用加载文件的方法         
             builder.RegisterAssemblyTypes(assemblysRepository).AsImplementedInterfaces();
+            
 
             //将services填充到Autofac容器生成器中
             builder.Populate(services);
 
             //使用已进行的组件登记创建新容器
             var ApplicationContainer = builder.Build();
-
-            #endregion
 
             return new AutofacServiceProvider(ApplicationContainer);//第三方IOC接管 core内置DI容器
 

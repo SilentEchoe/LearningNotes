@@ -1,4 +1,5 @@
-﻿using IRepository.BASE;
+﻿using Common;
+using IRepository.BASE;
 using Model.Models;
 using Repository.sugar;
 using SqlSugar;
@@ -11,7 +12,7 @@ namespace Repository.BASE
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, new()
     {
-        private DbContext context;
+        private DbContext context;     
         private SqlSugarClient db;
         private SimpleClient<TEntity> entityDB;
 

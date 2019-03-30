@@ -1,7 +1,5 @@
 ﻿using IRepository.BASE;
 using IServices;
-using Repository.BASE;
-using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -14,7 +12,7 @@ namespace Services
         public IBaseRepository<TEntity> baseDal;
         // public IBaseRepository<TEntity> baseDal = new BaseRepository<TEntity>();
 
-
+     
 
 
         public async Task<TEntity> QueryByID(object objId)

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using IServices;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.Models;
-using Services;
 
 namespace WebApi.Controllers
 {
@@ -27,7 +23,7 @@ namespace WebApi.Controllers
 
 
         [HttpGet("{id}", Name = "Get")]
-        public async Task<List<Doctor>> Get(int id)
+        public async Task<List<Doctor>> Get()
         {
             //IDoctorServices advertisementServices = new DoctorServices();
 
