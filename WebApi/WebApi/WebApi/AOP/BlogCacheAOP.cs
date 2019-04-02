@@ -18,15 +18,15 @@ namespace WebApi.AOP
         {
             _cache = cache;
         }
-        //Intercept方法是拦截的关键所在，也是IInterceptor接口中的唯一定义
+      
         //Intercept方法是拦截的关键所在，也是IInterceptor接口中的唯一定义
         public void Intercept(IInvocation invocation)
         {
             var method = invocation.MethodInvocationTarget ?? invocation.Method;
             //对当前方法的特性验证
-            var qCachingAttribute = method.GetCustomAttributes(true).FirstOrDefault(x => x.GetType() == typeof(CachingAttribute)) as CachingAttribute;
+            CachingAttribute qCachingAttribute = method.GetCustomAttributes(true).FirstOrDefault(x => x.GetType() == typeof(CachingAttribute)) as CachingAttribute;
             //只有那些指定的才可以被缓存，需要验证
-            if (qCachingAttribute != null)
+            if (qCachingAttribute != null) 
             {
                 //获取自定义缓存键
                 var cacheKey = CustomCacheKey(invocation);
