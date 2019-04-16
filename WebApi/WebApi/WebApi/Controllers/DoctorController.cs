@@ -10,13 +10,12 @@ namespace WebApi.Controllers
     [Route("api/Doctor")]
     public class DoctorController : Controller
     {
-       
-        IDoctorServices doctorServices;
+        readonly IDoctorServices _doctorServices;
 
         public DoctorController(IDoctorServices advertisementServices)
         {
           
-            this.doctorServices = advertisementServices;
+            this._doctorServices = advertisementServices;
         }
 
         /// <summary>
@@ -27,7 +26,7 @@ namespace WebApi.Controllers
         public async Task<object> Get()
         {
        
-            var model = await doctorServices.GetDoctors();
+            var model = await _doctorServices.GetDoctors();
             return Ok(new
             {
                 success = true,
@@ -36,6 +35,7 @@ namespace WebApi.Controllers
 
               
         }
+
 
     }
 }

@@ -18,7 +18,7 @@ namespace WebApi.AuthHelper.OverWrite
         /// </summary>
         /// <param name="tokenModel"></param>
         /// <returns></returns>
-        public static string IssueJwt(TokenModelJwt tokenModel)
+        public static string IssueJwt(TokenModelJWT tokenModel)
         {
             string iss = Appsettings.App(new string[] { "Audience", "Issuer" });
             string aud = Appsettings.App(new string[] { "Audience", "Audience" });
@@ -65,7 +65,7 @@ namespace WebApi.AuthHelper.OverWrite
         /// </summary>
         /// <param name="jwtStr"></param>
         /// <returns></returns>
-        public static TokenModelJwt SerializeJwt(string jwtStr)
+        public static TokenModelJWT SerializeJwt(string jwtStr)
         {
             var jwtHandler = new JwtSecurityTokenHandler();
             JwtSecurityToken jwtToken = jwtHandler.ReadJwtToken(jwtStr);
@@ -79,7 +79,7 @@ namespace WebApi.AuthHelper.OverWrite
                 Console.WriteLine(e);
                 throw;
             }
-            var tm = new TokenModelJwt
+            var tm = new TokenModelJWT
             {
                 Uid = (jwtToken.Id).ObjToInt(),
                 Role = role != null ? role.ObjToString() : "",
@@ -88,11 +88,12 @@ namespace WebApi.AuthHelper.OverWrite
         }
     }
 
-  
+   
+
     /// <summary>
     /// 令牌
     /// </summary>
-    public class TokenModelJwt
+    public class TokenModelJWT
     {
         /// <summary>
         /// Id
