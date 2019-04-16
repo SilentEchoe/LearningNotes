@@ -7,7 +7,6 @@ namespace IRepository
 {
     public interface IDoctorRepository: IBaseRepository<Doctor>
     {
-     
-
+    
     }
 }
