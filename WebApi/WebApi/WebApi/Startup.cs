@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApi.AOP;
 using Autofac.Extras.DynamicProxy;
+using Swashbuckle.AspNetCore.Swagger;
+
 namespace WebApi
 {
     public class Startup
@@ -24,6 +26,24 @@ namespace WebApi
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+
+            #region Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v0.0.1",
+                    Title = ".Core API",
+                    Description = "框架说明文档",
+                    TermsOfService = "None",
+                    Contact = new Contact { Name = ".net Core", Email = "", Url = "" }
+                });
+            });
+
+            #endregion
+
+
 
             //缓存注入
             services.AddScoped<ICaching, MemoryCaching>();
@@ -77,6 +97,14 @@ namespace WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            #region Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
+            });
+            #endregion
 
             app.UseMvc();
         }

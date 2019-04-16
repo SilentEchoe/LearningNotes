@@ -6,10 +6,11 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\WebApi\bin\Debug\</OutputPath>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="sqlSugarCore" Version="4.9.9.3" />
+    <PackageReference Include="sqlSugarCore" Version="4.9.9.7" />
   </ItemGroup>
 
   <ItemGroup>

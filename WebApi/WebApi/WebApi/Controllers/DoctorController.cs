@@ -19,7 +19,10 @@ namespace WebApi.Controllers
             this.doctorServices = advertisementServices;
         }
 
-
+        /// <summary>
+        /// 查询医生列表
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
         public async Task<object> Get()
         {
