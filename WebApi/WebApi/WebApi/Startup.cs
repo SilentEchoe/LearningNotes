@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Text;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
@@ -10,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApi.AOP;
 using Autofac.Extras.DynamicProxy;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
 using WebApi.AuthHelper.OverWrite;
 
@@ -84,6 +87,13 @@ namespace WebApi
 
             // 1【授权】、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
             // 然后这么写 [Authorize(Policy = "Admin")]
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
+            //    options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
+            //    options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
+            //});
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
@@ -92,8 +102,46 @@ namespace WebApi
             });
 
 
+            //上边用到的 tokenValidationParameters 
+            //读取配置文件
+            var audienceConfig = Configuration.GetSection("Audience");
+            var symmetricKeyAsBase64 = audienceConfig["Secret"];
+            var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
+            var signingKey = new SymmetricSecurityKey(keyByteArray);
 
-            //缓存注入
+            // 令牌验证参数
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = signingKey,//还是从 appsettings.json 拿到的
+                ValidateIssuer = true,
+                ValidIssuer = audienceConfig["Issuer"],//发行人
+                ValidateAudience = true,
+                ValidAudience = audienceConfig["Audience"],//订阅人
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero,
+                RequireExpirationTime = true,
+            };
+
+
+            // 2.1【认证】、官方JWT认证
+            services.AddAuthentication(x =>
+                {
+                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(o =>
+                {
+                    o.TokenValidationParameters = tokenValidationParameters;
+                });
+
+
+
+
+
+
+            #region 缓存注入
+            
             services.AddScoped<ICaching, MemoryCaching>();
             var builder = new ContainerBuilder();
             //注册要通过反射创建的组件
@@ -121,7 +169,7 @@ namespace WebApi
             var ApplicationContainer = builder.Build();
 
             return new AutofacServiceProvider(ApplicationContainer);//第三方IOC接管 core内置DI容器
-
+            #endregion
 
 
         }
@@ -136,9 +184,9 @@ namespace WebApi
 
 
 
-            app.UseMiddleware<JwtTokenAuth>();
+            //app.UseMiddleware<JwtTokenAuth>();
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
 
             #region Swagger
             app.UseSwagger();

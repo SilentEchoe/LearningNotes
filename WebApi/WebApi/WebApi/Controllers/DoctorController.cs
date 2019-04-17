@@ -24,7 +24,7 @@ namespace WebApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
-        [Authorize(Roles = "Admin")]
+      
         public async Task<object> Get()
         {
        

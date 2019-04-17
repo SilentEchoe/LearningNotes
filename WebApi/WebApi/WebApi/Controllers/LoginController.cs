@@ -19,39 +19,7 @@ namespace WebApi.Controllers
         //    _sysUserInfoServices = sysUserInfoServices;
         //}
 
-        /// <summary>
-        /// 登录
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="pass"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("Token")]
-        public async Task<object> GetJwtStr(string name, string pass)
-        {
-            string jwtStr = string.Empty;
-            bool suc = false;
-           // var user = await _sysUserInfoServices.GetUserRoleNameStr(name, pass);
-           var user = "2";
-            if (user != null)
-            {
-                TokenModelJwt tokenModel = new TokenModelJwt { Uid = 1, Role = user };
-                jwtStr = JwtHelper.IssueJwt(tokenModel);//登录，获取到一定规则的 Token 令牌
-                suc = true;
-            }
-            else
-            {
-                jwtStr = "login fail!!!";
-            }
-
-            return Ok(new
-            {
-                success = suc,
-                token = jwtStr
-            });
-        }
-
-
+    
 
         [HttpGet]
         [Route("GetTokenNuxt")]
@@ -67,7 +35,7 @@ namespace WebApi.Controllers
                 tokenModel.Uid = 1;
                 tokenModel.Role = "Admin";
 
-                jwtStr = JwtHelper.IssueJwt(tokenModel);
+                jwtStr = JwtHelper.IssueJWT(tokenModel);
                 suc = true;
             }
             else
@@ -85,7 +53,9 @@ namespace WebApi.Controllers
 
 
         [HttpGet]
-        [Authorize(Policy = "Admin")]     
+        [Authorize]
+        [Authorize(Roles = "Admin,Client")]
+        //[Authorize(Policy = "Admin")]     
         public string Get()
         {
             return "a";

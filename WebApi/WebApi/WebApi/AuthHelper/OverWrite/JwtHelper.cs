@@ -13,44 +13,94 @@ namespace WebApi.AuthHelper.OverWrite
     public class JwtHelper
     {
 
+        ///// <summary>
+        ///// 颁发JWT字符串
+        ///// </summary>
+        ///// <param name="tokenModel"></param>
+        ///// <returns></returns>
+        //public static string IssueJwt(TokenModelJwt tokenModel)
+        //{
+        //    string iss = Appsettings.App(new string[] { "Audience", "Issuer" });
+        //    string aud = Appsettings.App(new string[] { "Audience", "Audience" });
+        //    string secret = Appsettings.App(new string[] { "Audience", "Secret" });
+
+        //    //var claims = new Claim[] //old
+        //    var claims = new List<Claim>
+        //        {
+        //            //下边为Claim的默认配置
+        //        new Claim(JwtRegisteredClaimNames.Jti, tokenModel.Uid.ToString()),
+        //        new Claim(JwtRegisteredClaimNames.Iat, $"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),
+        //        new Claim(JwtRegisteredClaimNames.Nbf,$"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}") ,
+        //        //这个就是过期时间，目前是过期100秒，可自定义，注意JWT有自己的缓冲过期时间
+        //        new Claim (JwtRegisteredClaimNames.Exp,$"{new DateTimeOffset(DateTime.Now.AddSeconds(100)).ToUnixTimeSeconds()}"),
+        //        new Claim(JwtRegisteredClaimNames.Iss,iss),
+        //        new Claim(JwtRegisteredClaimNames.Aud,aud),
+
+        //        //new Claim(ClaimTypes.Role,tokenModel.Role),//为了解决一个用户多个角色(比如：Admin,System)，用下边的方法
+        //       };
+
+        //    // 可以将一个用户的多个角色全部赋予；
+        //    // 作者：DX 提供技术支持；
+        //    claims.AddRange(tokenModel.Role.Split(',').Select(s => new Claim(ClaimTypes.Role, s)));
+
+
+
+        //    //秘钥 (SymmetricSecurityKey 对安全性的要求，密钥的长度太短会报出异常)
+        //    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
+        //    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        //    var jwt = new JwtSecurityToken(
+        //        issuer: iss,
+        //        claims: claims,
+        //        signingCredentials: creds);
+
+        //    var jwtHandler = new JwtSecurityTokenHandler();
+        //    var encodedJwt = jwtHandler.WriteToken(jwt);
+
+        //    return encodedJwt;
+        //}
+
+
+
         /// <summary>
         /// 颁发JWT字符串
         /// </summary>
         /// <param name="tokenModel"></param>
         /// <returns></returns>
-        public static string IssueJwt(TokenModelJwt tokenModel)
+        public static string IssueJWT(TokenModelJwt tokenModel)
         {
-            string iss = Appsettings.App(new string[] { "Audience", "Issuer" });
-            string aud = Appsettings.App(new string[] { "Audience", "Audience" });
-            string secret = Appsettings.App(new string[] { "Audience", "Secret" });
+            var dateTime = DateTime.UtcNow;
 
-            //var claims = new Claim[] //old
-            var claims = new List<Claim>
+            //var claims = new Claim[]
+            //{
+            //    new Claim(JwtRegisteredClaimNames.Jti,tokenModel.Uid.ToString()),//Id
+            //    new Claim("Role", tokenModel.Role),//角色
+            //    new Claim(JwtRegisteredClaimNames.Iat,$"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),  
+            new Claim(JwtRegisteredClaimNames.Exp,
+                $"{new DateTimeOffset(DateTime.Now.AddSeconds(10)).ToUnixTimeSeconds()}");
+            //};
+
+            Claim[] claims = new Claim[]
                 {
                     //下边为Claim的默认配置
-                new Claim(JwtRegisteredClaimNames.Jti, tokenModel.Uid.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, $"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),
                 new Claim(JwtRegisteredClaimNames.Nbf,$"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}") ,
                 //这个就是过期时间，目前是过期100秒，可自定义，注意JWT有自己的缓冲过期时间
                 new Claim (JwtRegisteredClaimNames.Exp,$"{new DateTimeOffset(DateTime.Now.AddSeconds(100)).ToUnixTimeSeconds()}"),
-                new Claim(JwtRegisteredClaimNames.Iss,iss),
-                new Claim(JwtRegisteredClaimNames.Aud,aud),
-                
-                //new Claim(ClaimTypes.Role,tokenModel.Role),//为了解决一个用户多个角色(比如：Admin,System)，用下边的方法
+                new Claim(JwtRegisteredClaimNames.Iss,"WebApi"),
+                new Claim(JwtRegisteredClaimNames.Aud,"wr"),
+                //这个Role是官方UseAuthentication要要验证的Role，我们就不用手动设置Role这个属性了
+                new Claim(ClaimTypes.Role,tokenModel.Role),
                };
 
-            // 可以将一个用户的多个角色全部赋予；
-            // 作者：DX 提供技术支持；
-            claims.AddRange(tokenModel.Role.Split(',').Select(s => new Claim(ClaimTypes.Role, s)));
 
-
-
-            //秘钥 (SymmetricSecurityKey 对安全性的要求，密钥的长度太短会报出异常)
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
+            //秘钥
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsrty45634kkhllghtdgdfss345t678fs"));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var jwt = new JwtSecurityToken(
-                issuer: iss,
+                issuer: "WebApi",
                 claims: claims,
                 signingCredentials: creds);
 
@@ -59,6 +109,7 @@ namespace WebApi.AuthHelper.OverWrite
 
             return encodedJwt;
         }
+
 
         /// <summary>
         /// 解析
