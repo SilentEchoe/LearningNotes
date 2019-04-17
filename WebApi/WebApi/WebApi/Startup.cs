@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Autofac;
@@ -9,7 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApi.AOP;
 using Autofac.Extras.DynamicProxy;
+using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
+using WebApi.AuthHelper.OverWrite;
 
 namespace WebApi
 {
@@ -28,50 +31,83 @@ namespace WebApi
             services.AddMvc();
 
 
+        
+
             #region Swagger
+
+            string basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
+
+
+           
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v0.0.1",
-                    Title = ".Core API",
+                    Title = ".Net Core API",
                     Description = "框架说明文档",
                     TermsOfService = "None",
-                    Contact = new Contact { Name = ".net Core", Email = "", Url = "" }
+                    Contact = new Contact { Name = ".Net Core", Email = "", Url = "" }
                 });
-            });
 
+                //就是这里
+
+                #region 读取xml信息
+
+                //var xmlPath = Path.Combine(basePath, "Blog.Core.xml");//这个就是刚刚配置的xml文件名
+                //var xmlModelPath = Path.Combine(basePath, "Blog.Core.Model.xml");//这个就是Model层的xml文件名
+                //c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
+                //c.IncludeXmlComments(xmlModelPath);
+                #endregion
+
+                #region
+                //添加header验证信息
+                //c.OperationFilter<SwaggerHeader>();
+
+                var IssuerName = (Configuration.GetSection("Audience"))["Issuer"];
+
+                var security = new Dictionary<string, IEnumerable<string>> { { IssuerName, new string[] { } }, };
+                c.AddSecurityRequirement(security);
+                //方案名称“Blog.Core”可自定义，上下一致即可
+                c.AddSecurityDefinition(IssuerName, new ApiKeyScheme
+                {
+                    Description = "JWT授权(数据将在请求头中进行传输) 直接在下框中输入Bearer {token}（注意两者之间是一个空格）\"",
+                    Name = "Authorization",//jwt默认的参数名称
+                    In = "header",//jwt默认存放Authorization信息的位置(请求头中)
+                    Type = "apiKey"
+                });
+                #endregion
+
+            });
             #endregion
+
+            // 1【授权】、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
+            // 然后这么写 [Authorize(Policy = "Admin")]
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
+                options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
+                options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
+            });
 
 
 
             //缓存注入
             services.AddScoped<ICaching, MemoryCaching>();
-
             var builder = new ContainerBuilder();
-
             //注册要通过反射创建的组件
-
-
             // 注册拦截器
             builder.RegisterType<BlogCacheAOP>();
 
-
-            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;//获取项目路径
-
-
             var servicesDllFile = Path.Combine(basePath, "Services.dll");//获取注入项目绝对路径
             var assemblysServices = Assembly.LoadFile(servicesDllFile);//直接采用加载文件的方法        
-            //builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces();//指定已扫描程序集中的类型注册为提供所有其实现的接口。
-
+         
             builder.RegisterAssemblyTypes(assemblysServices)
                      .AsImplementedInterfaces()
                      .InstancePerLifetimeScope()
-                     .EnableInterfaceInterceptors()//引用Autofac.Extras.DynamicProxy;
+                     .EnableInterfaceInterceptors()//引用 Autofac.Extras.DynamicProxy;
                      .InterceptedBy(typeof(BlogCacheAOP));//可以直接替换拦截器
-
-
-
 
             var repositoryDllFile = Path.Combine(basePath, "Repository.dll");//获取注入项目绝对路径
             var assemblysRepository = Assembly.LoadFile(repositoryDllFile);//直接采用加载文件的方法         
@@ -97,6 +133,12 @@ namespace WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+
+
+            ////app.UseMiddleware<JwtTokenAuth>();
+
+            //app.UseAuthentication();
 
             #region Swagger
             app.UseSwagger();
