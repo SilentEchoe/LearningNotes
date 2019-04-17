@@ -50,8 +50,8 @@ namespace WebApi.AuthHelper.OverWrite
 
                 return _next(httpContext);
             }
-            //var tokenHeader = httpContext.Request.Headers["Authorization"].ToString();
-            var tokenHeader = httpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+            var tokenHeader = httpContext.Request.Headers["Authorization"].ToString();
+            //var tokenHeader = httpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
 
             try
             {

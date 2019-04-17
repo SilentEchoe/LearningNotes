@@ -57,7 +57,7 @@ namespace WebApi.Controllers
         [Route("GetTokenNuxt")]
         public async Task<object> GetJWTStrForNuxt(string name, string pass)
         {
-            string jwtStr = string.Empty;
+            string jwtStr;
             bool suc = false;
             //这里就是用户登陆以后，通过数据库去调取数据，分配权限的操作
             //这里直接写死了
@@ -74,10 +74,6 @@ namespace WebApi.Controllers
             {
                 jwtStr = "login fail!!!";
             }
-            var result = new
-            {
-                data = new { success = suc, token = jwtStr }
-            };
 
             return Ok(new
             {
@@ -89,10 +85,10 @@ namespace WebApi.Controllers
 
 
         [HttpGet]
-        [Authorize(Policy = "SystemOrAdmin")]     
-        public ActionResult Get()
+        [Authorize(Policy = "Admin")]     
+        public string Get()
         {
-            return null;
+            return "a";
       
         }
 

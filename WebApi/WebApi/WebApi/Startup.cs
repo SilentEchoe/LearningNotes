@@ -136,7 +136,7 @@ namespace WebApi
 
 
 
-            ////app.UseMiddleware<JwtTokenAuth>();
+            app.UseMiddleware<JwtTokenAuth>();
 
             //app.UseAuthentication();
 
