@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApi.AOP;
 using Autofac.Extras.DynamicProxy;
+using Common.Redis;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
@@ -39,9 +40,6 @@ namespace WebApi
             #region Swagger
 
             string basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
-
-
-           
 
             services.AddSwaggerGen(c =>
             {
@@ -85,15 +83,9 @@ namespace WebApi
             });
             #endregion
 
+            #region JWT认证
             // 1【授权】、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
-            // 然后这么写 [Authorize(Policy = "Admin")]
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
-            //    options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
-            //    options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
-            //});
-
+            // 然后这么写 [Authorize(Policy = "Admin")]         
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
@@ -134,14 +126,18 @@ namespace WebApi
                 {
                     o.TokenValidationParameters = tokenValidationParameters;
                 });
+            #endregion
 
 
-
-
+            #region Redis
+            services.AddScoped<IRedisCacheManager, RedisCacheManager>();
+            //这里说下，如果是自己的项目，个人更建议使用单例模式
+            //services.AddSingleton 
+            #endregion
 
 
             #region 缓存注入
-            
+
             services.AddScoped<ICaching, MemoryCaching>();
             var builder = new ContainerBuilder();
             //注册要通过反射创建的组件

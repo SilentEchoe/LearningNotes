@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using System;
+using System.Linq;
 
 namespace Common
 {
@@ -23,11 +24,7 @@ namespace Common
         {
             try
             {
-                var val = string.Empty;
-                for (int i = 0; i < sections.Length; i++)
-                {
-                    val += sections[i] + ":";
-                }
+                var val = sections.Aggregate(string.Empty, (current, t) => current + (t + ":"));
 
                 return Configuration[val.TrimEnd(':')];
             }
