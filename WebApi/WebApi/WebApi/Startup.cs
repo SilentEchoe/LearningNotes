@@ -142,7 +142,11 @@ namespace WebApi
             var builder = new ContainerBuilder();
             //注册要通过反射创建的组件
             // 注册拦截器
-            builder.RegisterType<BlogCacheAOP>();
+
+            builder.RegisterType<BlogCacheAOP>();//可以直接替换其他拦截器
+            builder.RegisterType<BlogRedisCacheAOP>();//可以直接替换其他拦截器
+            builder.RegisterType<LogAOP>();//这样可以注入第二个
+            
 
             var servicesDllFile = Path.Combine(basePath, "Services.dll");//获取注入项目绝对路径
             var assemblysServices = Assembly.LoadFile(servicesDllFile);//直接采用加载文件的方法        
