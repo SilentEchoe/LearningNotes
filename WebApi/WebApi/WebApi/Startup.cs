@@ -33,9 +33,7 @@ namespace WebApi
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
-
-        
+      
 
             #region Swagger
 
