@@ -13,10 +13,8 @@ using WebApi.AOP;
 using Autofac.Extras.DynamicProxy;
 using Common.Redis;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
-using WebApi.AuthHelper.OverWrite;
 
 namespace WebApi
 {
@@ -37,7 +35,7 @@ namespace WebApi
 
             #region Swagger
 
-            string basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
 
             services.AddSwaggerGen(c =>
             {
@@ -80,6 +78,7 @@ namespace WebApi
 
             });
             #endregion
+
 
             #region JWT认证
             // 1【授权】、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
@@ -179,8 +178,6 @@ namespace WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
-
 
             //app.UseMiddleware<JwtTokenAuth>();
 

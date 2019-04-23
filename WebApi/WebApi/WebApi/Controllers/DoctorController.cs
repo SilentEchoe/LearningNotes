@@ -34,31 +34,26 @@ namespace WebApi.Controllers
         [Caching(AbsoluteExpiration = 10)]//增加特性
         public async Task<object> Get()
         {
+                  
+            List<Doctor> blogArticleList;
 
-            var connect = Appsettings.App(new string[] { "AppSettings", "RedisCaching", "ConnectionString" });//按照层级的顺序，依次写出来
-
-          
-
-            List<Doctor> blogArticleList = new List<Doctor>();
-
-            if (redisCacheManager.Get<object>("Redis.Blog") != null)
+            if (redisCacheManager.Get<object>("Redis.Doctor") != null)
             {
                 blogArticleList = redisCacheManager.Get<List<Doctor>>("Redis.Blog");
             }
             else
             {
                 blogArticleList = await _doctorServices.GetDoctors();
-                redisCacheManager.Set("Redis.Blog", blogArticleList, TimeSpan.FromHours(2));//缓存2小时
+                redisCacheManager.Set("Redis.Doctor", blogArticleList, TimeSpan.FromHours(2));//缓存2小时
             }
 
-            return blogArticleList;
-
-            var model = await _doctorServices.GetDoctors();
+                  
             return Ok(new
             {
                 success = true,
-                data = model
+                data = blogArticleList
             });
+
 
               
         }
