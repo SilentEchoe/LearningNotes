@@ -8,6 +8,8 @@
   <ItemGroup>
     <PackageReference Include="ServiceStack" Version="5.5.0" />
     <PackageReference Include="ServiceStack.Redis" Version="5.5.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   </ItemGroup>
 
 </Project>

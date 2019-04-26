@@ -69,7 +69,7 @@ namespace WebApi.AOP
                 invocation.Proceed();
 
                 //存入缓存
-                if (!string.IsNullOrWhiteSpace(cacheKey))
+                if (string.IsNullOrWhiteSpace(cacheKey)) return;
                 {
                     object response;
 

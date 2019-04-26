@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 
-namespace RedisCore
+namespace Common.Redis
 {
     /// <summary>
     /// Redis 助手
@@ -72,10 +70,11 @@ namespace RedisCore
         static RedisHelper()
         {
             //ConnectionString = ConfigurationManager.ConnectionStrings["RedisConnectionString"].ConnectionString;
-            ConnectionString = "127.0.0.1:6379";
+            string ConnectionString = Appsettings.App(new string[] { "AppSettings", "RedisCaching", "ConnectionString" });//获取连接字符串
+            //ConnectionString = "127.0.0.1:6379";
             _connMultiplexer = ConnectionMultiplexer.Connect(ConnectionString);
             //DefaultKey = ConfigurationManager.AppSettings["Redis.DefaultKey"];
-            DefaultKey = "Wen.Helpers.ConsoleApp";
+            DefaultKey = "";
             AddRegisterEvent();
         }
 
@@ -1230,6 +1229,4 @@ namespace RedisCore
 
         #endregion private method
     }
-
-   
 }
