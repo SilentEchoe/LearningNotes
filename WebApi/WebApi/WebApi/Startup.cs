@@ -133,17 +133,17 @@ namespace WebApi
             #endregion
 
 
-            #region 缓存注入
+            #region 依赖注入
 
             services.AddScoped<ICaching, MemoryCaching>();
-            var builder = new ContainerBuilder();
+            
             //注册要通过反射创建的组件
-            // 注册拦截器
-
+            var builder = new ContainerBuilder();
+            #region  注册拦截器
             builder.RegisterType<BlogCacheAOP>();//可以直接替换其他拦截器
             builder.RegisterType<BlogRedisCacheAOP>();//可以直接替换其他拦截器
             builder.RegisterType<LogAOP>();//这样可以注入第二个
-            
+            #endregion
 
             var servicesDllFile = Path.Combine(basePath, "Services.dll");//获取注入项目绝对路径
             var assemblysServices = Assembly.LoadFile(servicesDllFile);//直接采用加载文件的方法        
