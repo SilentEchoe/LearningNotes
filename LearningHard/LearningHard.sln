@@ -29,7 +29,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadLearning", "ThreadLea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPool", "ThreadPool\ThreadPool.csproj", "{028750A4-47BB-4F56-AC1D-2D741E0F12EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asynchronization", "Asynchronization\Asynchronization.csproj", "{372F8DFD-560F-4AC3-956D-0B7AE6618D1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asynchronization", "Asynchronization\Asynchronization.csproj", "{372F8DFD-560F-4AC3-956D-0B7AE6618D1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plant", "Plant\Plant.csproj", "{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{372F8DFD-560F-4AC3-956D-0B7AE6618D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{372F8DFD-560F-4AC3-956D-0B7AE6618D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{372F8DFD-560F-4AC3-956D-0B7AE6618D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
