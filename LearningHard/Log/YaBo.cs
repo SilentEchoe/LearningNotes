@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Log
 {
-    public class LogFactory
-    {
-        public abstract Logs Create();
+   public abstract class YaBo
+   {
+       public abstract void Print();
 
-
-    }
+   }
 }

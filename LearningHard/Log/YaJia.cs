@@ -4,9 +4,10 @@ using System.Text;
 
 namespace Log
 {
-    public  abstract class Logs
+    public abstract class YaJia
     {
-        public abstract void Write();
+        public abstract void Print();
+
 
     }
 }
