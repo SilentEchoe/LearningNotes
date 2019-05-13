@@ -33,6 +33,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asynchronization", "Asynchr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plant", "Plant\Plant.csproj", "{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plants", "Plants", "{625FECE9-B606-4D3F-9457-F84A74FB542A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method", "Method\Method.csproj", "{A9E60956-CF62-4E1D-B7E8-D38FB863839D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,9 +103,17 @@ Global
 		{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9E60956-CF62-4E1D-B7E8-D38FB863839D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E60956-CF62-4E1D-B7E8-D38FB863839D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E60956-CF62-4E1D-B7E8-D38FB863839D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E60956-CF62-4E1D-B7E8-D38FB863839D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5E40E3B-86D4-48C4-BF8C-DE502AFAAEDB} = {625FECE9-B606-4D3F-9457-F84A74FB542A}
+		{A9E60956-CF62-4E1D-B7E8-D38FB863839D} = {625FECE9-B606-4D3F-9457-F84A74FB542A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F806933-21E0-43CD-8A22-4EFE3B15AE1B}
