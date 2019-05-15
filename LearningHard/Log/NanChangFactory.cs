@@ -10,7 +10,7 @@ namespace Log
         // 制作南昌鸭脖
         public override YaBo CreateYaBo()
         {
-            return  new  NanChangYaBo();
+            return new NanChangYaBo();
         }
 
         public override YaJia CreateYaJia()

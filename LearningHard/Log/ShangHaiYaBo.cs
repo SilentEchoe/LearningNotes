@@ -8,8 +8,7 @@ namespace Log
     {
         public override void Print()
         {
-            Console.WriteLine("上海的鸭脖");
-            
+            Console.WriteLine("上海的鸭脖");           
         }
     }
 
