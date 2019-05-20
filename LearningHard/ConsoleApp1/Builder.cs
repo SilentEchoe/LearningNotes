@@ -10,7 +10,7 @@ namespace Customer
    public class Builder
     {
         //装CPU
-        public abstract void BuildPartCPU();
+        //public abstract void BuildPartCPU();
 
 
 

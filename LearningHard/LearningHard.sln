@@ -37,7 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Log", "Log\Log.csproj", "{2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuilderModel", "BuilderModel", "{F6F2E874-B52B-48FD-A280-396348BA7B5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{0707B178-9453-46BC-A730-E49DC20E9E83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer", "ConsoleApp1\Customer.csproj", "{0707B178-9453-46BC-A730-E49DC20E9E83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decompression", "Decompression\Decompression.csproj", "{08D95621-2287-449E-BE76-7213FB0C4880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decompression2", "Decompression2\Decompression2.csproj", "{E6E530F5-BE47-418D-ADD9-30341AE6BC97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +113,14 @@ Global
 		{0707B178-9453-46BC-A730-E49DC20E9E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0707B178-9453-46BC-A730-E49DC20E9E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0707B178-9453-46BC-A730-E49DC20E9E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D95621-2287-449E-BE76-7213FB0C4880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D95621-2287-449E-BE76-7213FB0C4880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D95621-2287-449E-BE76-7213FB0C4880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D95621-2287-449E-BE76-7213FB0C4880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E530F5-BE47-418D-ADD9-30341AE6BC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E530F5-BE47-418D-ADD9-30341AE6BC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E530F5-BE47-418D-ADD9-30341AE6BC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E530F5-BE47-418D-ADD9-30341AE6BC97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
