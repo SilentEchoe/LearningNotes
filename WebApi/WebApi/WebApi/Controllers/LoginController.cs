@@ -23,7 +23,7 @@ namespace WebApi.Controllers
 
         [HttpGet]
         [Route("GetTokenNuxt")]
-        public async Task<object> GetJWTStrForNuxt(string name, string pass)
+        public async Task<object> GetJwtStrForNuxt(string name, string pass)
         {
             string jwtStr;
             bool suc = false;
