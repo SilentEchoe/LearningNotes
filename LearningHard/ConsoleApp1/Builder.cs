@@ -7,13 +7,21 @@ namespace Customer
     /// <summary>
     /// 抽象建造者
     /// </summary>
-   public class Builder
+   public abstract class Builder
     {
         //装CPU
-        //public abstract void BuildPartCPU();
+        public abstract void BuildPartCPU();
 
+        public abstract void BuildPartMainBoard();
 
+        public abstract Computer GetComputer();
 
 
     }
+
+
+
+
+
+
 }
