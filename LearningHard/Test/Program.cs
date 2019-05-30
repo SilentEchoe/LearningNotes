@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,19 +13,57 @@ namespace Test
     {
         static void Main(string[] args)
         {
-          
 
-         
+            GetLog();
 
+            Console.Read();
         }
 
 
-       
+        public static void GetLog()
+        {
+            string filepath = @"C:\FS\FS_Service\Log";
+            var files = Directory.GetFiles(filepath, "*.LOG");
+
+            Dictionary<string, string> filebylist = new Dictionary<string, string>();
+  
+            DateTime todayZeroTime = GetTodayZeroTime(DateTime.Now);
+            DateTime tomorrowZeroTime = GetTomorrowZeroTime(DateTime.Now);
+            foreach (var file in files)
+            {
+                
+                var fi = new FileInfo(file);
+
+                if (todayZeroTime >= fi.CreationTime && fi.CreationTime >= tomorrowZeroTime) continue;
+                Console.WriteLine(file + "," + fi.CreationTime.ToString(CultureInfo.InvariantCulture));
+                filebylist.Add(fi.CreationTime.ToString(CultureInfo.InvariantCulture),file);
 
 
 
-            // using System.Security.Cryptography;
-            public static string GetMd5Hash(string input)
+            }
+
+         
+
+
+
+
+        }
+        private static DateTime GetTodayZeroTime(DateTime datetime)
+        {
+            return new DateTime(datetime.Year, datetime.Month, datetime.Day);
+        }
+
+        private static DateTime GetTomorrowZeroTime(DateTime datetime)
+        {
+            TimeSpan timespan = new TimeSpan(1, 0, 0, 0);
+            DateTime yesdt = datetime.Add(timespan);
+            return new DateTime(yesdt.Year, yesdt.Month, yesdt.Day);
+        }
+
+
+
+        // using System.Security.Cryptography;
+        public static string GetMd5Hash(string input)
         {
             if (input == null)
             {
