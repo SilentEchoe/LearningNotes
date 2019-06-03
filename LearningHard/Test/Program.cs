@@ -20,6 +20,9 @@ namespace Test
         }
 
 
+
+
+
         public static void GetLog()
         {
             string filepath = @"C:\FS\FS_Service\Log";
@@ -34,20 +37,34 @@ namespace Test
                 
                 var fi = new FileInfo(file);
 
-                if (todayZeroTime >= fi.CreationTime && fi.CreationTime >= tomorrowZeroTime) continue;
+                if (todayZeroTime >= fi.CreationTime && fi.CreationTime >= tomorrowZeroTime)
+
+
+
+                    continue;
                 Console.WriteLine(file + "," + fi.CreationTime.ToString(CultureInfo.InvariantCulture));
+
+                var a  =  ConvertToBinary(file);
                 filebylist.Add(fi.CreationTime.ToString(CultureInfo.InvariantCulture),file);
-
-
-
             }
-
-         
-
-
-
-
         }
+
+        /// <summary>
+        /// 将文件转换成二进制
+        /// </summary>
+        /// <param name="Path">文件路径</param>
+        /// <returns></returns>
+        public static byte[] ConvertToBinary(string Path)
+        {
+            FileStream stream = new FileInfo(Path).OpenRead();
+            byte[] buffer = new byte[stream.Length];
+            stream.Read(buffer, 0, Convert.ToInt32(stream.Length));
+            return buffer;
+        }
+
+
+
+
         private static DateTime GetTodayZeroTime(DateTime datetime)
         {
             return new DateTime(datetime.Year, datetime.Month, datetime.Day);
