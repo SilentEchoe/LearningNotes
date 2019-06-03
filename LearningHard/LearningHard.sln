@@ -41,9 +41,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer", "ConsoleApp1\Cus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decompression2", "Decompression2\Decompression2.csproj", "{E6E530F5-BE47-418D-ADD9-30341AE6BC97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Port", "Port\Port.csproj", "{B5CAA5C4-312F-4A26-8B29-9A5A33352821}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Port", "Port\Port.csproj", "{B5CAA5C4-312F-4A26-8B29-9A5A33352821}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signalr", "Signalr\Signalr.csproj", "{3ABF5D10-4A1B-4A53-A803-8F63C6C19F8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signalr", "Signalr\Signalr.csproj", "{3ABF5D10-4A1B-4A53-A803-8F63C6C19F8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lazyload", "Lazyload\Lazyload.csproj", "{E08ADA69-CC63-482A-AE8E-55E178F82E0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +129,10 @@ Global
 		{3ABF5D10-4A1B-4A53-A803-8F63C6C19F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ABF5D10-4A1B-4A53-A803-8F63C6C19F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ABF5D10-4A1B-4A53-A803-8F63C6C19F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08ADA69-CC63-482A-AE8E-55E178F82E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08ADA69-CC63-482A-AE8E-55E178F82E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08ADA69-CC63-482A-AE8E-55E178F82E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08ADA69-CC63-482A-AE8E-55E178F82E0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
