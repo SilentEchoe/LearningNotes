@@ -20,6 +20,17 @@ namespace QuickstartIdentityServer
 
         }
 
+        public static IEnumerable<ApiResource> GetApis()
+        {
+            return new List<ApiResource>
+            {
+                new ApiResource("api1", "My API")
+
+            };
+
+        }
+
+
 
         public static IEnumerable<Client> GetClients()
         {
