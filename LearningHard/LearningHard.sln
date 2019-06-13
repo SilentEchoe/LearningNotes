@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringPort", "Monitorin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test2", "Test2\Test2.csproj", "{0F6758E7-AE44-4D64-B812-20F12D9A4A1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonDemo", "SingletonDemo\SingletonDemo.csproj", "{6357F962-CCC5-4C98-B874-55262E372749}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,10 @@ Global
 		{0F6758E7-AE44-4D64-B812-20F12D9A4A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F6758E7-AE44-4D64-B812-20F12D9A4A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F6758E7-AE44-4D64-B812-20F12D9A4A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6357F962-CCC5-4C98-B874-55262E372749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6357F962-CCC5-4C98-B874-55262E372749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6357F962-CCC5-4C98-B874-55262E372749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6357F962-CCC5-4C98-B874-55262E372749}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
