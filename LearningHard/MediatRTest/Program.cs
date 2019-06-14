@@ -7,6 +7,9 @@ namespace MediatRTest
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+           
+
+
         }
     }
 }

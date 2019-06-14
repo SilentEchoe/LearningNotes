@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonDemo", "SingletonD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRTest", "MediatRTest\MediatRTest.csproj", "{B088A027-0AB0-4654-BC7D-39ECA2E466C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFdll", "WPFdll\WPFdll.csproj", "{77861604-C29D-4B44-BC72-9E7600DBEB9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +159,10 @@ Global
 		{B088A027-0AB0-4654-BC7D-39ECA2E466C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B088A027-0AB0-4654-BC7D-39ECA2E466C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B088A027-0AB0-4654-BC7D-39ECA2E466C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77861604-C29D-4B44-BC72-9E7600DBEB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77861604-C29D-4B44-BC72-9E7600DBEB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77861604-C29D-4B44-BC72-9E7600DBEB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77861604-C29D-4B44-BC72-9E7600DBEB9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

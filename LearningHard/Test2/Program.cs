@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
+
 namespace Test2
 {
     class Program
@@ -27,10 +28,9 @@ namespace Test2
             DateTime b =  a.AddDays(1);
             var allLines = info.GetFiles("*.LOG")
                 .Where(p => p.CreationTime.Date > a && p.CreationTime.Date < b);
-                
 
 
-
+          
             Console.WriteLine("Hello World!");
         }
     }
