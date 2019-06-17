@@ -57,6 +57,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRTest", "MediatRTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFdll", "WPFdll\WPFdll.csproj", "{77861604-C29D-4B44-BC72-9E7600DBEB9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{31BEB36B-2D72-4768-B9D9-F6BE3ABE62F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalrTest", "SignalrTest\SignalrTest.csproj", "{D56CA225-FDE0-4A06-B81E-BF38FE521C2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +167,14 @@ Global
 		{77861604-C29D-4B44-BC72-9E7600DBEB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77861604-C29D-4B44-BC72-9E7600DBEB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77861604-C29D-4B44-BC72-9E7600DBEB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31BEB36B-2D72-4768-B9D9-F6BE3ABE62F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BEB36B-2D72-4768-B9D9-F6BE3ABE62F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BEB36B-2D72-4768-B9D9-F6BE3ABE62F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BEB36B-2D72-4768-B9D9-F6BE3ABE62F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56CA225-FDE0-4A06-B81E-BF38FE521C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56CA225-FDE0-4A06-B81E-BF38FE521C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56CA225-FDE0-4A06-B81E-BF38FE521C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56CA225-FDE0-4A06-B81E-BF38FE521C2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
