@@ -1,35 +1,35 @@
 ﻿using System;
-using System.Net;
-using System.Net.Sockets;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Hosting;
 using Owin;
 
-namespace SignalrTest
+namespace SignalrTest1
 {
     class Program
     {
-
         private static IHubContext _hubContext;
         private static IDisposable _hub;
         static void Main(string[] args)
         {
-           _hubContext = GlobalHost.ConnectionManager.GetHubContext<MyHub>();
+            _hubContext = GlobalHost.ConnectionManager.GetHubContext<MyHub>();
 
             _hub = HubServer.InitialHubServer();
+
+            Console.ReadLine();
 
         }
         void Send(string name, string msg)
         {
             _hubContext.Clients.All.addMessage(name, msg);
         }
-
-
-
     }
+
     public static class HubServer
     {
         private static IDisposable _signalR;
@@ -70,18 +70,16 @@ namespace SignalrTest
 
     public class MyHub : Hub
     {
-      
+
         public void Send(string name, string message)
         {
             switch (name)
             {
-               
-
                 default:
-                    {
-                        this.Clients.Client(this.Context.ConnectionId).addMessage(name, this.Context.ConnectionId);
-                        break;
-                    }
+                {
+                    this.Clients.Client(this.Context.ConnectionId).addMessage(name, this.Context.ConnectionId);
+                    break;
+                }
             }
         }
 
@@ -96,11 +94,11 @@ namespace SignalrTest
         private void SendStatus()
         {
             this.Clients.Client(this.Context.ConnectionId)
-                .addMessage("1","");
-            
+                .addMessage("1", "2");
+
         }
 
-    
+
 
         public override Task OnReconnected()
         {
@@ -110,11 +108,11 @@ namespace SignalrTest
 
         public override Task OnDisconnected(bool stopCalled)
         {
-          
+
             return base.OnDisconnected(stopCalled);
         }
 
-      
+
     }
 
 }

@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="automapper" Version="8.1.1" />
-    <PackageReference Include="WebApiClient.AOT" Version="0.3.3" />
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
   </ItemGroup>
 
 </Project>

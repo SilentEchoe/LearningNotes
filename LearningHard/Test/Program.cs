@@ -14,9 +14,23 @@ namespace Test
         static void Main(string[] args)
         {
 
-            GetLog();
+            string tempStr = "DQAMBAAAAAAAAAAFZwAAMgAAAABBVkFHTyAgICAgICAgICAgAAAXakFGQlItNzlFSURaLUgzQyAwM0JoB9BGIwAAD95RRjE2MDNFQiAgICAgICAgMTUwNDE1ICAMAABNSDNDIAAAAAAAAAAAAIcGiQkCBAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjEwMjMxQTJORlgxNTQwMTQ1MTQAADIwMTUwNDI4jqBj6653FgfEf3noT5CeOdPaw58yOSkHmZWSZ+oqicAwMjMxQTJORgAAAfsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==";
 
-            Console.Read();
+    
+            //var  a =  Convert.ToByte(tempStr, 16);
+
+
+            FileStream fs = new FileStream("D:\\a.bin", FileMode.Create, FileAccess.Write); //在D盘创建cc.jpg图片
+            BinaryWriter bw = new BinaryWriter(fs);
+         
+            byte tempByte = Convert.ToByte(tempStr, 16);
+            bw.Write(tempByte);
+            
+            fs.Close();
+            bw.Close();
+         
+       
+
         }
 
 
