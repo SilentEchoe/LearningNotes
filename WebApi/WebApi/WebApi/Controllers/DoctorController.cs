@@ -13,6 +13,7 @@ namespace WebApi.Controllers
 {
     [Produces("application/json")]
     [Route("api/Doctor")]
+
     public class DoctorController : Controller
     {
         readonly IDoctorServices _doctorServices;
@@ -29,10 +30,10 @@ namespace WebApi.Controllers
         /// </summary>
         /// <returns></returns>
 
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet]
         [AllowAnonymous]
         [Caching(AbsoluteExpiration = 10)]//增加特性
-        public async Task<object> Get()
+        public async Task<object> Geta()
         {
                   
             List<Doctor> blogArticleList;
@@ -43,7 +44,11 @@ namespace WebApi.Controllers
             }
             else
             {
+               
                 blogArticleList = await _doctorServices.GetDoctors();
+
+               
+
                 redisCacheManager.Set("Redis.Doctor", blogArticleList, TimeSpan.FromHours(2));//缓存2小时
             }
 
@@ -59,5 +64,34 @@ namespace WebApi.Controllers
         }
 
 
+        [HttpGet]
+        [AllowAnonymous]
+        [Caching(AbsoluteExpiration = 10)]//增加特性
+        [Route("api/GetaTask")]
+        public async Task<object> GetaTask()
+        {
+
+            List<Doctor> blogArticleList;
+
+            if (redisCacheManager.Get<object>("Redis.Doctor") != null)
+            {
+                blogArticleList = redisCacheManager.Get<List<Doctor>>("Redis.Blog");
+            }
+            else
+            {
+                blogArticleList = await _doctorServices.GetDoctors();
+                redisCacheManager.Set("Redis.Doctor", blogArticleList, TimeSpan.FromHours(2));//缓存2小时
+            }
+
+
+            return Ok(new
+            {
+                success = true,
+                data = blogArticleList
+            });
+
+
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using Model.Models;
+using Model.ViewModels;
 using WebApi.AutoMapper;
 
 namespace WebApi.AutoMapper
