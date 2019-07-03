@@ -135,6 +135,8 @@ namespace WebApi
 
             #region 依赖注入
 
+            // 官方的IOC 容器注入
+            // 服务在每次请求的时候被创建（生命周期）
             services.AddScoped<ICaching, MemoryCaching>();
             
             //注册要通过反射创建的组件

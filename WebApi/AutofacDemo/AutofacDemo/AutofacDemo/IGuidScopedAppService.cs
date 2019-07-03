@@ -5,9 +5,7 @@ using System.Threading.Tasks;
 
 namespace AutofacDemo
 {
-    public interface ITestService
+    public interface IGuidScopedAppService : IGuidAppService
     {
-        Guid MyProperty { get; }
-        List<string> GetList(string a);
     }
 }
