@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using AutofacDemo;
 using AutofacDemo.Service;
 using Microsoft.AspNetCore.Builder;
@@ -9,10 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
-namespace WebApplication1
+namespace AutofacTest
 {
     public class Startup
     {
@@ -24,17 +21,26 @@ namespace WebApplication1
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            var builder = new ContainerBuilder();
 
-         
 
-            services.AddTransient<IGuidTransientAppService, GuidTransientAppService>();
-            services.AddSingleton<IGuidScopedAppService, GuidScopedAppService>();
-            services.AddScoped<IGuidSingletonAppService, GuidSingletonAppService>();
+
+#pragma warning disable CS0436 // 类型与导入类型冲突
+            builder.RegisterType<GuidTransientAppService>().As<IGuidTransientAppService>();
+#pragma warning restore CS0436 // 类型与导入类型冲突
+#pragma warning disable CS0436 // 类型与导入类型冲突
+            builder.RegisterType<GuidScopedAppService>().As<IGuidScopedAppService>();
+#pragma warning restore CS0436 // 类型与导入类型冲突
+#pragma warning disable CS0436 // 类型与导入类型冲突
+            builder.RegisterType<GuidSingletonAppService>().As<IGuidSingletonAppService>();
+#pragma warning restore CS0436 // 类型与导入类型冲突
+            builder.Populate(services);
+            var ApplicationContainer = builder.Build();
+            return new AutofacServiceProvider(ApplicationContainer);
 
         }
 
