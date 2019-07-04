@@ -29,15 +29,14 @@ namespace AutofacTest
 
 
 
-#pragma warning disable CS0436 // 类型与导入类型冲突
-            builder.RegisterType<GuidTransientAppService>().As<IGuidTransientAppService>();
-#pragma warning restore CS0436 // 类型与导入类型冲突
-#pragma warning disable CS0436 // 类型与导入类型冲突
+
+            builder.RegisterType<GuidTransientAppService>().As<IGuidTransientAppService>().InstancePerDependency();
+
             builder.RegisterType<GuidScopedAppService>().As<IGuidScopedAppService>();
-#pragma warning restore CS0436 // 类型与导入类型冲突
-#pragma warning disable CS0436 // 类型与导入类型冲突
-            builder.RegisterType<GuidSingletonAppService>().As<IGuidSingletonAppService>();
-#pragma warning restore CS0436 // 类型与导入类型冲突
+
+            builder.RegisterType<GuidSingletonAppService>().As<IGuidSingletonAppService>().SingleInstance();
+
+
             builder.Populate(services);
             var ApplicationContainer = builder.Build();
             return new AutofacServiceProvider(ApplicationContainer);
