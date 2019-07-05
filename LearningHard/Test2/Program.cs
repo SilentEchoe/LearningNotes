@@ -1,6 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
+﻿using EasyOffice.Enums;
+using EasyOffice.Models.Excel;
 using System.Linq;
 
 
@@ -10,28 +9,30 @@ namespace Test2
     {
         public static void Main(string[] args)
         {
-            //Process.Start(@"C:\Users\Lenovo\Desktop\ceshi\FS_Feedback\FS_Feedback.exe");
+
+
+        }
+
+
+        public async System.Threading.Tasks.Task aaAsync()
+        {
+            //ImportOption importOption = new ImportOption();
+            //importOption.FileUrl = "";
+            //importOption.DataRowStartIndex = 1;
+            //importOption.HeaderRowIndex = 0;
+            //importOption.SheetIndex = 0;
+            //importOption.ValidateMode = ValidateModeEnum.Continue;
 
 
 
 
-            //Process[] app = Process.GetProcessesByName("FS_Feedback");
-            //if (app.Length > 0)
-            //{
-            //    Console.WriteLine("已启动");   
-            //    return;
-            //}
-
-            DirectoryInfo info = new DirectoryInfo(@"C:\FS\FS_Service\Log\");
-
-            DateTime a =  DateTime.Today;
-            DateTime b =  a.AddDays(1);
-            var allLines = info.GetFiles("*.LOG")
-                .Where(p => p.CreationTime.Date > a && p.CreationTime.Date < b);
 
 
-          
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
+
+
+    
+

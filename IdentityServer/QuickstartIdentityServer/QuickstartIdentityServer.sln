@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickstartIdentityServer", "QuickstartIdentityServer\QuickstartIdentityServer.csproj", "{C85B5078-ACF2-410D-96B8-3880A5DEA5F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickstartIdentityServer", "QuickstartIdentityServer\QuickstartIdentityServer.csproj", "{C85B5078-ACF2-410D-96B8-3880A5DEA5F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{8CA99CF4-E6D1-40F9-A549-8BBC727B1E5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{8CA99CF4-E6D1-40F9-A549-8BBC727B1E5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{3440EC01-C9CE-4E5D-88D7-3D92B7B88F3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{3440EC01-C9CE-4E5D-88D7-3D92B7B88F3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

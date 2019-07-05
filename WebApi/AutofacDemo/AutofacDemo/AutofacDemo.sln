@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacDemoTest", "WebApplication1\AutofacDemoTest.csproj", "{F07BCB49-A2F5-4407-AA6A-3456CFF6AB35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutofacDemoTest", "WebApplication1\AutofacDemoTest.csproj", "{F07BCB49-A2F5-4407-AA6A-3456CFF6AB35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacTest", "AutofacTest\AutofacTest.csproj", "{DCBB887A-1E14-4B1F-8937-AC9293CF9B29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutofacTest", "AutofacTest\AutofacTest.csproj", "{DCBB887A-1E14-4B1F-8937-AC9293CF9B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{E2F0A327-F003-46F9-817D-C02E14A45CCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DCBB887A-1E14-4B1F-8937-AC9293CF9B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCBB887A-1E14-4B1F-8937-AC9293CF9B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCBB887A-1E14-4B1F-8937-AC9293CF9B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2F0A327-F003-46F9-817D-C02E14A45CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2F0A327-F003-46F9-817D-C02E14A45CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2F0A327-F003-46F9-817D-C02E14A45CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2F0A327-F003-46F9-817D-C02E14A45CCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

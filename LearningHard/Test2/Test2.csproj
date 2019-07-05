@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EasyOffice" Version="1.1.3" />
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WPFdll\WPFdll.csproj" />
   </ItemGroup>
 

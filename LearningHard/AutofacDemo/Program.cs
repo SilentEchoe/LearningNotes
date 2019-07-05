@@ -14,10 +14,7 @@ namespace AutofacDemo
 
         static void Main(string[] args)
         {
-            var builder = new ContainerBuilder();
-            builder.RegisterType<ConsoleOutput>().As<IOutput>();
-            builder.RegisterType<TodayWriter>().As<IDateWriter>();
-            Container = builder.Build();
+          
 
             // The WriteDate method is where we'll make use
             // of our dependency injection. We'll define that
