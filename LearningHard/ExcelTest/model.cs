@@ -19,4 +19,19 @@ namespace ExcelTest
 
 
     }
+
+    public class model2
+    {
+        public string Modelname { get; set; }
+
+        public string Value1 { get; set; }
+
+        public string Value2 { get; set; }
+
+        public string Base64 { get; set; }
+
+
+
+    }
+
 }
