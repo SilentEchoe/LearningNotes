@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,38 +22,55 @@ namespace ExcelTest
             Console.ReadKey();
         }
 
-        static string binFilePath = @"C:\Users\Lenovo\Desktop\脚本\GE\云端中性码\";
+        static string binFilePath = @"C:\Users\Lenovo\Desktop\脚本\云端中性码\";
 
 
         public static void Addcompatibility()
         {
             // 获取数据库型号名
-            //var modelLits = GetModelLists();
+            var modelLits = GetModelLists();
 
             var list = OpenExcel2(@"C:\Users\Lenovo\Desktop\脚本\Ge.xls");
 
             foreach (var item in list)
             {
+                //解析 attry_key 和 attry_value
+                var attry = attrKey(item);            
+
+                string binPath = binFilePath + item.Base64;
+                string base64 = BinToBase64(binPath);
+
+                var modalid = modelLits.Where(p => p.modal_name == item.Modelname).FirstOrDefault();
+
+                if (base64 == "")
+                {
+                    Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry[1]}");
+                    break;
+                }
+
+                var a = HttpClientDoPost(modalid.id.ToString(), attry[0], attry[1], base64);
+                a.Wait();
+  
+                if (!a.Result)
+                {
+                    Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry[1]}");
+                }
+               
 
 
-             var a = attrKey(item);
 
 
-             Console.WriteLine($"型号名：{item.Modelname}，attry_ket{a}");
+                //if (AddCompatibility(modalid.id, attry[0], attry[1], base64))
+                //{
+                //    Console.WriteLine("成功");
+                //}
+                //else
+                //{
+                //    Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry[1]}");
+                //}
+                //System.Threading.Thread.Sleep(4000);
 
 
-             //Console.WriteLine($"型号名：{item.Modelname}，属性一{item.Value1}，属性二{item.Value2}，属性三{item.Value3}，属性四{item.Value4}，属性五{item.Value5}，属性六{item.Value6}");
-
-                //string key = string.Empty;
-
-                //string binPath = binFilePath + item.Base64;
-                //Console.WriteLine(BinToBase64(binPath));
-                //var modalid = modelLits.Where(p => p.modal_name == item.Modelname).FirstOrDefault();
-
-
-             
-
-                //Console.WriteLine(item.Modelname +":"+ key);
 
 
 
@@ -67,18 +85,31 @@ namespace ExcelTest
 
         }
 
+
+
+
+        // 将文件转换成base64
         public static string BinToBase64(string binPath)
         {
-            using (FileStream fs = new FileStream(binPath, FileMode.OpenOrCreate))
+            try
             {
-                byte[] buffer = new byte[fs.Length];
-                fs.Read(buffer, 0, buffer.Length);
-                fs.Close();
-                return Convert.ToBase64String(buffer);
+                using (FileStream fs = new FileStream(binPath, FileMode.OpenOrCreate))
+                {
+                    byte[] buffer = new byte[fs.Length];
+                    fs.Read(buffer, 0, buffer.Length);
+                    fs.Close();
+                    return Convert.ToBase64String(buffer);
+                }
             }
+            catch (Exception)
+            {
+
+                return "";
+            }
+
         }
 
-
+        // 添加型号名
         public void AddModelName()
         {
             int sum = 0;
@@ -120,79 +151,130 @@ namespace ExcelTest
             Console.ReadKey();
         }
 
-
-        public static string GetModel()
+        static bool AddCompatibility(int modaleId, string attrKey, string attrValue, string binBase64)
         {
-            Uri url = new Uri("http://54.245.72.232/api/fsapi/model/findListConfModalName");
+            Uri url = new Uri("http://localhost:5000/api/fsapi/Test/AddCompatible");
 
             var client = new RestClient(url);
             RestRequest request = new RestRequest(Method.POST);
-
+            request.AddParameter("modaleId", modaleId);
+            request.AddParameter("attrKey", attrKey);
+            request.AddParameter("attrValue", attrValue);
+            request.AddParameter("binBase64", binBase64);
             var response = client.Execute(request);
-
 
             var ceshistatucode = (int)response.StatusCode;
 
-            if (ceshistatucode == 200)
+
+
+            if (ceshistatucode != 200)
             {
-                return response.Content;
+                return false;
             }
-            return null;
+            else
+            {
+                return true;
+            }
+
+
         }
 
-        public static string attrKey(model2 model)
+        static async Task<bool> HttpClientDoPost(string modaleId, string attrKey, string attrValue, string binBase64)
+        {
+
+            using (var client = new HttpClient())
+            {
+                var values = new List<KeyValuePair<string, string>>();
+                values.Add(new KeyValuePair<string, string>("modaleId", modaleId));
+                values.Add(new KeyValuePair<string, string>("attrKey", attrKey));
+                values.Add(new KeyValuePair<string, string>("attrValue", attrValue));
+                values.Add(new KeyValuePair<string, string>("binBase64", binBase64));
+                var content = new FormUrlEncodedContent(values);
+                var response = await client.PostAsync("http://localhost:5000/api/fsapi/Test/AddCompatible", content);
+
+                var responseString = await response.Content.ReadAsStringAsync();
+                JObject obj = (JObject)JsonConvert.DeserializeObject(responseString);
+                if (obj["success"].ToString() == "True")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+              
+            }
+           
+
+        }
+
+
+
+        //解析属性
+        public static string[] attrKey(model2 model)
         {
             string attr_key = string.Empty;
             string attr_value = string.Empty;
-            if (model.Value1!="0")
+            if (model.Value1 != "0")
             {
                 attr_key += "1,";
                 attr_value += model.Value1 + ",";
             }
-            if(model.Value2!="0")
+            if (model.Value2 != "0")
             {
                 attr_key += "2,";
+                attr_value += model.Value2 + ",";
             }
             if (model.Value3 != "0")
             {
                 attr_key += "3,";
+                attr_value += model.Value3 + ",";
             }
             if (model.Value4 != "0")
             {
                 attr_key += "4,";
+                attr_value += model.Value4 + ",";
             }
             if (model.Value5 != "0")
             {
                 attr_key += "5,";
+                attr_value += model.Value5 + ",";
             }
             if (model.Value6 != "0")
             {
                 attr_key += "6,";
+                attr_value += model.Value6 + ",";
             }
 
             if (attr_key == "")
             {
                 attr_key = "0,0";
+                attr_value = "0,0";
             }
-            
+
 
 
             string[] attr_keya = attr_key.Split(',');
-            if (attr_keya.Length==2 && attr_keya[1]=="")
+            if (attr_keya.Length == 2 && attr_keya[1] == "")
             {
                 attr_key += "0";
+                attr_value += "0";
             }
             if (attr_keya.Length == 3)
             {
                 attr_key = attr_key.Substring(0, attr_key.Length - 1);
-                
+                attr_value = attr_value.Substring(0, attr_value.Length - 1);
             }
 
 
-            return attr_key;
+            string[] attry = new string[2] { attr_key, attr_value };
+
+            return attry;
+
         }
 
 
+        // 获取数据库型号名列表
 
         public static List<modelList> GetModelLists()
         {
@@ -216,6 +298,26 @@ namespace ExcelTest
             return lists;
         }
 
+
+        // 请求接口
+        public static string GetModel()
+        {
+            Uri url = new Uri("http://54.245.72.232/api/fsapi/model/findListConfModalName");
+
+            var client = new RestClient(url);
+            RestRequest request = new RestRequest(Method.POST);
+
+            var response = client.Execute(request);
+
+
+            var ceshistatucode = (int)response.StatusCode;
+
+            if (ceshistatucode == 200)
+            {
+                return response.Content;
+            }
+            return null;
+        }
 
         // 添加型号名
         public static bool addModelName(string modalName, int ParentId)
@@ -373,7 +475,7 @@ namespace ExcelTest
                 // 型号名
                 object[,] arryItem = (object[,])rng1.Value2;
 
-               
+
                 object[,] arryItem1 = (object[,])rng2.Value2;
 
                 object[,] arryItem2 = (object[,])rng3.Value2;   //get range's value
@@ -427,15 +529,6 @@ namespace ExcelTest
             return modelsList;
 
         }
-
-
-      
-
-
-
-
-
-
 
     }
 }
