@@ -4,7 +4,9 @@ using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using WebApiClient;
 
 namespace Test
@@ -14,23 +16,28 @@ namespace Test
         static void Main(string[] args)
         {
 
-            string tempStr = "DQAMBAAAAAAAAAAFZwAAMgAAAABBVkFHTyAgICAgICAgICAgAAAXakFGQlItNzlFSURaLUgzQyAwM0JoB9BGIwAAD95RRjE2MDNFQiAgICAgICAgMTUwNDE1ICAMAABNSDNDIAAAAAAAAAAAAIcGiQkCBAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjEwMjMxQTJORlgxNTQwMTQ1MTQAADIwMTUwNDI4jqBj6653FgfEf3noT5CeOdPaw58yOSkHmZWSZ+oqicAwMjMxQTJORgAAAfsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==";
+            // string tempStr = "DQAMBAAAAAAAAAAFZwAAMgAAAABBVkFHTyAgICAgICAgICAgAAAXakFGQlItNzlFSURaLUgzQyAwM0JoB9BGIwAAD95RRjE2MDNFQiAgICAgICAgMTUwNDE1ICAMAABNSDNDIAAAAAAAAAAAAIcGiQkCBAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjEwMjMxQTJORlgxNTQwMTQ1MTQAADIwMTUwNDI4jqBj6653FgfEf3noT5CeOdPaw58yOSkHmZWSZ+oqicAwMjMxQTJORgAAAfsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==";
 
-    
+
             //var  a =  Convert.ToByte(tempStr, 16);
 
 
-            FileStream fs = new FileStream("D:\\a.bin", FileMode.Create, FileAccess.Write); //在D盘创建cc.jpg图片
-            BinaryWriter bw = new BinaryWriter(fs);
-         
-            byte tempByte = Convert.ToByte(tempStr, 16);
-            bw.Write(tempByte);
-            
-            fs.Close();
-            bw.Close();
-         
-       
+            //FileStream fs = new FileStream("D:\\a.bin", FileMode.Create, FileAccess.Write); //在D盘创建cc.jpg图片
+            //BinaryWriter bw = new BinaryWriter(fs);
 
+            //byte tempByte = Convert.ToByte(tempStr, 16);
+            //bw.Write(tempByte);
+
+            //fs.Close();
+            //bw.Close();
+
+
+
+        }
+
+        private void Reun(object mny)
+        {
+            Console.WriteLine("");
         }
 
 

@@ -8,9 +8,9 @@ namespace Client
 {
    public class Program
     {
-       private static  async Task Main(string[] args)
+       private static  async Task Main(string[] args)h
         {
-            var client = new HttpClient();
+            private var client = new HttpClient();
             var disco = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
             if (disco.IsError)
             {

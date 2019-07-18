@@ -18,13 +18,16 @@ namespace ExcelTest
         static void Main(string[] args)
         {
 
+            //AddModelName();
+
             Addcompatibility();
+
             Console.ReadKey();
         }
 
         static string binFilePath = @"C:\Users\Lenovo\Desktop\脚本\云端中性码\";
 
-
+        // 添加新兼容品牌
         public static void Addcompatibility()
         {
             // 获取数据库型号名
@@ -48,6 +51,15 @@ namespace ExcelTest
                     break;
                 }
 
+                try
+                {
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
                 var a = HttpClientDoPost(modalid.id.ToString(), attry[0], attry[1], base64);
                 a.Wait();
   
@@ -110,26 +122,11 @@ namespace ExcelTest
         }
 
         // 添加型号名
-        public void AddModelName()
+        public static void AddModelName()
         {
             int sum = 0;
-            var jsonTxt = GetModel();
-            var dynamicObject = JsonConvert.DeserializeObject<dynamic>(jsonTxt)["obj"];
 
-            List<modelList> lists = new List<modelList>();
-
-
-            var mJObj = JArray.Parse(dynamicObject.ToString());
-
-            foreach (var item in mJObj)
-            {
-                modelList model = new modelList();
-                model.id = item["id"];
-                model.modal_name = item["modalName"];
-                lists.Add(model);
-
-            }
-
+            var lists = GetModelLists();
             var models = OpenExcel(@"C:\Users\Lenovo\Desktop\WDM模块新旧型号名的关联.xlsx");
 
             foreach (var item in models)
@@ -162,10 +159,7 @@ namespace ExcelTest
             request.AddParameter("attrValue", attrValue);
             request.AddParameter("binBase64", binBase64);
             var response = client.Execute(request);
-
             var ceshistatucode = (int)response.StatusCode;
-
-
 
             if (ceshistatucode != 200)
             {
@@ -181,29 +175,39 @@ namespace ExcelTest
 
         static async Task<bool> HttpClientDoPost(string modaleId, string attrKey, string attrValue, string binBase64)
         {
-
-            using (var client = new HttpClient())
+            try
             {
-                var values = new List<KeyValuePair<string, string>>();
-                values.Add(new KeyValuePair<string, string>("modaleId", modaleId));
-                values.Add(new KeyValuePair<string, string>("attrKey", attrKey));
-                values.Add(new KeyValuePair<string, string>("attrValue", attrValue));
-                values.Add(new KeyValuePair<string, string>("binBase64", binBase64));
-                var content = new FormUrlEncodedContent(values);
-                var response = await client.PostAsync("http://localhost:5000/api/fsapi/Test/AddCompatible", content);
+                using (var client = new HttpClient())
+                {
+                    var values = new List<KeyValuePair<string, string>>();
+                    values.Add(new KeyValuePair<string, string>("modaleId", modaleId));
+                    values.Add(new KeyValuePair<string, string>("attrKey", attrKey));
+                    values.Add(new KeyValuePair<string, string>("attrValue", attrValue));
+                    values.Add(new KeyValuePair<string, string>("binBase64", binBase64));
+                    var content = new FormUrlEncodedContent(values);
+                    var response = await client.PostAsync("http://localhost:5000/api/fsapi/Test/AddCompatible", content);
 
-                var responseString = await response.Content.ReadAsStringAsync();
-                JObject obj = (JObject)JsonConvert.DeserializeObject(responseString);
-                if (obj["success"].ToString() == "True")
-                {
-                    return true;
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    JObject obj = (JObject)JsonConvert.DeserializeObject(responseString);
+                    if (obj["success"].ToString() == "True")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
                 }
-                else
-                {
-                    return false;
-                }
-              
+
             }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+            
            
 
         }

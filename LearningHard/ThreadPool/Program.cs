@@ -11,18 +11,23 @@ namespace ThreadPool
         private delegate string RunOnThreadPool(out int threadId);
         static void Main(string[] args)
         {
-            int threadId = 0;
-            RunOnThreadPool runOnThreadPool = Test;
-            var t = new Thread(() => Test(out threadId));
-            t.Start();
-            t.Join();
-            WriteLine($"Thread id:{threadId}");
-            IAsyncResult r = runOnThreadPool.BeginInvoke(out threadId, Callback, "a delegate asynchronous call");
-            r.AsyncWaitHandle.WaitOne();
-            string result = runOnThreadPool.EndInvoke(out threadId, r);
-            Console.WriteLine($"Thread pool worker thread id:{threadId}");
-            Console.WriteLine(result);
-            Sleep(TimeSpan.FromSeconds(2));
+            //int threadId = 0;
+            //RunOnThreadPool runOnThreadPool = Test;
+            //var t = new Thread(() => Test(out threadId));
+            //t.Start();
+            //t.Join();
+            //WriteLine($"Thread id:{threadId}");
+            //IAsyncResult r = runOnThreadPool.BeginInvoke(out threadId, Callback, "a delegate asynchronous call");
+            //r.AsyncWaitHandle.WaitOne();
+            //string result = runOnThreadPool.EndInvoke(out threadId, r);
+            //Console.WriteLine($"Thread pool worker thread id:{threadId}");
+            //Console.WriteLine(result);
+            //Sleep(TimeSpan.FromSeconds(2));
+
+           
+
+
+
         }
 
         private static string Test(out int threadId)
