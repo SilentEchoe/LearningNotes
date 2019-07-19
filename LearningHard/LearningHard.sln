@@ -83,6 +83,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "多线程", "多线程", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolTest", "ThreadPoolTest\ThreadPoolTest.csproj", "{D01BE578-6E83-44CF-93E5-5D2FC57D3361}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "工作流", "工作流", "{1825B6F5-DBC1-4D70-A461-388E8FB2B32E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldWorkflow", "HelloWorldWorkflow\HelloWorldWorkflow.csproj", "{A2893695-7393-43D6-A229-C97B875AAA00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -229,6 +233,10 @@ Global
 		{D01BE578-6E83-44CF-93E5-5D2FC57D3361}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D01BE578-6E83-44CF-93E5-5D2FC57D3361}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D01BE578-6E83-44CF-93E5-5D2FC57D3361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2893695-7393-43D6-A229-C97B875AAA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2893695-7393-43D6-A229-C97B875AAA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2893695-7393-43D6-A229-C97B875AAA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2893695-7393-43D6-A229-C97B875AAA00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -239,6 +247,7 @@ Global
 		{E52DF342-5F1D-45B4-B491-1143802A0DFF} = {0F58BB8E-1B68-4E8A-AC70-6315433D153A}
 		{44A1C015-2EA7-4CA2-8673-94BAFD6D4612} = {F4CCAB0D-B3A7-42C4-B463-EA9BE81DE7FC}
 		{D01BE578-6E83-44CF-93E5-5D2FC57D3361} = {C540206B-5B80-4705-8892-AE537DEA3852}
+		{A2893695-7393-43D6-A229-C97B875AAA00} = {1825B6F5-DBC1-4D70-A461-388E8FB2B32E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F806933-21E0-43CD-8A22-4EFE3B15AE1B}
