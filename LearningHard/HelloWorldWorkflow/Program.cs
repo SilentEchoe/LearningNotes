@@ -12,11 +12,17 @@ namespace HelloWorldWorkflow
 
             var serviceProvider = ConfigureServices();
             var host = serviceProvider.GetService<IWorkflowHost>();
-            host.RegisterWorkflow<HelloWorldWorkflow>();
+           
+            //host.RegisterWorkflow<HelloWorldWorkflow>();
+            host.RegisterWorkflow<IfStatementWorkflow, MyData>();
+
             host.Start();
 
             // Demo1:Hello World
-            host.StartWorkflow("HelloWorld");
+
+            string workflowId = host.StartWorkflow("if-sample", new MyData() { Counter = 4 }).Result;
+
+            //host.StartWorkflow("HelloWorld");
 
             Console.ReadKey();
             host.Stop();
