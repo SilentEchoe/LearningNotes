@@ -35,18 +35,25 @@ namespace ExcelCoreTest
             var list=  OfficeHelper.ReadStreamToDataTable(stream);
 
 
+
+
             var list2 = TableToList<ModelName>(list);
 
-
-
-            foreach (var item in list2)
-            {
-                Console.WriteLine(item.modelName);
-            }
+            var workbook = new HSSFWorkbook();
+            //创建表
+            var table = workbook.CreateSheet("joye.net");
 
 
 
+          
 
+            string[] modelNameList = new string[8] { "modelName", "waveband", "distance", "modeleLength", "modelType", "port", "Rate", "binFile" };
+
+            var a =  Output(list, modelNameList);
+
+            WriteByteToFile(a, "D:\\net.xlsx");
+
+         
 
 
 
@@ -180,5 +187,76 @@ namespace ExcelCoreTest
 
 
         }
+
+
+
+        public static byte[] Output(DataTable dataTable, string[] tableTitle)
+        {
+            NPOI.SS.UserModel.IWorkbook workbook = new NPOI.XSSF.UserModel.XSSFWorkbook();
+            NPOI.SS.UserModel.ISheet sheet = workbook.CreateSheet("sheet");
+            IRow Title = null;
+            IRow rows = null;
+            for (int i = 1; i <= dataTable.Rows.Count; i++)
+            {
+                //创建表头
+                if (i - 1 == 0)
+                {
+                    Title = sheet.CreateRow(0);
+                    for (int k = 1; k < tableTitle.Length + 1; k++)
+                    {
+                    
+                        Title.CreateCell(k).SetCellValue(tableTitle[k - 1]);
+                    }
+                    continue;
+                }
+                else
+                {
+                    rows = sheet.CreateRow(i - 1);
+                    for (int j = 1; j <= dataTable.Columns.Count; j++)
+                    {
+                        rows.CreateCell(0).SetCellValue(i - 1);
+                        rows.CreateCell(j).SetCellValue(dataTable.Rows[i - 1][j - 1].ToString());
+                    }
+                }
+            }
+
+            byte[] buffer = new byte[1024 * 5];
+            using (MemoryStream ms = new MemoryStream())
+            {
+                workbook.Write(ms);
+                buffer = ms.GetBuffer();
+                ms.Close();
+            }
+            return buffer;
+        }
+
+
+        /// <summary>
+        /// 写byte[]到fileName
+        /// </summary>
+        /// <param name="pReadByte">byte[]</param>
+        /// <param name="fileName">保存至硬盘路径</param>
+        /// <returns></returns>
+        public static bool WriteByteToFile(byte[] pReadByte, string fileName)
+        {
+            FileStream pFileStream = null;
+            try
+            {
+                pFileStream = new FileStream(fileName, FileMode.OpenOrCreate);
+                pFileStream.Write(pReadByte, 0, pReadByte.Length);
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                if (pFileStream != null)
+                    pFileStream.Close();
+            }
+            return true;
+        }
+
+
     }
 }
