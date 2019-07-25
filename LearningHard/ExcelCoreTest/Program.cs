@@ -45,7 +45,7 @@ namespace ExcelCoreTest
 
             string[] modelNameList = new string[8] { "modelName", "waveband", "distance", "modeleLength", "modelType", "port", "Rate", "binFile" };
 
-            var a =  Output(list, modelNameList);
+            var ExFile =  Output(list, modelNameList);
 
         
 
