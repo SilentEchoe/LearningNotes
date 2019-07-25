@@ -1,18 +1,21 @@
-function sayHello(person: string) {
+
+
+function sayHelloTwo(person: string) {
     return 'Hello,' + person;
 }
 
-let user = 'Tom'
+let userinfo = 'Hi'
 
 //console.log(sayHello(user))
 //alert('hello world in TypeScript!');
 
 
-function Add(left: number, right: number): number {
-    return left + right
+
+function add(left:number,right:number):number
+{
+    return left + right;
 
 }
-
 
 interface Shape {
     name: string;
@@ -21,7 +24,7 @@ interface Shape {
     color?: string;
 }
 
-function area(shape: Shape) {
+function areat(shape: Shape) {
     var area = shape.width * shape.height;
     return "Im:" + shape.name + 'With area' + area + "cm squared"
 }
@@ -47,8 +50,7 @@ var shape =
 
 }
 
-
-class Class1
+class Class2
 {
     area : number;
     color: string;
@@ -69,7 +71,7 @@ class Class1
 
 shape.popup();
 
-var square = new Class1("square", 30, 30);
+var square = new Class2("square", 30, 30);
 
 console.log( square.shoutout() );
 console.log( 'Area of Shape: ' + square.area );
