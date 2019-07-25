@@ -4,8 +4,8 @@ function sayHello(person: string) {
 
 let user = 'Tom'
 
-console.log(sayHello(user))
-alert('hello world in TypeScript!');
+//console.log(sayHello(user))
+//alert('hello world in TypeScript!');
 
 
 function Add(left: number, right: number): number {
@@ -27,7 +27,7 @@ function area(shape: Shape) {
 }
 
 
-alert(area({name:"Readaw",width:20,height:30}))
+//alert(area({name:"Readaw",width:20,height:30}))
 
 var shape = 
 {
@@ -42,9 +42,35 @@ var shape =
             console.log('Im a '+ this.name + '!');
 
         },3000)
-
+   
     }
 
 }
 
+
+class Class1
+{
+    area : number;
+    color: string;
+
+    constructor(name:string,width:number,height:number)
+    {
+        this.area = width * height;
+        this.color = "Pink";
+    }
+
+    shoutout()
+    {
+        return "I'm " + this.color + this.area + " cm squared.";
+    }
+
+}
+
+
 shape.popup();
+
+var square = new Class1("square", 30, 30);
+
+console.log( square.shoutout() );
+console.log( 'Area of Shape: ' + square.area );
+console.log( 'Color of Shape: ' + square.color );
