@@ -10,12 +10,7 @@ namespace RabbitMQConsumer
         static void Main(string[] args)
         {
             //创建连接工厂
-            ConnectionFactory factory = new ConnectionFactory
-            {
-                UserName = "guest",//用户名
-                Password = "guest",//密码
-                HostName = "http://localhost:15672"//rabbitmq ip
-            };
+            var factory = new ConnectionFactory() { HostName = "localhost" };
 
             //创建连接
             var connection = factory.CreateConnection();
@@ -24,6 +19,8 @@ namespace RabbitMQConsumer
 
             //事件基本消费者
             EventingBasicConsumer consumer = new EventingBasicConsumer(channel);
+
+           
 
             //接收到消息事件
             consumer.Received += (ch, ea) =>

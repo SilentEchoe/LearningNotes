@@ -8,16 +8,9 @@ namespace RabbitMQDemo
     {
         static void Main(string[] args)
         {
-           
+            var factory = new ConnectionFactory() { HostName = "localhost" };
 
-            ConnectionFactory factory = new ConnectionFactory
-            {
-                UserName = "admin",//用户名  
-                Password = "admin",//密码  
-                HostName = "127.0.0.1:15672"//rabbitmq ip
-            };
-
-          
+       
             using (var connection = factory.CreateConnection())
             {
                 using (var channel = connection.CreateModel())
