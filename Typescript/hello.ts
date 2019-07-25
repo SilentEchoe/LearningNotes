@@ -29,3 +29,22 @@ function area(shape: Shape) {
 
 alert(area({name:"Readaw",width:20,height:30}))
 
+var shape = 
+{
+    name:"rectangle",
+    popup:function()
+    {
+        console.log('This inside popup():'+ this.name)
+
+        setTimeout(()=>
+        {
+            console.log('This inside setTimeout():'+ this.name);
+            console.log('Im a '+ this.name + '!');
+
+        },3000)
+
+    }
+
+}
+
+shape.popup();
