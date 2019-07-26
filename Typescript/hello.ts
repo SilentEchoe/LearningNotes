@@ -50,11 +50,13 @@ var shape =
 
 }
 
+
 class Class2
 {
     area : number;
     color: string;
 
+    // 构造函数
     constructor(name:string,width:number,height:number)
     {
         this.area = width * height;
@@ -76,3 +78,55 @@ var square = new Class2("square", 30, 30);
 console.log( square.shoutout() );
 console.log( 'Area of Shape: ' + square.area );
 console.log( 'Color of Shape: ' + square.color );
+
+
+class Animal
+{
+    name:string;
+    constructor(TheName:string)
+    {
+        this.name = TheName;
+    }
+
+    move(distanceInMeters:number= 0)
+    {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+    }
+
+}
+
+
+// extends 关键字创建子类
+class Snake extends Animal
+{
+    constructor(name:string){super(name);}
+    move(distanceInMeters = 5)
+    {
+        console.log("Slithering...")
+        super.move(distanceInMeters);
+    }
+}
+
+
+class Horese extends Animal
+{
+    constructor(name:string){super(name);}
+    move(distanceInMeters = 45)
+    {
+        console.log("Galloping...")
+        super.move(distanceInMeters);
+    }
+}
+
+
+let sam = new Snake("Sammy the Python");
+
+let tom:Animal = new Horese("Tommy the Palomino");
+
+sam.move();
+tom.move()
+
+
+
+
+
