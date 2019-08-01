@@ -7,9 +7,14 @@
 
 <script>
 // 导入组件
+import Hello from './components/Hello'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components:
+  {
+    Hello
+  }
 }
 </script>
 
