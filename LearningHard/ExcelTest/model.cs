@@ -35,7 +35,7 @@ namespace ExcelTest
 
         public string Base64 { get; set; }
 
-
+        public string Sum { get; set; }
 
     }
 

@@ -20,12 +20,15 @@ namespace ExcelTest
 
             //AddModelName();
 
+    
             Addcompatibility();
 
-            Console.ReadKey();
+
+            Console.WriteLine("完成");
+            Console.ReadLine();
         }
 
-        static string binFilePath = @"C:\Users\Lenovo\Desktop\脚本\云端中性码\";
+        static string binFilePath = @"C:\Users\Lenovo\Desktop\脚本\ME编码-BOX\";
 
         // 添加新兼容品牌
         public static void Addcompatibility()
@@ -33,71 +36,72 @@ namespace ExcelTest
             // 获取数据库型号名
             var modelLits = GetModelLists();
 
-            var list = OpenExcel2(@"C:\Users\Lenovo\Desktop\脚本\Ge.xls");
+            // 获取xls数据
+            var list = OpenExcel2(@"C:\Users\Lenovo\Desktop\脚本\ME编码表.xls");
 
             foreach (var item in list)
             {
-                //解析 attry_key 和 attry_value
-                var attry = attrKey(item);            
-
-                string binPath = binFilePath + item.Base64;
-                string base64 = BinToBase64(binPath);
-
-                var modalid = modelLits.Where(p => p.modal_name == item.Modelname).FirstOrDefault();
-
-                if (base64 == "")
-                {
-                    Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry[1]}");
-                    break;
-                }
-
-                try
-                {
-
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-                var a = HttpClientDoPost(modalid.id.ToString(), attry[0], attry[1], base64);
-                a.Wait();
-  
-                if (!a.Result)
-                {
-                    Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry[1]}");
-                }
                
+                //解析 attry_key 和 attry_value
+                var attry = attrKey(item);
+                string base64 = string.Empty;
+                var modalid = modelLits.Where(p => p.modal_name == item.Modelname).FirstOrDefault();
+                // 判断数量 如果数量是1 则为模板. 大于1则为bin文件
 
+                if (item.Sum=="1")
+                {
+                    // 上传bin模板
 
+                    if (item.Base64!="")
+                    {
+                        string binPath = binFilePath + item.Base64 + ".bin";
+                        base64 = BinToBase64(binPath);
+                    }                
+                    var isAdd = HttpClientDoPost(modalid.id.ToString(), attry[0], attry[1], base64,"0");
+                    isAdd.Wait();
+                    if (!isAdd.Result)
+                    {
+                        Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry[1]}");
+                    }
+                }
+                else
+                {
+                    // 上传bin文件
+                    var isAdd = HttpClientDoPost(modalid.id.ToString(), attry[0], attry[1],base64,"1");
+                    isAdd.Wait();
+                    if (!isAdd.Result)
+                    {
+                        Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry [1]}");
 
+                        // 如果添加成功
+                        //string id = GetModelTypeId(modalid.id.ToString(), "Mellanox", attry[0], attry[1]);
+                        //string[] modelID = null;
+                        //if (id!="")
+                        //{
+                        //     modelID = id.Split(',');
+                        //}                
+                        //DirectoryInfo folder = new DirectoryInfo(binFilePath + item.Base64);
+                        //foreach (FileInfo file in folder.GetFiles("*.bin"))
+                        //{   
+                        //    base64 = BinToBase64(file.FullName);
+                        //    if (!AddCompatibleByBase64(file.Name, int.Parse(modelID[0]), int.Parse(modelID[1]), base64))
+                        //    {
+                        //        Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry[1]}");
+                        //    };
+                        //}
+                    }
+                   
 
-                //if (AddCompatibility(modalid.id, attry[0], attry[1], base64))
-                //{
-                //    Console.WriteLine("成功");
-                //}
-                //else
-                //{
-                //    Console.WriteLine($"型号名：{item.Modelname},attr_key:{attry[0]},attr_value:{attry[1]}");
-                //}
-                //System.Threading.Thread.Sleep(4000);
-
-
-
-
-
+                }
             }
-
-
-
-
-
-
-
-
         }
 
 
+
+        private bool addBins(string fileName, int modelbintypeid, int modelbinattrid, string base64)
+        {
+          return  AddCompatibleByBase64(fileName, modelbintypeid, modelbinattrid, base64);
+        }
 
 
         // 将文件转换成base64
@@ -148,6 +152,7 @@ namespace ExcelTest
             Console.ReadKey();
         }
 
+        // 添加兼容品牌的请求
         static bool AddCompatibility(int modaleId, string attrKey, string attrValue, string binBase64)
         {
             Uri url = new Uri("http://localhost:5000/api/fsapi/Test/AddCompatible");
@@ -173,7 +178,7 @@ namespace ExcelTest
 
         }
 
-        static async Task<bool> HttpClientDoPost(string modaleId, string attrKey, string attrValue, string binBase64)
+        static async Task<bool> HttpClientDoPost(string modaleId, string attrKey, string attrValue, string binBase64,string isBin)
         {
             try
             {
@@ -184,6 +189,7 @@ namespace ExcelTest
                     values.Add(new KeyValuePair<string, string>("attrKey", attrKey));
                     values.Add(new KeyValuePair<string, string>("attrValue", attrValue));
                     values.Add(new KeyValuePair<string, string>("binBase64", binBase64));
+                    values.Add(new KeyValuePair<string, string>("isBin", isBin));
                     var content = new FormUrlEncodedContent(values);
                     var response = await client.PostAsync("http://localhost:5000/api/fsapi/Test/AddCompatible", content);
 
@@ -206,9 +212,57 @@ namespace ExcelTest
 
                 return false;
             }
+        }
 
-            
-           
+
+        static string GetModelTypeId(string modalId, string compatibleTpe, string attrKey, string attrValue)
+        {
+            Uri url = new Uri("http://localhost:5000/api/fsapi/Test/GetModalTypeId");
+
+            var client = new RestClient(url);
+            RestRequest request = new RestRequest(Method.GET);
+            request.AddParameter("modalId", modalId);
+            request.AddParameter("compatibleTpe", compatibleTpe);
+            request.AddParameter("attrKey", attrKey);
+            request.AddParameter("attrValue", attrValue);
+            var response = client.Execute(request);
+            var ceshistatucode = (int)response.StatusCode;
+
+            if (ceshistatucode != 200)
+            {
+                return "";
+            }
+            else
+            {
+                JObject obj = (JObject)JsonConvert.DeserializeObject(response.Content);
+                return obj["msg"].ToString();
+            }
+
+
+        }
+
+        static bool AddCompatibleByBase64(string fileName, int modelbintypeid, int modelbinattrid, string base64)
+        {
+            Uri url = new Uri("http://localhost:5000/api/fsapi/Test/AddCompatibleByBase64");
+
+            var client = new RestClient(url);
+            RestRequest request = new RestRequest(Method.POST);
+            request.AddParameter("fileName", fileName);
+            request.AddParameter("modelbintypeid", modelbintypeid);
+            request.AddParameter("modelbinattrid", modelbinattrid);
+            request.AddParameter("base64", base64);
+            var response = client.Execute(request);
+            var ceshistatucode = (int)response.StatusCode;
+
+            if (ceshistatucode != 200)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
 
         }
 
@@ -440,12 +494,9 @@ namespace ExcelTest
                 //取得第一个工作薄
                 Worksheet ws = (Worksheet)wb.Worksheets.get_Item(1);
 
-
                 //取得总记录行数   (包括标题列)
                 int rowsint = ws.UsedRange.Cells.Rows.Count; //得到行数
                                                              //int columnsint = mySheet.UsedRange.Cells.Columns.Count;//得到列数
-
-
                 //取得数据范围区域 (不包括标题列) 
                 // 型号名
                 Range rng1 = ws.Cells.get_Range("A2", "A" + rowsint);   //item
@@ -473,7 +524,7 @@ namespace ExcelTest
                 // bin文件
                 Range rng8 = ws.Cells.get_Range("J2", "J" + rowsint);
 
-
+                Range Sum = ws.Cells.get_Range("K2", "K" + rowsint);
 
 
                 // 型号名
@@ -492,6 +543,10 @@ namespace ExcelTest
                 object[,] arryItem6 = (object[,])rng7.Value2;
                 object[,] arryItem7 = (object[,])rng8.Value2;
 
+                object[,] arryItem8 = (object[,])Sum.Value2;
+
+
+
                 //将新值赋给一个数组
                 string[,] arry = new string[rowsint - 1, 2];
                 for (int i = 1; i <= rowsint - 1; i++)
@@ -508,7 +563,15 @@ namespace ExcelTest
                     model.Value5 = arryItem5[i, 1].ToString();
                     model.Value6 = arryItem6[i, 1].ToString();
 
-                    model.Base64 = arryItem7[i, 1].ToString() + ".bin";
+                    if (arryItem7[i, 1]==null)                   
+                        model.Base64 = "";              
+                    else              
+                        model.Base64 = arryItem7[i, 1].ToString();
+
+                    if (arryItem8[i, 1] == null)
+                        model.Sum = "";
+                    else
+                        model.Sum = arryItem8[i, 1].ToString();
 
                     modelsList.Add(model);
 
