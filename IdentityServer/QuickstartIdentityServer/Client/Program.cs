@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-   public class Program
+    public class Program
     {
-       private static  async Task Main(string[] args)h
+        private static async Task Main(string[] args)
         {
-            private var client = new HttpClient();
+            var client = new HttpClient();
             var disco = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
             if (disco.IsError)
             {
@@ -18,25 +18,24 @@ namespace Client
                 return;
             }
 
-            var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            var tokenRespone = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
                 Address = disco.TokenEndpoint,
-
                 ClientId = "client",
                 ClientSecret = "secret",
                 Scope = "api1"
+
             });
 
-            if (tokenResponse.IsError)
+            if (tokenRespone.IsError)
             {
-                Console.WriteLine(tokenResponse.Error);
+                Console.WriteLine(tokenRespone.Error);
                 return;
             }
 
-            Console.WriteLine(tokenResponse.Json);
 
             var apiClient = new HttpClient();
-            apiClient.SetBearerToken(tokenResponse.AccessToken);
+            apiClient.SetBearerToken(tokenRespone.AccessToken);
 
             var response = await apiClient.GetAsync("http://localhost:5001/identity");
             if (!response.IsSuccessStatusCode)
@@ -48,6 +47,12 @@ namespace Client
                 var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(JArray.Parse(content));
             }
+
+            Console.ReadLine();
         }
+
     }
+
+
 }
+   
