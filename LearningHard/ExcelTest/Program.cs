@@ -20,10 +20,11 @@ namespace ExcelTest
 
             //AddModelName();
 
-    
-            Addcompatibility();
 
-
+            //Addcompatibility();
+            string aa = "a";
+            string cc = aa.PadRight(6, ' ');//右对齐此实例中的字符，在左边用指定的 Unicode 字符填充以达到指定的总长度。
+            Console.WriteLine(cc);
             Console.WriteLine("完成");
             Console.ReadLine();
         }

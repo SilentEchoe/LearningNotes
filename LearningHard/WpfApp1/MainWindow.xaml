@@ -4,11 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:domain11="clr-namespace:MaterialDesignDemo.Domain"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label x:Name="Label" Content="Label" HorizontalAlignment="Left" Margin="150,105,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="365,105,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameTextBox" materialDesign:HintAssist.Hint="Name">
+            <TextBox.Text>
+                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <!--<domain11:NotEmptyValidationRule ValidatesOnTargetUpdated="True" xmlns:domain1="clr-namespace:MaterialDesignDemo.Domain" />-->
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
 
     </Grid>
 </Window>
