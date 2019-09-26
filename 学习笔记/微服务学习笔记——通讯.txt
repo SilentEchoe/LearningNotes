@@ -1,0 +1,32 @@
+微服务之间如何通讯
+
+REST API 风格协议
+
+RPC { dubbo, dubbox , motan, grpc, thrift } 微服务常用的通讯协议
+
+MQ 消息队列 （发布订阅模式）
+
+
+RPC 选型
+
+I/O 线程调度模型
+序列化的方式 二进制 json 等
+多语言支持 （编程语言）
+服务治理
+
+流行的RPC 框架：
+
+dubbo/dubbox  thrift motan Grpc
+dubbo 已停止维护 支持Java
+motan 支持千亿级别的调用 支持Java
+thrift 跨语言 序列化方式支持自thrift
+Grpc 跨语言 面向移动端 支持http2
+
+
+服务编排：
+服务发现 部署 扩容
+流行的服务编排工具 
+Mesos
+Docker Swarm
+kubernetes
+
