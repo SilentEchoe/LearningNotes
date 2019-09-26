@@ -1,0 +1,7 @@
+D:\C#Learninghard\LearningHard\FactoryClass\bin\Debug\FactoryClass.exe.config
+D:\C#Learninghard\LearningHard\FactoryClass\bin\Debug\FactoryClass.exe
+D:\C#Learninghard\LearningHard\FactoryClass\bin\Debug\FactoryClass.pdb
+D:\C#Learninghard\LearningHard\FactoryClass\obj\Debug\FactoryClass.csprojAssemblyReference.cache
+D:\C#Learninghard\LearningHard\FactoryClass\obj\Debug\FactoryClass.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\FactoryClass\obj\Debug\FactoryClass.exe
+D:\C#Learninghard\LearningHard\FactoryClass\obj\Debug\FactoryClass.pdb

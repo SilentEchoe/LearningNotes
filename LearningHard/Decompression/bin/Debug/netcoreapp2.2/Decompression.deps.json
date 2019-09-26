@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": "8564902dbbaf5167ba6643b5ff7a72cf75f35134"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "Decompression/1.0.0": {
+        "dependencies": {
+          "ICSharpCode.SharpZipLib.dll": "0.85.4.369"
+        },
+        "runtime": {
+          "Decompression.dll": {}
+        }
+      },
+      "ICSharpCode.SharpZipLib.dll/0.85.4.369": {
+        "runtime": {
+          "lib/net20/ICSharpCode.SharpZipLib.dll": {
+            "assemblyVersion": "0.85.4.369",
+            "fileVersion": "0.85.4.369"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Decompression/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ICSharpCode.SharpZipLib.dll/0.85.4.369": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrJHR5IQoTXXQZgoGZZiu2oYw7V4FdjhwVLwWhV4G+9Xe9wo4MB+n7OaG96efyEJ2PFm4KhCbWNr54HWFdyt2A==",
+      "path": "icsharpcode.sharpziplib.dll/0.85.4.369",
+      "hashPath": "icsharpcode.sharpziplib.dll.0.85.4.369.nupkg.sha512"
+    }
+  }
+}

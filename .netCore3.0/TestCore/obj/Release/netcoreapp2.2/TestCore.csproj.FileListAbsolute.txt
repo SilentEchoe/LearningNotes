@@ -1,0 +1,11 @@
+D:\C#Learninghard\.netCore3.0\TestCore\bin\Release\netcoreapp2.2\TestCore.deps.json
+D:\C#Learninghard\.netCore3.0\TestCore\bin\Release\netcoreapp2.2\TestCore.runtimeconfig.json
+D:\C#Learninghard\.netCore3.0\TestCore\bin\Release\netcoreapp2.2\TestCore.runtimeconfig.dev.json
+D:\C#Learninghard\.netCore3.0\TestCore\bin\Release\netcoreapp2.2\TestCore.dll
+D:\C#Learninghard\.netCore3.0\TestCore\bin\Release\netcoreapp2.2\TestCore.pdb
+D:\C#Learninghard\.netCore3.0\TestCore\obj\Release\netcoreapp2.2\TestCore.csprojAssemblyReference.cache
+D:\C#Learninghard\.netCore3.0\TestCore\obj\Release\netcoreapp2.2\TestCore.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\.netCore3.0\TestCore\obj\Release\netcoreapp2.2\TestCore.AssemblyInfoInputs.cache
+D:\C#Learninghard\.netCore3.0\TestCore\obj\Release\netcoreapp2.2\TestCore.AssemblyInfo.cs
+D:\C#Learninghard\.netCore3.0\TestCore\obj\Release\netcoreapp2.2\TestCore.dll
+D:\C#Learninghard\.netCore3.0\TestCore\obj\Release\netcoreapp2.2\TestCore.pdb

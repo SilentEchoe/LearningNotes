@@ -1,0 +1,10 @@
+D:\C#Learninghard\LearningHard\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
+D:\C#Learninghard\LearningHard\ConsoleApp3\bin\Debug\ConsoleApp3.exe
+D:\C#Learninghard\LearningHard\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
+D:\C#Learninghard\LearningHard\ConsoleApp3\bin\Debug\System.IO.Compression.dll
+D:\C#Learninghard\LearningHard\ConsoleApp3\obj\Debug\ConsoleApp3.csprojAssemblyReference.cache
+D:\C#Learninghard\LearningHard\ConsoleApp3\obj\Debug\ConsoleApp3.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\ConsoleApp3\obj\Debug\ConsoleApp3.csproj.CopyComplete
+D:\C#Learninghard\LearningHard\ConsoleApp3\obj\Debug\ConsoleApp3.exe
+D:\C#Learninghard\LearningHard\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
+D:\C#Learninghard\LearningHard\ConsoleApp3\bin\Debug\SharpCompress.dll

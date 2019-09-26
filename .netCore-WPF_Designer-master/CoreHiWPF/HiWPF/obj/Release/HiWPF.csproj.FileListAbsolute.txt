@@ -1,0 +1,15 @@
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\bin\Release\HiWPF.exe.config
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\bin\Release\HiWPF.exe
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\bin\Release\HiWPF.pdb
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF.csprojAssemblyReference.cache
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\MainWindow.g.cs
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\App.g.cs
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF_MarkupCompile.cache
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF_MarkupCompile.lref
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\MainWindow.baml
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF.g.resources
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF.Properties.Resources.resources
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF.csproj.GenerateResource.cache
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF.exe
+D:\C#Learninghard\.netCore-WPF_Designer-master\CoreHiWPF\HiWPF\obj\Release\HiWPF.pdb

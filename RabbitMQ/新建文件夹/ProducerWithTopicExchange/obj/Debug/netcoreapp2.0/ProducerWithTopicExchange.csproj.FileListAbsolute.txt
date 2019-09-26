@@ -1,0 +1,10 @@
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\bin\Debug\netcoreapp2.0\ProducerWithTopicExchange.deps.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\bin\Debug\netcoreapp2.0\ProducerWithTopicExchange.runtimeconfig.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\bin\Debug\netcoreapp2.0\ProducerWithTopicExchange.runtimeconfig.dev.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\bin\Debug\netcoreapp2.0\ProducerWithTopicExchange.dll
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\bin\Debug\netcoreapp2.0\ProducerWithTopicExchange.pdb
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\obj\Debug\netcoreapp2.0\ProducerWithTopicExchange.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\obj\Debug\netcoreapp2.0\ProducerWithTopicExchange.AssemblyInfoInputs.cache
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\obj\Debug\netcoreapp2.0\ProducerWithTopicExchange.AssemblyInfo.cs
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\obj\Debug\netcoreapp2.0\ProducerWithTopicExchange.dll
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithTopicExchange\obj\Debug\netcoreapp2.0\ProducerWithTopicExchange.pdb

@@ -1,0 +1,10 @@
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\bin\Debug\netcoreapp2.2\AutofacDemoTest.deps.json
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\bin\Debug\netcoreapp2.2\AutofacDemoTest.runtimeconfig.json
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\bin\Debug\netcoreapp2.2\AutofacDemoTest.runtimeconfig.dev.json
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\bin\Debug\netcoreapp2.2\AutofacDemoTest.dll
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\bin\Debug\netcoreapp2.2\AutofacDemoTest.pdb
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\obj\Debug\netcoreapp2.2\AutofacDemoTest.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\obj\Debug\netcoreapp2.2\AutofacDemoTest.AssemblyInfoInputs.cache
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\obj\Debug\netcoreapp2.2\AutofacDemoTest.AssemblyInfo.cs
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\obj\Debug\netcoreapp2.2\AutofacDemoTest.dll
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication1\obj\Debug\netcoreapp2.2\AutofacDemoTest.pdb

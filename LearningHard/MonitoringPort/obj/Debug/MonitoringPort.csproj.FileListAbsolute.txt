@@ -1,0 +1,6 @@
+D:\C#Learninghard\LearningHard\MonitoringPort\bin\Debug\MonitoringPort.exe.config
+D:\C#Learninghard\LearningHard\MonitoringPort\bin\Debug\MonitoringPort.exe
+D:\C#Learninghard\LearningHard\MonitoringPort\bin\Debug\MonitoringPort.pdb
+D:\C#Learninghard\LearningHard\MonitoringPort\obj\Debug\MonitoringPort.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\MonitoringPort\obj\Debug\MonitoringPort.exe
+D:\C#Learninghard\LearningHard\MonitoringPort\obj\Debug\MonitoringPort.pdb

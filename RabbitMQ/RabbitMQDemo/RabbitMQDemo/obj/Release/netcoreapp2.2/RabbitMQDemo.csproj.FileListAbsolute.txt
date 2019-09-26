@@ -1,0 +1,10 @@
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\bin\Release\netcoreapp2.2\RabbitMQDemo.deps.json
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\bin\Release\netcoreapp2.2\RabbitMQDemo.runtimeconfig.json
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\bin\Release\netcoreapp2.2\RabbitMQDemo.runtimeconfig.dev.json
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\bin\Release\netcoreapp2.2\RabbitMQDemo.dll
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\bin\Release\netcoreapp2.2\RabbitMQDemo.pdb
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\obj\Release\netcoreapp2.2\RabbitMQDemo.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\obj\Release\netcoreapp2.2\RabbitMQDemo.AssemblyInfoInputs.cache
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\obj\Release\netcoreapp2.2\RabbitMQDemo.AssemblyInfo.cs
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\obj\Release\netcoreapp2.2\RabbitMQDemo.dll
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQDemo\obj\Release\netcoreapp2.2\RabbitMQDemo.pdb

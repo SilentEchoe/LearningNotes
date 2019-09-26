@@ -7,7 +7,7 @@ namespace IServices
     public interface IDoctorServices : IBaseServices<Doctor>
     {
         Task<List<Doctor>> GetDoctors();
-        Task<List<Doctor>> doctors();
+        //Task<List<Doctor>> doctors();
 
     }
 }

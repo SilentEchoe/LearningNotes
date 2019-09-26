@@ -30,8 +30,27 @@ namespace Test
 
             //fs.Close();
             //bw.Close();
+            int k = 0;
+            int s = 0;
+            for (int x = 3; x <= 10; x++)
+            {
+                for (k = 2; k < x; k++)
+                {
+                    if (x % k == 0)
+                    {
+                        break;
+                    }
 
+                    if (k == x)
+                    {
+                        s = s + k;
+                    }
+                }
 
+                
+            }
+
+            string a = s.ToString();
 
         }
 

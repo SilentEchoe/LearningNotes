@@ -1,0 +1,10 @@
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\bin\Release\netcoreapp2.2\RabbitMQConsumer.deps.json
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\bin\Release\netcoreapp2.2\RabbitMQConsumer.runtimeconfig.json
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\bin\Release\netcoreapp2.2\RabbitMQConsumer.runtimeconfig.dev.json
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\bin\Release\netcoreapp2.2\RabbitMQConsumer.dll
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\bin\Release\netcoreapp2.2\RabbitMQConsumer.pdb
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\obj\Release\netcoreapp2.2\RabbitMQConsumer.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\obj\Release\netcoreapp2.2\RabbitMQConsumer.AssemblyInfoInputs.cache
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\obj\Release\netcoreapp2.2\RabbitMQConsumer.AssemblyInfo.cs
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\obj\Release\netcoreapp2.2\RabbitMQConsumer.dll
+D:\C#Learninghard\RabbitMQ\RabbitMQDemo\RabbitMQConsumer\obj\Release\netcoreapp2.2\RabbitMQConsumer.pdb

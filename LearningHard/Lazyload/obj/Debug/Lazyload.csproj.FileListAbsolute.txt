@@ -1,0 +1,6 @@
+D:\C#Learninghard\LearningHard\Lazyload\bin\Debug\Lazyload.exe.config
+D:\C#Learninghard\LearningHard\Lazyload\bin\Debug\Lazyload.exe
+D:\C#Learninghard\LearningHard\Lazyload\bin\Debug\Lazyload.pdb
+D:\C#Learninghard\LearningHard\Lazyload\obj\Debug\Lazyload.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\Lazyload\obj\Debug\Lazyload.exe
+D:\C#Learninghard\LearningHard\Lazyload\obj\Debug\Lazyload.pdb

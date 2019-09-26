@@ -1,0 +1,11 @@
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\bin\Debug\netcoreapp2.2\HelloWorldWorkflow.deps.json
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\bin\Debug\netcoreapp2.2\HelloWorldWorkflow.runtimeconfig.json
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\bin\Debug\netcoreapp2.2\HelloWorldWorkflow.runtimeconfig.dev.json
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\bin\Debug\netcoreapp2.2\HelloWorldWorkflow.dll
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\obj\Debug\netcoreapp2.2\HelloWorldWorkflow.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\obj\Debug\netcoreapp2.2\HelloWorldWorkflow.AssemblyInfoInputs.cache
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\obj\Debug\netcoreapp2.2\HelloWorldWorkflow.AssemblyInfo.cs
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\bin\Debug\netcoreapp2.2\HelloWorldWorkflow.pdb
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\obj\Debug\netcoreapp2.2\HelloWorldWorkflow.dll
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\obj\Debug\netcoreapp2.2\HelloWorldWorkflow.pdb
+D:\C#Learninghard\LearningHard\HelloWorldWorkflow\obj\Debug\netcoreapp2.2\HelloWorldWorkflow.csprojAssemblyReference.cache

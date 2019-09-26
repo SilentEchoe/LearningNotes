@@ -1,0 +1,11 @@
+D:\C#Learninghard\LearningHard\Port\bin\Debug\netcoreapp2.2\Port.deps.json
+D:\C#Learninghard\LearningHard\Port\bin\Debug\netcoreapp2.2\Port.runtimeconfig.json
+D:\C#Learninghard\LearningHard\Port\bin\Debug\netcoreapp2.2\Port.runtimeconfig.dev.json
+D:\C#Learninghard\LearningHard\Port\bin\Debug\netcoreapp2.2\Port.dll
+D:\C#Learninghard\LearningHard\Port\bin\Debug\netcoreapp2.2\Port.pdb
+D:\C#Learninghard\LearningHard\Port\obj\Debug\netcoreapp2.2\Port.csprojAssemblyReference.cache
+D:\C#Learninghard\LearningHard\Port\obj\Debug\netcoreapp2.2\Port.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\Port\obj\Debug\netcoreapp2.2\Port.AssemblyInfoInputs.cache
+D:\C#Learninghard\LearningHard\Port\obj\Debug\netcoreapp2.2\Port.AssemblyInfo.cs
+D:\C#Learninghard\LearningHard\Port\obj\Debug\netcoreapp2.2\Port.dll
+D:\C#Learninghard\LearningHard\Port\obj\Debug\netcoreapp2.2\Port.pdb

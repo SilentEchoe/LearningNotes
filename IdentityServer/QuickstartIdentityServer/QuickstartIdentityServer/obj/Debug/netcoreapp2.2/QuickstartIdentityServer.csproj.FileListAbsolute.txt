@@ -1,0 +1,14 @@
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\bin\Debug\netcoreapp2.2\QuickstartIdentityServer.deps.json
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\bin\Debug\netcoreapp2.2\QuickstartIdentityServer.runtimeconfig.json
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\bin\Debug\netcoreapp2.2\QuickstartIdentityServer.runtimeconfig.dev.json
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\bin\Debug\netcoreapp2.2\QuickstartIdentityServer.dll
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.RazorAssemblyInfo.cache
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.RazorAssemblyInfo.cs
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.AssemblyInfoInputs.cache
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.AssemblyInfo.cs
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.RazorTargetAssemblyInfo.cache
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\bin\Debug\netcoreapp2.2\QuickstartIdentityServer.pdb
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.dll
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.pdb
+D:\C#Learninghard\IdentityServer\QuickstartIdentityServer\QuickstartIdentityServer\obj\Debug\netcoreapp2.2\QuickstartIdentityServer.csprojAssemblyReference.cache

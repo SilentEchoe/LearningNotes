@@ -1,0 +1,14 @@
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\bin\Debug\netcoreapp2.2\WebApplication2.deps.json
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\bin\Debug\netcoreapp2.2\WebApplication2.runtimeconfig.json
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\bin\Debug\netcoreapp2.2\WebApplication2.runtimeconfig.dev.json
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\bin\Debug\netcoreapp2.2\WebApplication2.dll
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.RazorAssemblyInfo.cache
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.RazorAssemblyInfo.cs
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.AssemblyInfoInputs.cache
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.AssemblyInfo.cs
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.RazorTargetAssemblyInfo.cache
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.csprojAssemblyReference.cache
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\bin\Debug\netcoreapp2.2\WebApplication2.pdb
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.dll
+D:\C#Learninghard\WebApi\AutofacDemo\AutofacDemo\WebApplication2\obj\Debug\netcoreapp2.2\WebApplication2.pdb

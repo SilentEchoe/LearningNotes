@@ -93,7 +93,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "设计模式", "设计模�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "装饰者", "装饰者", "{3491844E-1B5C-42B4-824B-1F2CC60F9415}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecorateDemo", "DecorateDemo\DecorateDemo.csproj", "{1CE6E6DD-E178-4E95-96F3-DF438FCA7543}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecorateDemo", "DecorateDemo\DecorateDemo.csproj", "{1CE6E6DD-E178-4E95-96F3-DF438FCA7543}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteTxt", "WriteTxt\WriteTxt.csproj", "{5F7ADB1D-E8B4-4C07-93F4-A7F1026A056F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCore", "TestCore\TestCore.csproj", "{ED51F367-40B2-4C3F-97F5-7C1C3CB9A491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -253,6 +257,14 @@ Global
 		{1CE6E6DD-E178-4E95-96F3-DF438FCA7543}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CE6E6DD-E178-4E95-96F3-DF438FCA7543}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CE6E6DD-E178-4E95-96F3-DF438FCA7543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7ADB1D-E8B4-4C07-93F4-A7F1026A056F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7ADB1D-E8B4-4C07-93F4-A7F1026A056F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7ADB1D-E8B4-4C07-93F4-A7F1026A056F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7ADB1D-E8B4-4C07-93F4-A7F1026A056F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED51F367-40B2-4C3F-97F5-7C1C3CB9A491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED51F367-40B2-4C3F-97F5-7C1C3CB9A491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED51F367-40B2-4C3F-97F5-7C1C3CB9A491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED51F367-40B2-4C3F-97F5-7C1C3CB9A491}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,11 @@
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\bin\Debug\netcoreapp2.0\Producer.deps.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\bin\Debug\netcoreapp2.0\Producer.runtimeconfig.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\bin\Debug\netcoreapp2.0\Producer.runtimeconfig.dev.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\bin\Debug\netcoreapp2.0\Producer.dll
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\bin\Debug\netcoreapp2.0\Producer.pdb
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\obj\Debug\netcoreapp2.0\Producer.csprojAssemblyReference.cache
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\obj\Debug\netcoreapp2.0\Producer.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\obj\Debug\netcoreapp2.0\Producer.AssemblyInfoInputs.cache
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\obj\Debug\netcoreapp2.0\Producer.AssemblyInfo.cs
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\obj\Debug\netcoreapp2.0\Producer.dll
+D:\C#Learninghard\RabbitMQ\新建文件夹\DotNetCore.RabbitMQ\obj\Debug\netcoreapp2.0\Producer.pdb

@@ -31,6 +31,19 @@ namespace Services
         }
 
 
+        /// <summary>
+        /// 连表查询
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Caching(AbsoluteExpiration = 10)]
+        public async Task<List<Doctor>> GetDoctor()
+        {
+            
+
+        }
+
+
     }
 
 }

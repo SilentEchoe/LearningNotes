@@ -1,0 +1,11 @@
+D:\C#Learninghard\LearningHard\MediatRTest\bin\Debug\netcoreapp2.2\MediatRTest.deps.json
+D:\C#Learninghard\LearningHard\MediatRTest\bin\Debug\netcoreapp2.2\MediatRTest.runtimeconfig.json
+D:\C#Learninghard\LearningHard\MediatRTest\bin\Debug\netcoreapp2.2\MediatRTest.runtimeconfig.dev.json
+D:\C#Learninghard\LearningHard\MediatRTest\bin\Debug\netcoreapp2.2\MediatRTest.dll
+D:\C#Learninghard\LearningHard\MediatRTest\bin\Debug\netcoreapp2.2\MediatRTest.pdb
+D:\C#Learninghard\LearningHard\MediatRTest\obj\Debug\netcoreapp2.2\MediatRTest.csprojAssemblyReference.cache
+D:\C#Learninghard\LearningHard\MediatRTest\obj\Debug\netcoreapp2.2\MediatRTest.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\MediatRTest\obj\Debug\netcoreapp2.2\MediatRTest.AssemblyInfoInputs.cache
+D:\C#Learninghard\LearningHard\MediatRTest\obj\Debug\netcoreapp2.2\MediatRTest.AssemblyInfo.cs
+D:\C#Learninghard\LearningHard\MediatRTest\obj\Debug\netcoreapp2.2\MediatRTest.dll
+D:\C#Learninghard\LearningHard\MediatRTest\obj\Debug\netcoreapp2.2\MediatRTest.pdb

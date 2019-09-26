@@ -1,0 +1,95 @@
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\bin\Debug\RisCaptureLib.exe.config
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\bin\Debug\RisCaptureLib.exe
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\bin\Debug\RisCaptureLib.pdb
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\App.g.cs
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.cache
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.lref
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\Themes\generic.baml
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.g.resources
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.Properties.Resources.resources
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.csproj.GenerateResource.Cache
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.exe
+c:\users\yinyuanyuan\documents\visual studio 2015\Projects\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.pdb
+E:\Demo\CaptureScreenDemo\RisCaptureLib\bin\Debug\RisCaptureLib.exe.config
+E:\Demo\CaptureScreenDemo\RisCaptureLib\bin\Debug\RisCaptureLib.exe
+E:\Demo\CaptureScreenDemo\RisCaptureLib\bin\Debug\RisCaptureLib.pdb
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.csprojResolveAssemblyReference.cache
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\App.g.cs
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.cache
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.lref
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\Themes\generic.baml
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.g.resources
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.Properties.Resources.resources
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.csproj.GenerateResource.Cache
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.exe
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\RisCaptureLib.pdb
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\ToolBarControl.g.cs
+E:\Demo\CaptureScreenDemo\RisCaptureLib\obj\Debug\ToolBarControl.baml
+E:\协同会议文件\RisCaptureLib\bin\Debug\RisCaptureLib.exe.config
+E:\协同会议文件\RisCaptureLib\bin\Debug\RisCaptureLib.exe
+E:\协同会议文件\RisCaptureLib\bin\Debug\RisCaptureLib.pdb
+E:\协同会议文件\RisCaptureLib\obj\Debug\RisCaptureLib.csprojResolveAssemblyReference.cache
+E:\协同会议文件\RisCaptureLib\obj\Debug\ToolBarControl.g.cs
+E:\协同会议文件\RisCaptureLib\obj\Debug\App.g.cs
+E:\协同会议文件\RisCaptureLib\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\协同会议文件\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.cache
+E:\协同会议文件\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.lref
+E:\协同会议文件\RisCaptureLib\obj\Debug\Themes\generic.baml
+E:\协同会议文件\RisCaptureLib\obj\Debug\ToolBarControl.baml
+E:\协同会议文件\RisCaptureLib\obj\Debug\RisCaptureLib.g.resources
+E:\协同会议文件\RisCaptureLib\obj\Debug\RisCaptureLib.Properties.Resources.resources
+E:\协同会议文件\RisCaptureLib\obj\Debug\RisCaptureLib.csproj.GenerateResource.Cache
+E:\协同会议文件\RisCaptureLib\obj\Debug\RisCaptureLib.exe
+E:\协同会议文件\RisCaptureLib\obj\Debug\RisCaptureLib.pdb
+E:\协同会议文件\CaptureDemo\RisCaptureLib\bin\Debug\RisCaptureLib.exe.config
+E:\协同会议文件\CaptureDemo\RisCaptureLib\bin\Debug\RisCaptureLib.exe
+E:\协同会议文件\CaptureDemo\RisCaptureLib\bin\Debug\RisCaptureLib.pdb
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.csprojResolveAssemblyReference.cache
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\ToolBarControl.g.cs
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\App.g.cs
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.cache
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.lref
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\Themes\generic.baml
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\ToolBarControl.baml
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.g.resources
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.Properties.Resources.resources
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.csproj.GenerateResource.Cache
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.exe
+E:\协同会议文件\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.pdb
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\bin\Debug\RisCaptureLib.exe.config
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\bin\Debug\RisCaptureLib.exe
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\bin\Debug\RisCaptureLib.pdb
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.csprojAssemblyReference.cache
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\ToolBarControl.g.cs
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\App.g.cs
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.cache
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.lref
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\Themes\generic.baml
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\ToolBarControl.baml
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.g.resources
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.Properties.Resources.resources
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.csproj.GenerateResource.cache
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.exe
+C:\Users\Lenovo\Desktop\CaptureDemo\CaptureDemo\RisCaptureLib\obj\Debug\RisCaptureLib.pdb
+D:\C#Learninghard\LearningHard\RisCaptureLib\bin\Debug\RisCaptureLib.exe.config
+D:\C#Learninghard\LearningHard\RisCaptureLib\bin\Debug\RisCaptureLib.exe
+D:\C#Learninghard\LearningHard\RisCaptureLib\bin\Debug\RisCaptureLib.pdb
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib.csprojAssemblyReference.cache
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\ToolBarControl.g.cs
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\App.g.cs
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.cache
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib_MarkupCompile.lref
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\Themes\generic.baml
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\ToolBarControl.baml
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib.g.resources
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib.Properties.Resources.resources
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib.csproj.GenerateResource.cache
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib.exe
+D:\C#Learninghard\LearningHard\RisCaptureLib\obj\Debug\RisCaptureLib.pdb

@@ -1,0 +1,8 @@
+D:\C#Learninghard\LearningHard\Signalr\bin\Debug\netcoreapp2.2\Signalr.deps.json
+D:\C#Learninghard\LearningHard\Signalr\bin\Debug\netcoreapp2.2\Signalr.runtimeconfig.json
+D:\C#Learninghard\LearningHard\Signalr\bin\Debug\netcoreapp2.2\Signalr.runtimeconfig.dev.json
+D:\C#Learninghard\LearningHard\Signalr\bin\Debug\netcoreapp2.2\Signalr.dll
+D:\C#Learninghard\LearningHard\Signalr\obj\Debug\netcoreapp2.2\Signalr.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\Signalr\obj\Debug\netcoreapp2.2\Signalr.AssemblyInfoInputs.cache
+D:\C#Learninghard\LearningHard\Signalr\obj\Debug\netcoreapp2.2\Signalr.AssemblyInfo.cs
+D:\C#Learninghard\LearningHard\Signalr\obj\Debug\netcoreapp2.2\Signalr.csprojAssemblyReference.cache

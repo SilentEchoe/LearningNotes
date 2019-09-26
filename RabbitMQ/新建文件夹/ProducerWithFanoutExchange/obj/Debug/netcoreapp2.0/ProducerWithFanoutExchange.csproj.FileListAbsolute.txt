@@ -1,0 +1,11 @@
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\bin\Debug\netcoreapp2.0\ProducerWithFanoutExchange.deps.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\bin\Debug\netcoreapp2.0\ProducerWithFanoutExchange.runtimeconfig.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\bin\Debug\netcoreapp2.0\ProducerWithFanoutExchange.runtimeconfig.dev.json
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\bin\Debug\netcoreapp2.0\ProducerWithFanoutExchange.dll
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\bin\Debug\netcoreapp2.0\ProducerWithFanoutExchange.pdb
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\obj\Debug\netcoreapp2.0\ProducerWithFanoutExchange.csprojAssemblyReference.cache
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\obj\Debug\netcoreapp2.0\ProducerWithFanoutExchange.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\obj\Debug\netcoreapp2.0\ProducerWithFanoutExchange.AssemblyInfoInputs.cache
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\obj\Debug\netcoreapp2.0\ProducerWithFanoutExchange.AssemblyInfo.cs
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\obj\Debug\netcoreapp2.0\ProducerWithFanoutExchange.dll
+D:\C#Learninghard\RabbitMQ\新建文件夹\ProducerWithFanoutExchange\obj\Debug\netcoreapp2.0\ProducerWithFanoutExchange.pdb
