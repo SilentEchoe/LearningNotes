@@ -622,11 +622,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#Learninghard\\Grpc\\GrpcService1\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj",
+      "projectUniqueName": "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj",
       "projectName": "AspNetCoregRpcService",
-      "projectPath": "D:\\C#Learninghard\\Grpc\\GrpcService1\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj",
+      "projectPath": "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\C#Learninghard\\Grpc\\GrpcService1\\AspNetCoregRpcService\\obj\\",
+      "outputPath": "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

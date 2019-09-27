@@ -278,11 +278,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#Learninghard\\Grpc\\GrpcService1\\AspNetCoreGrpcClient\\AspNetCoreGrpcClient.csproj",
+      "projectUniqueName": "D:\\C#Learninghard\\Grpc\\AspNetCoreGrpcClient\\AspNetCoreGrpcClient.csproj",
       "projectName": "AspNetCoreGrpcClient",
-      "projectPath": "D:\\C#Learninghard\\Grpc\\GrpcService1\\AspNetCoreGrpcClient\\AspNetCoreGrpcClient.csproj",
+      "projectPath": "D:\\C#Learninghard\\Grpc\\AspNetCoreGrpcClient\\AspNetCoreGrpcClient.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\C#Learninghard\\Grpc\\GrpcService1\\AspNetCoreGrpcClient\\obj\\",
+      "outputPath": "D:\\C#Learninghard\\Grpc\\AspNetCoreGrpcClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
