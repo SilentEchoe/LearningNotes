@@ -19,6 +19,7 @@ I/O 线程调度模型
 dubbo/dubbox  thrift motan Grpc
 dubbo 已停止维护 支持Java
 motan 支持千亿级别的调用 支持Java
+
 thrift 跨语言 序列化方式支持自thrift
 Grpc 跨语言 面向移动端 支持http2
 
@@ -26,7 +27,10 @@ Grpc 跨语言 面向移动端 支持http2
 服务编排：
 服务发现 部署 扩容
 流行的服务编排工具 
+
 Mesos
+
 Docker Swarm
+
 kubernetes
 

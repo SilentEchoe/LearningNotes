@@ -1,0 +1,10 @@
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\bin\Debug\netcoreapp3.0\AspNetCoreGrpcClient.exe
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\obj\Debug\netcoreapp3.0\AspNetCoreGrpcClient.AssemblyInfoInputs.cache
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\obj\Debug\netcoreapp3.0\AspNetCoreGrpcClient.AssemblyInfo.cs
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\bin\Debug\netcoreapp3.0\Grpc.Core.Api.dll
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\bin\Debug\netcoreapp3.0\Grpc.Net.Client.dll
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\bin\Debug\netcoreapp3.0\Grpc.Net.Common.dll
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\obj\Debug\netcoreapp3.0\AspNetCoreGrpcClient.csprojAssemblyReference.cache
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\obj\Debug\netcoreapp3.0\AspNetCoreGrpcClient.csproj.CopyComplete
+D:\C#Learninghard\Grpc\GrpcService1\AspNetCoreGrpcClient\bin\Debug\netcoreapp3.0\Google.Protobuf.dll

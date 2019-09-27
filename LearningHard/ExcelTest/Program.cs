@@ -21,15 +21,15 @@ namespace ExcelTest
             //AddModelName();
 
 
-            //Addcompatibility();
-            string aa = "a";
-            string cc = aa.PadRight(6, ' ');//右对齐此实例中的字符，在左边用指定的 Unicode 字符填充以达到指定的总长度。
-            Console.WriteLine(cc);
+            Addcompatibility();
+            //string aa = "a";
+            //string cc = aa.PadRight(6, ' ');//右对齐此实例中的字符，在左边用指定的 Unicode 字符填充以达到指定的总长度。
+            //Console.WriteLine(cc);
             Console.WriteLine("完成");
             Console.ReadLine();
         }
 
-        static string binFilePath = @"C:\Users\Lenovo\Desktop\脚本\ME编码-BOX\";
+        static string binFilePath = @"C:\Users\Lenovo\Desktop\脚本\Ciena\BOX2019CI\";
 
         // 添加新兼容品牌
         public static void Addcompatibility()
@@ -38,7 +38,7 @@ namespace ExcelTest
             var modelLits = GetModelLists();
 
             // 获取xls数据
-            var list = OpenExcel2(@"C:\Users\Lenovo\Desktop\脚本\ME编码表.xls");
+            var list = OpenExcel2(@"C:\Users\Lenovo\Desktop\脚本\Ciena\CI.xls");
 
             foreach (var item in list)
             {
@@ -552,29 +552,38 @@ namespace ExcelTest
                 string[,] arry = new string[rowsint - 1, 2];
                 for (int i = 1; i <= rowsint - 1; i++)
                 {
-                    model2 model = new model2();
-                    model.Modelname = arryItem[i, 1].ToString();
-                    model.Value1 = arryItem1[i, 1].ToString();
-                    model.Value2 = arryItem2[i, 1].ToString();
+                    try
+                    {
+                        model2 model = new model2();
+                        model.Modelname = arryItem[i, 1].ToString();
+                        model.Value1 = arryItem1[i, 1].ToString();
+                        model.Value2 = arryItem2[i, 1].ToString();
 
-                    model.Value3 = arryItem3[i, 1].ToString();
+                        model.Value3 = arryItem3[i, 1].ToString();
 
-                    model.Value4 = arryItem4[i, 1].ToString();
+                        model.Value4 = arryItem4[i, 1].ToString();
 
-                    model.Value5 = arryItem5[i, 1].ToString();
-                    model.Value6 = arryItem6[i, 1].ToString();
+                        model.Value5 = arryItem5[i, 1].ToString();
+                        model.Value6 = arryItem6[i, 1].ToString();
 
-                    if (arryItem7[i, 1]==null)                   
-                        model.Base64 = "";              
-                    else              
-                        model.Base64 = arryItem7[i, 1].ToString();
+                        if (arryItem7[i, 1] == null)
+                            model.Base64 = "";
+                        else
+                            model.Base64 = arryItem7[i, 1].ToString();
 
-                    if (arryItem8[i, 1] == null)
-                        model.Sum = "";
-                    else
-                        model.Sum = arryItem8[i, 1].ToString();
+                        if (arryItem8[i, 1] == null)
+                            model.Sum = "";
+                        else
+                            model.Sum = arryItem8[i, 1].ToString();
 
-                    modelsList.Add(model);
+                        modelsList.Add(model);
+                    }
+                    catch (Exception)
+                    {
+
+                       
+                    }
+                   
 
                 }
 
