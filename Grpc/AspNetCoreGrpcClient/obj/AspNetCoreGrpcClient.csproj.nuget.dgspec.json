@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj": {
+                "projectPath": "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -43,7 +47,7 @@
           "dependencies": {
             "Google.Protobuf": {
               "target": "Package",
-              "version": "[3.9.2, )"
+              "version": "[3.9.1, )"
             },
             "Grpc.Net.Client": {
               "target": "Package",
@@ -53,7 +57,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.24.0, )"
+              "version": "[2.23.0, )"
             }
           },
           "imports": [
@@ -67,6 +71,73 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj",
+        "projectName": "AspNetCoregRpcService",
+        "projectPath": "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\AspNetCoregRpcService.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\C#Learninghard\\Grpc\\AspNetCoregRpcService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.23.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
