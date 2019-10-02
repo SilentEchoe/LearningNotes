@@ -1,0 +1,10 @@
+D:\C#Learninghard\LearningHard\SSHTest\bin\Debug\SSHTest.exe.config
+D:\C#Learninghard\LearningHard\SSHTest\bin\Debug\SSHTest.exe
+D:\C#Learninghard\LearningHard\SSHTest\bin\Debug\SSHTest.pdb
+D:\C#Learninghard\LearningHard\SSHTest\bin\Debug\Renci.SshNet.dll
+D:\C#Learninghard\LearningHard\SSHTest\bin\Debug\Renci.SshNet.xml
+D:\C#Learninghard\LearningHard\SSHTest\obj\Debug\SSHTest.csprojAssemblyReference.cache
+D:\C#Learninghard\LearningHard\SSHTest\obj\Debug\SSHTest.csproj.CoreCompileInputs.cache
+D:\C#Learninghard\LearningHard\SSHTest\obj\Debug\SSHTest.csproj.CopyComplete
+D:\C#Learninghard\LearningHard\SSHTest\obj\Debug\SSHTest.exe
+D:\C#Learninghard\LearningHard\SSHTest\obj\Debug\SSHTest.pdb
