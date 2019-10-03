@@ -12,11 +12,14 @@ namespace SSHTest
     {
         static void Main(string[] args)
         {
+          
+
+
             string _host = "39.106.221.26";
             string _username = "root";
             string _password = "wk19970424!";
             int _port = 22;
-
+            
             //連線資訊
             ConnectionInfo conInfo = new ConnectionInfo(_host, _port, _username, new AuthenticationMethod[]{
     new PasswordAuthenticationMethod(_username,_password)
@@ -65,5 +68,10 @@ namespace SSHTest
 
 
         }
+
+
+
+
+
     }
 }
