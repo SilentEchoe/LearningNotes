@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AspNetCoreGrpcClient",
     "\\AspNetCoregRpcService"
   ],
-  "SelectedNode": "\\AspNetCoreGrpcClient\\AspNetCoreGrpcClient.csproj",
   "PreviewInSolutionExplorer": false
 }

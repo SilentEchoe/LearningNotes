@@ -10,11 +10,7 @@ namespace DockerTest
     {
         static void Main(string[] args)
         {
-            IList<ContainerListResponse> containers = await client.Containers.ListContainersAsync(
-    new ContainersListParameters()
-    {
-        Limit = 10,
-    });
+
         }
     }
 }

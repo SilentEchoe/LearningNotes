@@ -14,8 +14,7 @@ namespace AspNetCoreGrpcClient
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloAsync(
                 new HelloRequest { Name = "晓晨" });
-            Console.WriteLine("调用Greeter服务 : " + reply.Message);
-
+            Console.WriteLine("Greeter 服务返回数据: " + reply.Message);
             Console.ReadKey();
         }
     }

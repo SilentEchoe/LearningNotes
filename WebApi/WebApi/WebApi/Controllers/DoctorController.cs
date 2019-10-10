@@ -57,10 +57,7 @@ namespace WebApi.Controllers
             {
                 success = true,
                 data = blogArticleList
-            });
-
-
-              
+            }); 
         }
 
 
