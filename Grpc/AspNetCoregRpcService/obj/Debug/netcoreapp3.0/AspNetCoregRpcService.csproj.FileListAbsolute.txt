@@ -49,3 +49,4 @@ D:\C#Learninghard\Grpc\AspNetCoregRpcService\obj\Debug\netcoreapp3.0\AspNetCoreg
 D:\C#Learninghard\Grpc\AspNetCoregRpcService\obj\Debug\netcoreapp3.0\AspNetCoregRpcService.csproj.CopyComplete
 D:\C#Learninghard\Grpc\AspNetCoregRpcService\obj\Debug\netcoreapp3.0\AspNetCoregRpcService.dll
 D:\C#Learninghard\Grpc\AspNetCoregRpcService\obj\Debug\netcoreapp3.0\AspNetCoregRpcService.pdb
+D:\C#Learninghard\Grpc\AspNetCoregRpcService\obj\Debug\netcoreapp3.0\AspNetCoregRpcService.csprojAssemblyReference.cache

@@ -24,3 +24,4 @@ D:\C#Learninghard\Grpc\AspNetCoreGrpcClient\obj\Debug\netcoreapp3.0\AspNetCoreGr
 D:\C#Learninghard\Grpc\AspNetCoreGrpcClient\obj\Debug\netcoreapp3.0\AspNetCoreGrpcClient.dll
 D:\C#Learninghard\Grpc\AspNetCoreGrpcClient\obj\Debug\netcoreapp3.0\AspNetCoreGrpcClient.pdb
 D:\C#Learninghard\Grpc\AspNetCoreGrpcClient\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\C#Learninghard\Grpc\AspNetCoreGrpcClient\obj\Debug\netcoreapp3.0\AspNetCoreGrpcClient.csprojAssemblyReference.cache
