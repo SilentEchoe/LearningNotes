@@ -76,7 +76,7 @@ namespace DockerServiceApi.Controllers
                 //});
 
 
-                //await client.Containers.ExecCreateContainerAsync("0f3e07c0138f", containerExecCreate);
+                
                 return "执行完毕";
             }
             catch (Exception ex)
