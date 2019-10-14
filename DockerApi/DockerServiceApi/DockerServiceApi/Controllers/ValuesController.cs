@@ -56,27 +56,20 @@ namespace DockerServiceApi.Controllers
                         .CreateClient();
 
               
-
-                await client.Containers.StartWithConfigContainerExecAsync("0f3e07c0138f", new ContainerExecStartParameters
+                // 在容器中执行CMD 命令
+                var execResponse = await client.Containers.ExecCreateContainerAsync(
+                "67fa590cfc1c", new ContainerExecCreateParameters()
                 {
-                    Env = new List<string> { "ACCEPT_EULA=Y", $"SA_PASSWORD=null" },
+                    Detach = false,
+                    Tty = true,
+                    Cmd = new[]
+                    {
+                        "mkdir", "/tmp/abc"
+                    }
                 });
 
 
-                // 在容器中执行CMD 命令
-                //var execResponse = await client.Containers.ExecCreateContainerAsync(
-                //"307ef337fbfd", new ContainerExecCreateParameters()
-                //{
-                //    Detach = false,
-                //    Tty = true,
-                //    Cmd = new[]
-                //    {
-                //        "mkdir", "/tmp/abc"
-                //    }
-                //});
 
-
-                
                 return "执行完毕";
             }
             catch (Exception ex)
