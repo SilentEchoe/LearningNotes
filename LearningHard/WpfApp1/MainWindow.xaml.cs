@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAnimatedGif;
 
 namespace WpfApp1
 {
@@ -20,38 +21,40 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-
-        System.Windows.Threading.DispatcherTimer IsClose = new System.Windows.Threading.DispatcherTimer();
-
-        private int a = 0;
-        private int b = 0;
+        BitmapImage image = new BitmapImage();
+        BitmapImage image2 = new BitmapImage();
+        int a = 0;
         public MainWindow()
         {
-            InitializeComponent();
 
-            dispatcherTimer.Tick += DispatcherTimer_Tick;
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 1);
+           
+            image.BeginInit();
+            image.UriSource = new Uri(@"C:\Users\Lenovo\Desktop\status1.gif");
+            image.EndInit();
+            
+            image2.BeginInit();
+            image2.UriSource = new Uri(@"C:\Users\Lenovo\Desktop\status2.gif");
+            image2.EndInit();
 
-            IsClose.Tick += Close_Tick;
-            IsClose.Interval = new TimeSpan(0, 0, 0, 1);
-            IsClose.Start();
-            dispatcherTimer.Start();
+
+            
+          
+
+
         }
 
-
-        private void Close_Tick(object sender, EventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            a++;
-            this.Label.Content = a.ToString();
-
-        }
-        private void DispatcherTimer_Tick(object sender, EventArgs e)
-        {
-            b++;
-            this.Label1.Content = b.ToString();
-
-
+            if (a==0)
+            {
+                ImageBehavior.SetAnimatedSource(img, image2);
+                a = 1;
+            }
+            else
+            {
+                ImageBehavior.SetAnimatedSource(img, image);
+                a = 0;
+            }
         }
     }
 }

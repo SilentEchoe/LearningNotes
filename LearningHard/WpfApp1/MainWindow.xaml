@@ -3,21 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:domain11="clr-namespace:MaterialDesignDemo.Domain"
+      
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="547" Width="800">
     <Grid>
-        <TextBox x:Name="NameTextBox" materialDesign:HintAssist.Hint="Name">
-            <TextBox.Text>
-                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <!--<domain11:NotEmptyValidationRule ValidatesOnTargetUpdated="True" xmlns:domain1="clr-namespace:MaterialDesignDemo.Domain" />-->
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
+
+        <Image x:Name="img" gif:ImageBehavior.AnimatedSource="D:\C#Learninghard\LearningHard\WpfApp1\img\status1.gif" />
+
+        <Button Click="Button_Click" Margin="650,473,0,11" RenderTransformOrigin="0.5,0.5" Content="aaa" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.378"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
 
     </Grid>
 </Window>
