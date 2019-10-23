@@ -69,7 +69,7 @@ Kubectl create -f kubernetes-dashboard.yaml
 
 
 
-访问http://39.106.221.26:8080/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#!/namespace?namespace=default
+访问http://服务器外网IP:8080/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#!/namespace?namespace=default
 效果图如下：
 
 
