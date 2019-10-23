@@ -54,74 +54,9 @@ wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificat
 rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem
 
 
-
-## 编写kubernetes-dashboard.yaml 文件
-
-kind: Deployment 
-apiVersion: extensions/v1beta1 
-metadata: 
-  labels: 
-    app: kubernetes-dashboard 
-  name: kubernetes-dashboard 
-  namespace: kube-system 
-spec: 
-  replicas: 1 
-  selector: 
-    matchLabels: 
-      app: kubernetes-dashboard 
-  template: 
-    metadata: 
-      labels: 
-        app: kubernetes-dashboard 
-      # Comment the following annotation if Dashboard must not be deployed on master 
-      annotations: 
-        scheduler.alpha.kubernetes.io/tolerations: | 
-          [ 
-            { 
-              "key": "dedicated", 
-              "operator": "Equal", 
-              "value": "master", 
-              "effect": "NoSchedule" 
-            } 
-          ] 
-    spec: 
-      containers: 
-      - name: kubernetes-dashboard 
-        image: docker.io/siriuszg/kubernetes-dashboard-amd64      #此镜像最好先下载到本地 
-        imagePullPolicy: Always 
-        ports: 
-        - containerPort: 9090 
-          protocol: TCP 
-        args: 
-          # Uncomment the following line to manually specify Kubernetes API server Host 
-          # If not specified, Dashboard will attempt to auto discover the API server and connect 
-          # to it. Uncomment only if the default does not work. 
-          - --apiserver-host=http://内网IP:8080    #注意这里是api的地址 
-        livenessProbe: 
-          httpGet: 
-            path: / 
-            port: 9090 
-          initialDelaySeconds: 30 
-          timeoutSeconds: 30 
---- 
-kind: Service 
-apiVersion: v1 
-metadata: 
-  labels: 
-    app: kubernetes-dashboard 
-  name: kubernetes-dashboard 
-  namespace: kube-system 
-spec: 
-  type: NodePort 
-  ports: 
-  - port: 80 
-    targetPort: 9090 
-  selector: 
-    app: kubernetes-dashboard 
-
+## 将kubernetes-dashboard.yaml 文件上传到服务器上
 
 ## 注意：镜像最好先下载到本地 不然创建实例时可能会报错
-
 
 ## 创建实例：
 Kubectl create -f kubernetes-dashboard.yaml
