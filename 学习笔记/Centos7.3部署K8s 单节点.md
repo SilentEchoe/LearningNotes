@@ -67,3 +67,5 @@ kubectl get pods --all-namespaces
 ## 访问http://服务器外网IP:8080/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#!/namespace?namespace=default
 
 ## 记得开放防火墙 8080 端口
+
+![avatar]
