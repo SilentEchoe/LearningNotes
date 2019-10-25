@@ -1,0 +1,16 @@
+#定义版本
+apiVersion: v1 
+#类型
+kind: Pod  
+#元数据
+metadata:  
+  name: nginx 
+#特别的配置
+spec:
+  #定义容器
+  containers:
+    - name: nginx
+      image: nginx:1.7.9 #指定镜像版本
+      prots: 
+        # 容器的端口
+      - containerPort: 80
