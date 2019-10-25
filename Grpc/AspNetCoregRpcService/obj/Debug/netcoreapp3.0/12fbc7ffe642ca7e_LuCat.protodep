@@ -1,3 +1,0 @@
-obj\Debug\netcoreapp3.0/LuCat.cs \
-obj\Debug\netcoreapp3.0/LuCatGrpc.cs: C:/Users/Lenovo/.nuget/packages/grpc.tools/2.23.0/build/native/include/google/protobuf/empty.proto\
- Protos/LuCat.proto

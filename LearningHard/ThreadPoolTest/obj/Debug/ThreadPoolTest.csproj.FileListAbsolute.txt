@@ -1,7 +1,0 @@
-D:\C#Learninghard\LearningHard\ThreadPoolTest\bin\Debug\ThreadPoolTest.exe.config
-D:\C#Learninghard\LearningHard\ThreadPoolTest\bin\Debug\ThreadPoolTest.exe
-D:\C#Learninghard\LearningHard\ThreadPoolTest\bin\Debug\ThreadPoolTest.pdb
-D:\C#Learninghard\LearningHard\ThreadPoolTest\obj\Debug\ThreadPoolTest.csprojAssemblyReference.cache
-D:\C#Learninghard\LearningHard\ThreadPoolTest\obj\Debug\ThreadPoolTest.csproj.CoreCompileInputs.cache
-D:\C#Learninghard\LearningHard\ThreadPoolTest\obj\Debug\ThreadPoolTest.exe
-D:\C#Learninghard\LearningHard\ThreadPoolTest\obj\Debug\ThreadPoolTest.pdb

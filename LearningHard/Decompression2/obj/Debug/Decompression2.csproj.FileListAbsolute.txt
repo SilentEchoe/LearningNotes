@@ -1,9 +1,0 @@
-D:\C#Learninghard\LearningHard\Decompression2\bin\Debug\Decompression2.exe.config
-D:\C#Learninghard\LearningHard\Decompression2\bin\Debug\Decompression2.exe
-D:\C#Learninghard\LearningHard\Decompression2\bin\Debug\Decompression2.pdb
-D:\C#Learninghard\LearningHard\Decompression2\bin\Debug\ICSharpCode.SharpZipLib.dll
-D:\C#Learninghard\LearningHard\Decompression2\obj\Debug\Decompression2.csprojAssemblyReference.cache
-D:\C#Learninghard\LearningHard\Decompression2\obj\Debug\Decompression2.csproj.CoreCompileInputs.cache
-D:\C#Learninghard\LearningHard\Decompression2\obj\Debug\Decompression2.csproj.CopyComplete
-D:\C#Learninghard\LearningHard\Decompression2\obj\Debug\Decompression2.exe
-D:\C#Learninghard\LearningHard\Decompression2\obj\Debug\Decompression2.pdb

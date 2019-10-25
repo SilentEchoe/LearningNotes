@@ -1,8 +1,0 @@
-C:\Users\Lenovo\Desktop\新建文件夹 (5)\MyWindowsService\MyWindowsService\bin\Release\MyWindowsService.exe.config
-C:\Users\Lenovo\Desktop\新建文件夹 (5)\MyWindowsService\MyWindowsService\bin\Release\MyWindowsService.exe
-C:\Users\Lenovo\Desktop\新建文件夹 (5)\MyWindowsService\MyWindowsService\bin\Release\MyWindowsService.pdb
-C:\Users\Lenovo\Desktop\新建文件夹 (5)\MyWindowsService\MyWindowsService\obj\Release\MyWindowsService.ProjectInstaller.resources
-C:\Users\Lenovo\Desktop\新建文件夹 (5)\MyWindowsService\MyWindowsService\obj\Release\MyWindowsService.csproj.GenerateResource.cache
-C:\Users\Lenovo\Desktop\新建文件夹 (5)\MyWindowsService\MyWindowsService\obj\Release\MyWindowsService.csproj.CoreCompileInputs.cache
-C:\Users\Lenovo\Desktop\新建文件夹 (5)\MyWindowsService\MyWindowsService\obj\Release\MyWindowsService.exe
-C:\Users\Lenovo\Desktop\新建文件夹 (5)\MyWindowsService\MyWindowsService\obj\Release\MyWindowsService.pdb

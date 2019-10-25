@@ -1,7 +1,0 @@
-D:\C#Learninghard\LearningHard\SingletonDemo\bin\Debug\SingletonDemo.exe.config
-D:\C#Learninghard\LearningHard\SingletonDemo\bin\Debug\SingletonDemo.exe
-D:\C#Learninghard\LearningHard\SingletonDemo\bin\Debug\SingletonDemo.pdb
-D:\C#Learninghard\LearningHard\SingletonDemo\obj\Debug\SingletonDemo.csprojAssemblyReference.cache
-D:\C#Learninghard\LearningHard\SingletonDemo\obj\Debug\SingletonDemo.csproj.CoreCompileInputs.cache
-D:\C#Learninghard\LearningHard\SingletonDemo\obj\Debug\SingletonDemo.exe
-D:\C#Learninghard\LearningHard\SingletonDemo\obj\Debug\SingletonDemo.pdb

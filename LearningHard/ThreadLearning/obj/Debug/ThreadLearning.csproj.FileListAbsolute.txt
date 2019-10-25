@@ -1,6 +1,0 @@
-D:\C#Learninghard\LearningHard\ThreadLearning\bin\Debug\ThreadLearning.exe.config
-D:\C#Learninghard\LearningHard\ThreadLearning\bin\Debug\ThreadLearning.exe
-D:\C#Learninghard\LearningHard\ThreadLearning\bin\Debug\ThreadLearning.pdb
-D:\C#Learninghard\LearningHard\ThreadLearning\obj\Debug\ThreadLearning.csproj.CoreCompileInputs.cache
-D:\C#Learninghard\LearningHard\ThreadLearning\obj\Debug\ThreadLearning.exe
-D:\C#Learninghard\LearningHard\ThreadLearning\obj\Debug\ThreadLearning.pdb
