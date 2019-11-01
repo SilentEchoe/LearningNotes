@@ -1,5 +1,5 @@
-package main
-
+//package main
+import demo
 import "fmt"
 
 
@@ -12,11 +12,14 @@ func main(){
 	//var b int = 200
 	//b, a = a, b
 	//fmt.Println(a, b)
+
+	var x complex128 = complex(1, 2) // 1+2i
+
 	var C int ;
 	a, _ := GetData()
 	_, b := GetData()
 	_ = C
-    fmt.Println(a, b,C)
+    fmt.Println(a, b,C,x)
 
 }
 // := 操作符只能在声明变量的时候使用
