@@ -5,6 +5,7 @@ import "fmt"
 
 
 
+var a float32 = 3.14
 
 func main(){
 	//var a int = 100
@@ -24,4 +25,6 @@ func main(){
 func GetData() (int, int) {
     return 100, 200
 }
+
+//Go语言程序中全局变量与局部变量名称可以相同，但是函数体内的局部变量会被优先考虑。
 
