@@ -1,7 +1,7 @@
 package main
 
-
 import(
+	"flag"
 	"fmt"
 )
 // 指针
@@ -14,6 +14,7 @@ import(
 // go语言中在变量名前面添加 & 操作符（前缀）来获取变量的内存地址
 // ptr:=&v //v的类型为T
 
+var mode = flag.String("dotnet","","-v")
 
 func main()  {
 	 // 准备一个字符串类型
@@ -32,4 +33,35 @@ func main()  {
 	// 指针取值后就是指向变量的值
 	fmt.Printf("value: %s\n", value)
 
+	// 准备两个变量, 赋值1和2
+    x, y := 1, 2
+    // 交换变量值
+    swap(&x, &y)
+    // 输出变量值
+	fmt.Println(x, y)
+	
+	// 解析命令行参数
+	flag.Parse()
+	// 输出命令行参数
+	fmt.Println(*mode)
+
+    strTest := new(string)
+
+    *strTest = "Go语言教程"
+
+    fmt.Println(*strTest)
+
+
+
+
+}
+
+
+
+func swap(a,b *int)  {
+	t := *a
+	// *a 的意思不是取a指针的值，而是“a 指向的变量”
+	*a = *b
+
+	*b = t
 }
