@@ -12,6 +12,9 @@ namespace FreeSqlTest.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        // 使用Freesql 必须要使用单例模式 
+
+
         IFreeSql fsql = new FreeSqlBuilder()
     .UseConnectionString(DataType.MySql, "Data Source=54.245.72.232;Port=13307;User ID=fsbox;Password=tzZ=xx20cfmI;Initial Catalog=fs;")
     .Build();
