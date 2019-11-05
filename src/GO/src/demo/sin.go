@@ -1,4 +1,4 @@
-package main
+//package main
 
 import (
     "image"
@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-    
+
     // 图片大小
     const size = 300
     // 根据给定大小创建灰度图
