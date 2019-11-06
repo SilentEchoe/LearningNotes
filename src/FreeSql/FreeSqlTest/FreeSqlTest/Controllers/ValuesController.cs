@@ -58,7 +58,7 @@ namespace FreeSqlTest.Controllers
 
             public DateTime create_date { get; set; }
 
-          
+
 
         }
 
@@ -70,7 +70,7 @@ namespace FreeSqlTest.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-                
+
             var sql = fsql.Select<Topic>()
                 .AsTable((a, b) => "(select * from conf_modal_name )")
                 .Page(1, 10).ToList();
@@ -82,6 +82,6 @@ namespace FreeSqlTest.Controllers
             return new string[] { "value1", "value2" };
         }
 
-      
+
     }
 }
