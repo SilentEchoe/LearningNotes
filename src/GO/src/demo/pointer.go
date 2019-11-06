@@ -16,6 +16,18 @@ import(
 
 var mode = flag.String("dotnet","","-v")
 
+type weekday int
+// 类似实现C# 中的枚举
+const (
+	Sunday weekday = iota
+	Tuesday
+	Wednesday
+	Thursday
+	Friday
+	Saturday
+
+)
+
 func main()  {
 	 // 准备一个字符串类型
 	 var house = "Malibu Point 10880, 90265"
@@ -50,9 +62,6 @@ func main()  {
     *strTest = "Go语言教程"
 
     fmt.Println(*strTest)
-
-
-
 
 }
 
