@@ -9,8 +9,10 @@
             "remotePath": "",
             "port": 2345,
             "host": "127.0.0.1",
-            "program": "${workspaceRoot}",
-            "env": {},
+            "program": "${fileDirname}",
+            "env": {
+                "GOPATH":"D:/Develop/vscodegolang"
+            },
             "args": [],
             "showLog": true
         }

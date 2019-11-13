@@ -1,4 +1,4 @@
-package main
+//package main
 
 import(
 	"flag"
@@ -59,7 +59,7 @@ func main()  {
 
     strTest := new(string)
 
-    *strTest = "Go语言教程"
+    *strTest = "Go"
 
     fmt.Println(*strTest)
 
