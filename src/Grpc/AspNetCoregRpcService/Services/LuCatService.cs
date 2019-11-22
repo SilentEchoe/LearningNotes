@@ -34,16 +34,16 @@ namespace AspNetCoregRpcService.Services
                 _logger.LogInformation($"Cat {requestStream.Current.Id} Enqueue.");
             }
 
-            //遍历队列开始洗澡
-            while (bathQueue.TryDequeue(out var catId))
+            while (!context.CancellationToken.IsCancellationRequested && bathQueue.TryDequeue(out var catId))
             {
+                _logger.LogInformation($"Cat {catId} Dequeue.");
                 await responseStream.WriteAsync(new BathTheCatResp() { Message = $"铲屎的成功给一只{Cats[catId]}洗了澡！" });
 
                 await Task.Delay(500);//此处主要是为了方便客户端能看出流调用的效果
             }
-
-
         }
+
+
 
         public override Task<CountCatResult> Count(Empty request, ServerCallContext context)
         {
