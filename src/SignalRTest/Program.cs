@@ -9,9 +9,9 @@ namespace SignalRTest
     {
 
         private IDisposable _hub;
-        private IHubContext _hubContext;
+        private readonly IHubContext _hubContext;
 
-       
+
         static void Main(string[] args)
         {
 

@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNet.SignalR;
-using Microsoft.Owin.Hosting;
-using Owin;
+﻿using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
-using Microsoft.Owin.Cors;
 namespace SignalRTest
 {
     public static class HubServer
@@ -60,15 +57,17 @@ namespace SignalRTest
                 
                 case "":
                     {
-                      
-                        Clients.Client(Context.ConnectionId).addMessage(name, "1");
+                     
+                        Clients.Client(Context.ConnectionId).SendAsync(name);
+                        //Clients.Client(Context.ConnectionId).addMessage(name, "1");
                         break;
                     }
 
 
                 default:
                     {
-                        Clients.Client(Context.ConnectionId).addMessage(name, Context.ConnectionId);
+                        Clients.Client(Context.ConnectionId).SendAsync(name);
+                        //Clients.Client(Context.ConnectionId).addMessage(name, Context.ConnectionId);
                         break;
                     }
             }
