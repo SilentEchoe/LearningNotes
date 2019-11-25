@@ -22,5 +22,4 @@
     <Protobuf Include="Protos\LuCat.proto" GrpcServices="Client" />
   </ItemGroup>
   
-
 </Project>
