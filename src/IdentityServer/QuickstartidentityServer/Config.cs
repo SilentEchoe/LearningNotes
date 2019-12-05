@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuickstartidentityServer
 {
-    public class Config
+    public static class Config
     {
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
@@ -45,11 +45,6 @@ namespace QuickstartidentityServer
                     AllowedScopes = { "api1" }
                 }
             };
-
         }
-
-     
-
-
     }
 }
