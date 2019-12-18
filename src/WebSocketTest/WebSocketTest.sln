@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketTest", "WebSocketTest.csproj", "{1F963F1C-F1FB-4F0A-93BB-CF8D86DCF6CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRTest", "SignalRTest\SignalRTest.csproj", "{A29EC879-2D53-469E-AD17-B031617E48B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F963F1C-F1FB-4F0A-93BB-CF8D86DCF6CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F963F1C-F1FB-4F0A-93BB-CF8D86DCF6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F963F1C-F1FB-4F0A-93BB-CF8D86DCF6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F963F1C-F1FB-4F0A-93BB-CF8D86DCF6CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29EC879-2D53-469E-AD17-B031617E48B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29EC879-2D53-469E-AD17-B031617E48B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29EC879-2D53-469E-AD17-B031617E48B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29EC879-2D53-469E-AD17-B031617E48B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED45940D-CF19-4333-871B-1DA8696F17B8}
+	EndGlobalSection
+EndGlobal
