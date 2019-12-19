@@ -36,14 +36,13 @@ namespace API.Core
                 app.UseDeveloperExceptionPage();
             }
 
+            // Routing
             app.UseRouting();
 
+            // 然后是授权中间件
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+         
 
             #region Swagger
             app.UseSwagger();
@@ -60,6 +59,16 @@ namespace API.Core
                 c.RoutePrefix = ""; //路径配置，设置为空，表示直接在根域名（localhost:8001）访问该文件,注意localhost:8001/swagger是访问不到的，去launchSettings.json把launchUrl去掉，如果你想换一个路径，直接写名字即可，比如直接写c.RoutePrefix = "doc";
             });
             #endregion
+
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                //endpoints.MapHub<ChatHub>("/api2/chatHub");
+            });
 
         }
     }
