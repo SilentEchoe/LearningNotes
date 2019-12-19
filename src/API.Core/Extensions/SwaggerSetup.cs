@@ -1,8 +1,16 @@
-﻿using log4net;
+﻿using API.Core.Common.Helper;
+using API.Core.Filter;
+
+using log4net;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using static API.Core.SwaggerHelper.CustomApiVersion;
 
 namespace API.Core.Extensions
 {
@@ -43,10 +51,10 @@ namespace API.Core.Extensions
                 try
                 {
                     //就是这里
-                    var xmlPath = Path.Combine(basePath, "Blog.Core.xml");//这个就是刚刚配置的xml文件名
+                    var xmlPath = Path.Combine(basePath, "API.Core.xml");//这个就是刚刚配置的xml文件名
                     c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
 
-                    var xmlModelPath = Path.Combine(basePath, "Blog.Core.Model.xml");//这个就是Model层的xml文件名
+                    var xmlModelPath = Path.Combine(basePath, "API.Core.Model.xml");//这个就是Model层的xml文件名
                     c.IncludeXmlComments(xmlModelPath);
                 }
                 catch (Exception ex)
