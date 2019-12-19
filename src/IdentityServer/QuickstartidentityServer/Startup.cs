@@ -18,11 +18,11 @@ namespace QuickstartidentityServer
         {
             //添加管道服务
             var builder = services.AddIdentityServer()
-        .AddDeveloperSigningCredential()
-        .AddInMemoryIdentityResources(Config.GetIdentityResources())
-        .AddInMemoryApiResources(Config.GetApis())
-        .AddInMemoryClients(Config.GetClients());
-
+                        .AddDeveloperSigningCredential()
+                        .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                        .AddInMemoryApiResources(Config.GetApis())
+                        .AddInMemoryClients(Config.GetClients())
+                        .AddTestUsers(Config.GetUsers());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
