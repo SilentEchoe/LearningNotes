@@ -25,8 +25,12 @@ namespace API.Core.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        ///  查询接口
+        /// </summary>
+        /// <returns></returns>
+
         [HttpGet]
-        
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

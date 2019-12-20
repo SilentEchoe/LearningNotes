@@ -4,5 +4,11 @@
         <name>API.Core</name>
     </assembly>
     <members>
+        <member name="M:API.Core.Controllers.WeatherForecastController.Get">
+            <summary>
+             查询接口
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
