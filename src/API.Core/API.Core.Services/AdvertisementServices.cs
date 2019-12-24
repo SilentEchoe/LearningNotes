@@ -11,8 +11,10 @@ namespace API.Core.Services
 {
     public class AdvertisementServices : BaseServices<BinInfo>, IAdvertisementServices
     {
-        
 
+        public int Test() {
+            return 1;
+        }
       
     }
 }

@@ -14,7 +14,7 @@ namespace API.Core.IServices
         //bool Update(BinInfo model);
         //List<BinInfo> Query(Expression<Func<BinInfo, bool>> whereExpression);
 
-      
+        int Test();
 
     }
 }

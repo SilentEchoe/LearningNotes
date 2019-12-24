@@ -21,10 +21,11 @@ namespace API.Core.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        private readonly IAdvertisementServices advertisementServices;
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IAdvertisementServices advertisementServices)
         {
             _logger = logger;
+            this.advertisementServices = advertisementServices;
         }
 
         /// <summary>
@@ -33,15 +34,15 @@ namespace API.Core.Controllers
         /// <param name="id">第一个变量</param>  
         /// <returns></returns>
         [HttpGet]
-        public async Task<List<BinInfo>> GetAsync(int id)
+        public  string[] GetAsync()
         {
-            IAdvertisementServices advertisementServices = new AdvertisementServices();
-
-            return await advertisementServices.Query(d => d.Id == id);
-
-
             //IAdvertisementServices advertisementServices = new AdvertisementServices();
-            //return advertisementServices.Sum(i, j);
+
+            //return await advertisementServices.Query(d => d.Id == id);
+
+
+            var ads = advertisementServices.Test();
+            return Summaries;
         }
     }
 }

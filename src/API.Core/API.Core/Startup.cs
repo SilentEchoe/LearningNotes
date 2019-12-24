@@ -2,7 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using API.Core.IServices;
+using API.Core.Services;
+using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +27,8 @@ namespace API.Core
         {
             Configuration = configuration;
         }
+     
+
 
         public IConfiguration Configuration { get; }
 
@@ -51,6 +58,27 @@ namespace API.Core
 
         }
 
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
+
+            //直接注册某一个类和接口
+            //左边的是实现类，右边的As是接口
+            builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
+
+
+            //注册要通过反射创建的组件
+            var servicesDllFile = Path.Combine(basePath, "API.Core.Services.dll");
+            var assemblysServices = Assembly.LoadFrom(servicesDllFile);
+
+            builder.RegisterAssemblyTypes(assemblysServices)
+                      .AsImplementedInterfaces()
+                      .InstancePerLifetimeScope()
+                      .EnableInterfaceInterceptors();
+
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -77,5 +105,8 @@ namespace API.Core
                 endpoints.MapControllers();
             });
         }
+    
+    
+    
     }
 }
