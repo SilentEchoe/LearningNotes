@@ -33,11 +33,11 @@ namespace API.Core.Controllers
         /// <param name="id">第一个变量</param>  
         /// <returns></returns>
         [HttpGet]
-        public List<BinInfo> Get(int id)
+        public async Task<List<BinInfo>> GetAsync(int id)
         {
             IAdvertisementServices advertisementServices = new AdvertisementServices();
 
-            return advertisementServices.Query(d => d.Id == id);
+            return await advertisementServices.Query(d => d.Id == id);
 
 
             //IAdvertisementServices advertisementServices = new AdvertisementServices();

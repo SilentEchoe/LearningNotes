@@ -4,7 +4,7 @@
         <name>API.Core</name>
     </assembly>
     <members>
-        <member name="M:API.Core.Controllers.WeatherForecastController.Get(System.Int32)">
+        <member name="M:API.Core.Controllers.WeatherForecastController.GetAsync(System.Int32)">
             <summary>
             测试例子
             </summary>
