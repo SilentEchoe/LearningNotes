@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -37,11 +38,13 @@ namespace API.Core
                     Version = "V1",
                     Title = $"{ApiName} 接口文档——Netcore 3.0",
                     Description = $"{ApiName} HTTP API V1",
-                    Contact = new OpenApiContact { Name = ApiName, Email = "Blog.Core@xxx.com", Url = new Uri("https://www.jianshu.com/u/94102b59cc2a") },
+                    Contact = new OpenApiContact { Name = ApiName, Email = "API.Core@xxx.com", Url = new Uri("https://www.jianshu.com/u/94102b59cc2a") },
                     License = new OpenApiLicense { Name = ApiName, Url = new Uri("https://www.jianshu.com/u/94102b59cc2a") }
                 });
                 c.OrderActionsBy(o => o.RelativePath);
 
+                var xmlPath = Path.Combine(basePath, "API.Core.xml");//这个就是刚刚配置的xml文件名
+                c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
 
             });
 

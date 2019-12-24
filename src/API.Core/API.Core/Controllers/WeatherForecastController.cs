@@ -23,6 +23,10 @@ namespace API.Core.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// 获取信息
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
