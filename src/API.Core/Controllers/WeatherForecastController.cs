@@ -29,7 +29,8 @@ namespace API.Core.Controllers
         ///  查询接口
         /// </summary>
         /// <returns></returns>
-
+        //[ApiExplorerSettings(IgnoreApi = true)]
+        // 隐藏某些接口
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
