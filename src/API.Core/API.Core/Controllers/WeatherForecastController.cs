@@ -9,8 +9,6 @@ namespace API.Core.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-
-  
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -25,12 +23,6 @@ namespace API.Core.Controllers
             _logger = logger;
         }
 
-        /// <summary>
-        ///  查询接口
-        /// </summary>
-        /// <returns></returns>
-        //[ApiExplorerSettings(IgnoreApi = true)]
-        // 隐藏某些接口
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
