@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Core.IServices;
+using API.Core.Model.Models;
 using API.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -26,17 +27,21 @@ namespace API.Core.Controllers
             _logger = logger;
         }
 
-      /// <summary>
-      /// 测试例子
-      /// </summary>
-      /// <param name="i">第一个变量</param>
-      /// <param name="j">第二个变量</param>
-      /// <returns></returns>
+        /// <summary>
+        /// 测试例子
+        /// </summary>
+        /// <param name="id">第一个变量</param>  
+        /// <returns></returns>
         [HttpGet]
-        public int Get(int i,int j)
+        public List<BinInfo> Get(int id)
         {
             IAdvertisementServices advertisementServices = new AdvertisementServices();
-            return advertisementServices.Sum(i, j);
+
+            return advertisementServices.Query(d => d.Id == id);
+
+
+            //IAdvertisementServices advertisementServices = new AdvertisementServices();
+            //return advertisementServices.Sum(i, j);
         }
     }
 }

@@ -37,30 +37,30 @@ namespace API.Core.Model.Models
         /// <summary>
         /// Isddm
         /// </summary>
-        public bool IsDDM { get; set; }
+        public bool is_ddm { get; set; }
 
 
         /// <summary>
         /// BinType bin文件的封装类型
         /// </summary>
-        public string BinType { get; set; }
+        public string bin_type { get; set; }
 
 
         /// <summary>
         /// BinMeter bin文件的米数（仅线缆）
         /// </summary>
-        public string BinMeter { get; set; }
+        public string bin_mi { get; set; }
 
         /// <summary>
         /// compatibility 兼容类型
         /// </summary>
-        public string Compatibility { get; set; }
+        public string compatibility { get; set; }
 
 
         /// <summary>
         /// Manufacturer 厂商名
         /// </summary>
-        public string Manufacturer { get; set; }
+        public string manufacturer { get; set; }
 
         /// <summary>
         /// version 版本

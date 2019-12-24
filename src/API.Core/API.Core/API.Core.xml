@@ -4,12 +4,11 @@
         <name>API.Core</name>
     </assembly>
     <members>
-        <member name="M:API.Core.Controllers.WeatherForecastController.Get(System.Int32,System.Int32)">
+        <member name="M:API.Core.Controllers.WeatherForecastController.Get(System.Int32)">
             <summary>
             测试例子
             </summary>
-            <param name="i">第一个变量</param>
-            <param name="j">第二个变量</param>
+            <param name="id">第一个变量</param>  
             <returns></returns>
         </member>
     </members>

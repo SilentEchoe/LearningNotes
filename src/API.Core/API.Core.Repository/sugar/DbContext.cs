@@ -1,8 +1,7 @@
 ﻿using SqlSugar;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
+using DbType = SqlSugar.DbType;
 
 namespace API.Core.Repository.sugar
 {
@@ -10,7 +9,7 @@ namespace API.Core.Repository.sugar
     {
 
         private static string _connectionString;
-        private static SqlSugar.DbType _dbType;
+        private static DbType _dbType;
         private SqlSugarClient _db;
 
         /// <summary>
@@ -26,7 +25,7 @@ namespace API.Core.Repository.sugar
         /// 数据库类型 
         /// Blog.Core 
         /// </summary>
-        public static SqlSugar.DbType DbType
+        public static DbType DbType
         {
             get { return _dbType; }
             set { _dbType = value; }
@@ -325,7 +324,7 @@ namespace {Namespace}
         /// </summary>
         /// <param name="strConnectionString">连接字符串</param>
         /// <param name="enmDbType">数据库类型</param>
-        public static void Init(string strConnectionString, SqlSugar.DbType enmDbType = SqlSugar.DbType.SqlServer)
+        public static void Init(string strConnectionString, DbType enmDbType = SqlSugar.DbType.MySql)
         {
             _connectionString = strConnectionString;
             _dbType = enmDbType;
