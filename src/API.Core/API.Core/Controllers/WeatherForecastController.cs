@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Core.IServices;
+using API.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace API.Core.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    [Produces("application/json")]
+    [Route("api/WeatherForecast")]
+   
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,21 +26,17 @@ namespace API.Core.Controllers
             _logger = logger;
         }
 
-        /// <summary>
-        /// 获取信息
-        /// </summary>
-        /// <returns></returns>
+      /// <summary>
+      /// 测试例子
+      /// </summary>
+      /// <param name="i">第一个变量</param>
+      /// <param name="j">第二个变量</param>
+      /// <returns></returns>
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public int Get(int i,int j)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            IAdvertisementServices advertisementServices = new AdvertisementServices();
+            return advertisementServices.Sum(i, j);
         }
     }
 }

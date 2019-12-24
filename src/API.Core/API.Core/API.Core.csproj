@@ -14,5 +14,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API.Core.IServices\API.Core.IServices.csproj" />
+    <ProjectReference Include="..\API.Core.Services\API.Core.Services.csproj" />
+  </ItemGroup>
+
 
 </Project>
