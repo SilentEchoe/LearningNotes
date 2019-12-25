@@ -12,7 +12,8 @@ namespace API.Core.Services.BASE
 {
     public class BaseServices<TEntity> : IBaseServices<TEntity> where TEntity : class, new()
     {
-        public IBaseRepository<TEntity> baseDal = new BaseRepository<TEntity>();
+        public IBaseRepository<TEntity> baseDal;
+        //public IBaseRepository<TEntity> baseDal = new BaseRepository<TEntity>();
 
         public async Task<TEntity> QueryByID(object objId)
         {

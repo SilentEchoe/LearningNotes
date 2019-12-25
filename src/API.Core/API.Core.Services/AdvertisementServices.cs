@@ -12,6 +12,13 @@ namespace API.Core.Services
     public class AdvertisementServices : BaseServices<BinInfo>, IAdvertisementServices
     {
 
+        IAdvertisementRepository dal;
+        public AdvertisementServices(IAdvertisementRepository dal)
+        {
+            this.dal = dal;
+            base.baseDal = dal;
+        }
+
         public int Test() {
             return 1;
         }
