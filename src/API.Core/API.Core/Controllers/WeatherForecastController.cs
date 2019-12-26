@@ -33,16 +33,31 @@ namespace API.Core.Controllers
         /// </summary>
         /// <param name="id">第一个变量</param>  
         /// <returns></returns>
-        [HttpGet]
-        public  string[] GetAsync()
-        {
+        //[HttpGet]
+        //public  string[] GetAsync()
+        //{
             //IAdvertisementServices advertisementServices = new AdvertisementServices();
 
             //return await advertisementServices.Query(d => d.Id == id);
 
 
-            var ads = advertisementServices.Test();
-            return Summaries;
+        //    var ads = advertisementServices.Test();
+        //    return Summaries;
+        //}
+
+
+        /// <summary>
+        /// 测试AOP
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<AdvertisementEntity> TestAdsFromAOP()
+        {
+          
+            return advertisementServices.TestAOP();
         }
+
+
+
     }
 }

@@ -15,6 +15,6 @@ namespace API.Core.IServices
         //List<BinInfo> Query(Expression<Func<BinInfo, bool>> whereExpression);
 
         int Test();
-
+        List<AdvertisementEntity> TestAOP();
     }
 }

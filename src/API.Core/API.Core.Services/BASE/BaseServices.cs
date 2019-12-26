@@ -1,11 +1,8 @@
 ﻿using API.Core.IRepository.BASE;
 using API.Core.IServices.BASE;
-using API.Core.Repository.BASE;
-using API.Core.Repository.BASE.Blog.Core.Repository.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace API.Core.Services.BASE

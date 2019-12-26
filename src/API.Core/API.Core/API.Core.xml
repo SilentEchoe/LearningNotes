@@ -4,11 +4,16 @@
         <name>API.Core</name>
     </assembly>
     <members>
-        <member name="M:API.Core.Controllers.WeatherForecastController.GetAsync">
+        <member name="M:API.Core.AOP.BlogLogAOP.Intercept(Castle.DynamicProxy.IInvocation)">
             <summary>
-            测试例子
+            实例化IInterceptor唯一方法 
             </summary>
-            <param name="id">第一个变量</param>  
+            <param name="invocation">包含被拦截方法的信息</param>
+        </member>
+        <member name="M:API.Core.Controllers.WeatherForecastController.TestAdsFromAOP">
+            <summary>
+            测试AOP
+            </summary>
             <returns></returns>
         </member>
     </members>

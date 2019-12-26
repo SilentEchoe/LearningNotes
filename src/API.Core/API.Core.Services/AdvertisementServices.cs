@@ -1,11 +1,8 @@
 ﻿using API.Core.IRepository;
 using API.Core.IServices;
 using API.Core.Model.Models;
-using API.Core.Repository;
 using API.Core.Services.BASE;
-using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace API.Core.Services
 {
@@ -22,6 +19,6 @@ namespace API.Core.Services
         public int Test() {
             return 1;
         }
-      
+        public List<AdvertisementEntity> TestAOP() => new List<AdvertisementEntity>() { new AdvertisementEntity() { id = 1, name = "laozhang" } };
     }
 }

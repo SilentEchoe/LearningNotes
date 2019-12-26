@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using API.Core.AOP;
 using API.Core.IServices;
 using API.Core.Services;
 using Autofac;
@@ -67,15 +68,28 @@ namespace API.Core
             //左边的是实现类，右边的As是接口
             builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
 
+            #region 注册拦截器
+            builder.RegisterType<BlogLogAOP>();
+
+            #endregion
+
 
             //注册要通过反射创建的组件
+
+            // 注册服务层
             var servicesDllFile = Path.Combine(basePath, "API.Core.Services.dll");
             var assemblysServices = Assembly.LoadFrom(servicesDllFile);
 
             builder.RegisterAssemblyTypes(assemblysServices)
                       .AsImplementedInterfaces()
                       .InstancePerLifetimeScope()
-                      .EnableInterfaceInterceptors();
+                      .EnableInterfaceInterceptors()
+                      .InterceptedBy(typeof(BlogLogAOP));
+
+            // 注册仓储
+            var repositoryDllFile = Path.Combine(basePath, "API.Core.Repository.dll");
+            var assemblysRepository = Assembly.LoadFrom(repositoryDllFile);
+            builder.RegisterAssemblyTypes(assemblysRepository).AsImplementedInterfaces();
 
         }
 
