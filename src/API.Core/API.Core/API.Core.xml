@@ -4,6 +4,38 @@
         <name>API.Core</name>
     </assembly>
     <members>
+        <member name="M:API.Core.AOP.AOPbase.Intercept(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            AOP的拦截方法
+            </summary>
+            <param name="invocation"></param>
+        </member>
+        <member name="M:API.Core.AOP.AOPbase.CustomCacheKey(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            自定义缓存的key
+            </summary>
+            <param name="invocation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Core.AOP.AOPbase.GetArgumentValue(System.Object)">
+            <summary>
+            object 转 string
+            </summary>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Core.AOP.AOPbase.MD5Encrypt16(System.String)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="T:API.Core.AOP.BlogCacheAOP">
+            <summary>
+            面向切面的缓存使用
+            </summary>
+        </member>
         <member name="M:API.Core.AOP.BlogLogAOP.Intercept(Castle.DynamicProxy.IInvocation)">
             <summary>
             实例化IInterceptor唯一方法 

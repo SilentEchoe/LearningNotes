@@ -28,11 +28,7 @@ namespace API.Core.Controllers
             this.advertisementServices = advertisementServices;
         }
 
-        /// <summary>
-        /// 测试例子
-        /// </summary>
-        /// <param name="id">第一个变量</param>  
-        /// <returns></returns>
+       
         //[HttpGet]
         //public  string[] GetAsync()
         //{

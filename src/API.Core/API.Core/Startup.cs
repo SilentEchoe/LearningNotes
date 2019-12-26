@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using API.Core.AOP;
+using API.Core.Common.MemoryCache;
 using API.Core.IServices;
 using API.Core.Services;
 using Autofac;
@@ -55,7 +56,7 @@ namespace API.Core
                 c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
 
             });
-
+            services.AddScoped<ICaching, MemoryCaching>();
 
         }
 
@@ -70,7 +71,7 @@ namespace API.Core
 
             #region 注册拦截器
             builder.RegisterType<BlogLogAOP>();
-
+            builder.RegisterType<BlogCacheAOP>();
             #endregion
 
 
@@ -84,7 +85,7 @@ namespace API.Core
                       .AsImplementedInterfaces()
                       .InstancePerLifetimeScope()
                       .EnableInterfaceInterceptors()
-                      .InterceptedBy(typeof(BlogLogAOP));
+                      .InterceptedBy(typeof(BlogLogAOP),typeof(BlogCacheAOP));
 
             // 注册仓储
             var repositoryDllFile = Path.Combine(basePath, "API.Core.Repository.dll");
