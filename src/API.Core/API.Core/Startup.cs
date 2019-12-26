@@ -5,6 +5,8 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using API.Core.AOP;
+using API.Core.Common;
+using API.Core.Common.Helper;
 using API.Core.Common.MemoryCache;
 using API.Core.IServices;
 using API.Core.Services;
@@ -38,6 +40,7 @@ namespace API.Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<ICaching, MemoryCaching>();
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
             services.AddSwaggerGen(c =>
             {
@@ -56,7 +59,7 @@ namespace API.Core
                 c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
 
             });
-            services.AddScoped<ICaching, MemoryCaching>();
+            
 
         }
 
@@ -70,8 +73,8 @@ namespace API.Core
             builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
 
             #region 注册拦截器
-            builder.RegisterType<BlogLogAOP>();
             builder.RegisterType<BlogCacheAOP>();
+            builder.RegisterType<BlogLogAOP>();
             #endregion
 
 
@@ -81,11 +84,23 @@ namespace API.Core
             var servicesDllFile = Path.Combine(basePath, "API.Core.Services.dll");
             var assemblysServices = Assembly.LoadFrom(servicesDllFile);
 
+            var cacheType = new List<Type>();
+            if (Appsettings.app(new string[] { "AppSettings", "MemoryCachingAOP", "Enabled" }).ObjToBool())
+            {
+                cacheType.Add(typeof(BlogCacheAOP));
+            }
+           
+            if (Appsettings.app(new string[] { "AppSettings", "LogAOP", "Enabled" }).ObjToBool())
+            {
+                cacheType.Add(typeof(BlogLogAOP));
+            }
+
+
             builder.RegisterAssemblyTypes(assemblysServices)
                       .AsImplementedInterfaces()
                       .InstancePerLifetimeScope()
                       .EnableInterfaceInterceptors()
-                      .InterceptedBy(typeof(BlogLogAOP),typeof(BlogCacheAOP));
+                      .InterceptedBy(cacheType.ToArray());
 
             // 注册仓储
             var repositoryDllFile = Path.Combine(basePath, "API.Core.Repository.dll");

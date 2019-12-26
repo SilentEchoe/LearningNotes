@@ -33,7 +33,9 @@ namespace API.Core.AOP
                 return;
             }
             //去执行当前的方法
+           
             invocation.Proceed();
+            
             //存入缓存
             if (!string.IsNullOrWhiteSpace(cacheKey))
             {
