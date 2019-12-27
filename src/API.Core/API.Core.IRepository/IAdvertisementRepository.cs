@@ -1,8 +1,7 @@
 ﻿using API.Core.IRepository.BASE;
 using API.Core.Model.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+using API.Core.Model.ViewModels;
+using System.Threading.Tasks;
 
 namespace API.Core.IRepository
 {
@@ -14,6 +13,8 @@ namespace API.Core.IRepository
         //bool Delete(BinInfo model);
         //bool Update(BinInfo model);
         //List<BinInfo> Query(Expression<Func<BinInfo, bool>> whereExpression);
+       
+      
 
     }
 }

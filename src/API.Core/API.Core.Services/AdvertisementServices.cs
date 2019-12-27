@@ -11,10 +11,12 @@ namespace API.Core.Services
     {
 
         IAdvertisementRepository dal;
+        
         public AdvertisementServices(IAdvertisementRepository dal)
         {
             this.dal = dal;
             base.baseDal = dal;
+            
         }
 
         public int Test() {
@@ -23,5 +25,7 @@ namespace API.Core.Services
 
         [Caching(AbsoluteExpiration =10)]//增加特性
         public List<AdvertisementEntity> TestAOP() => new List<AdvertisementEntity>() { new AdvertisementEntity() { id = 1, name = "laozhang" } };
+
+        
     }
 }
