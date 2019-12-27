@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace API.Core.Common
+namespace API.Core.Common.Helper
 {
     public static class UtilConvert
     {
