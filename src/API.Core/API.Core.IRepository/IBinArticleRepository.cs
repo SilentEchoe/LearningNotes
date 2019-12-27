@@ -5,5 +5,7 @@ namespace API.Core.IRepository
 {
     public interface IBinArticleRepository:IBaseRepository<BinInfo>
     {
+
+      
     }
 }
