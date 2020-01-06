@@ -24,9 +24,21 @@ namespace API.Core.Services
 
         public async Task<BinInfoViewModels> GetBinList()
         {
-             var blogArticle = (await base.Query(a => a.Id == 1)).FirstOrDefault();
-             BinInfoViewModels models = _mapper.Map<BinInfoViewModels>(blogArticle);
-             return models;
+            var blogArticle = (await base.Query(a => a.Id == 1)).FirstOrDefault();
+            BinInfoViewModels models = _mapper.Map<BinInfoViewModels>(blogArticle);
+            return models;
         }
+
+        public async Task<object> TestGetBinList()
+        {
+            throw new System.Exception("Throw Exception");
+
+            var blogArticle = await base.FedEx<BinInfo, OrderInfo>("order_id", "Id");
+
+            return null;
+
+        }
+
+
     }
 }

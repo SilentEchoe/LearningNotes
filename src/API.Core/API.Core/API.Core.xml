@@ -72,12 +72,6 @@
             配置构造函数，用来创建关系映射
             </summary>
         </member>
-        <member name="M:API.Core.Controllers.BinController.GetBin">
-            <summary>
-            获取Bin
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:API.Core.Controllers.WeatherForecastController.TestAdsFromAOP">
             <summary>
             测试AOP

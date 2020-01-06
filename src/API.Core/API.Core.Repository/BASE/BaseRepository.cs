@@ -317,6 +317,91 @@ namespace API.Core.Repository.BASE
 
 
 
+            /// <summary>
+            /// 执行SQL查询语句
+            /// </summary>
+            /// <param name="sql">执行sql语句查询</param>
+            /// <returns>返回TEntity实体集合</returns>
+            public async Task<List<TEntity>> QuerySQL(string sql)
+            {
+                return await Task.Run(() => db.SqlQueryable<TEntity>(sql).ToList());
+            }
+
+            /// <summary>
+            /// 联表查询
+            /// </summary>
+            /// <typeparam name="TEntity1">实体类1</typeparam>
+            /// <typeparam name="TEntity2">实体类2</typeparam>
+            /// <param name="foreignKey">实体类1外键</param>
+            /// <param name="Id">实体类2主键</param>
+            /// <returns></returns>
+            public async Task<object> FedEx<TEntity1, TEntity2>(string foreignKey, string Id)
+            {
+                string relation = $"s1.{foreignKey} = s2.{Id}";
+                var TestSQl = db.Queryable("BinInfo", "s1")
+                                              .AddJoinInfo("OrderInfo", "s2", relation)
+                                              .Select("s1.Sn").ToSql();
+
+                return await Task.Run(() => db.Queryable("BinInfo", "s1")
+                                              .AddJoinInfo("OrderInfo", "s2", relation)
+                                              .Select("s1.Sn").ToSql()
+               );
+            }
+
+            /// <summary>
+            /// 双联表查询全部
+            /// </summary>
+            /// <param name="doubleTable"></param>
+            /// <returns></returns>
+            public async Task<List<TEntity>> FedEx(DoubleTable doubleTable)
+            {
+                string relation = $"s1.{doubleTable.ForeignKey} = s2.{doubleTable.Key}";
+                return await Task.Run(() => db.Queryable(doubleTable.LeftSurface, "s1")
+                                              .AddJoinInfo(doubleTable.RightSurface, "s2", relation)
+                                              .Select<TEntity>("*")
+                                              .OrderByIF(!string.IsNullOrEmpty(doubleTable.OrderByFileds), doubleTable.OrderByFileds)
+                                              .ToList()
+               );
+            }
+
+            /// <summary>
+            /// 联表查询分页
+            /// </summary>
+            /// <param name="doubleTable"></param>
+            /// <returns></returns>
+
+            public async Task<List<TEntity>> FedExPage(DoubleTable doubleTable)
+            {
+                string relation = $"s1.{doubleTable.ForeignKey} = s2.{doubleTable.Key}";
+                return await Task.Run(() => db.Queryable(doubleTable.LeftSurface, "s1")
+                                              .AddJoinInfo(doubleTable.RightSurface, "s2", relation)
+                                              .Select<TEntity>("*")
+                                              .OrderByIF(!string.IsNullOrEmpty(doubleTable.OrderByFileds), doubleTable.OrderByFileds)
+                                              .ToPageList(doubleTable.IntPageIndex, doubleTable.IntPageSize)
+               );
+            }
+
+            /// <summary>
+            /// 联表查询 
+            /// </summary>
+            /// <param name="whereExpression">条件表达式</param>
+            /// <param name="doubleTable">联表参数</param>
+            /// <returns></returns>
+            public async Task<List<TEntity>> FedExPage(Expression<Func<TEntity, bool>> whereExpression, DoubleTable doubleTable)
+            {
+                string relation = $"s1.{doubleTable.ForeignKey} = s2.{doubleTable.Key}";
+                return await Task.Run(() => db.Queryable(doubleTable.LeftSurface, "s1")
+                                              .AddJoinInfo(doubleTable.RightSurface, "s2", relation)
+                                              .Select<TEntity>("*")
+                                              .OrderByIF(!string.IsNullOrEmpty(doubleTable.OrderByFileds), doubleTable.OrderByFileds)
+                                              .WhereIF(whereExpression != null, whereExpression)
+                                              .ToPageList(doubleTable.IntPageIndex, doubleTable.IntPageSize)
+               );
+            }
+
+
+
+
 
         }
 

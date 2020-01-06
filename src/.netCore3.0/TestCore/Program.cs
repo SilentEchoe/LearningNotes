@@ -12,13 +12,13 @@ namespace TestCore
         static void Main(string[] args)
         {
 
-            
 
-            //string bse64 = "AwQHEAAAAAAAAAAGZwAAAB4PAABGUyAgICAgICAgICAgICAgAACQZVNGUC0xMEdTUi04NSAgICBBICAgA1IAeQAaAABCMTkxMjA1MzMzOCAgICAgMTgwNzA1ICBo8AP7NzQwLTAzMTk4MCBSRVYgMDEgICAgICAgICAgICAgICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-            //var binContent = Base64ToBytes(bse64);
-            //WriteByteToFile(binContent, "D:/a.bin");
+
+            string bse64 = "AwQHAAAAAhIAAQEBDQAUyAAAAABGUyAgICAgICAgICAgICAgAAAAAENXMjctMUctMjAtMTI3MCBBICAgBPYAUAASAABZMTgwNzE3MjI3MyAgICAgMTgwOTE4ICBokAGFNzQwLTAxMTc4NCBSRVYgMDEAAAAAAAAAAAAAAAAAAAD//////////////////////////////////////////////////ycQAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////zc0MC0wMTE3ODQgUkVWIDAx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////";
+            var binContent = Base64ToBytes(bse64);
+            WriteByteToFile(binContent, "D:/C.bin");
             Console.WriteLine("Test");
-            Communication();
+          
             Console.ReadLine();
 
 
