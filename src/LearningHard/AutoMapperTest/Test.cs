@@ -9,14 +9,6 @@ namespace AutoMapperTest
     {
         public Test() {
 
-            List<Order> orders = new List<Order>();
-            Order order = new Order()
-            {
-                id = 1,
-                name = "a"
-            };
-            orders.Add(order);
-            OrderDto models = IMapper.Map<OrderDto>(order);
            
         }
 
