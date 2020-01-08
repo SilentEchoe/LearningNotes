@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainofResponsibility", "Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "Observer\Observer.csproj", "{A734D608-2CD8-4CBE-B86C-57A3D23AFF1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapperTest", "AutoMapperTest\AutoMapperTest.csproj", "{3BA331DA-113C-442E-8AD8-7F45B192D11C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,10 +23,6 @@ Global
 		{A734D608-2CD8-4CBE-B86C-57A3D23AFF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A734D608-2CD8-4CBE-B86C-57A3D23AFF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A734D608-2CD8-4CBE-B86C-57A3D23AFF1A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3BA331DA-113C-442E-8AD8-7F45B192D11C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BA331DA-113C-442E-8AD8-7F45B192D11C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BA331DA-113C-442E-8AD8-7F45B192D11C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BA331DA-113C-442E-8AD8-7F45B192D11C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

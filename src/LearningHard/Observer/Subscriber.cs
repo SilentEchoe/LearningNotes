@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Observer
 {
-     public class Subscriber
+     public class Subscriber:IObserver
     {
         public string Name { get; set; }
 
@@ -13,13 +13,10 @@ namespace Observer
             this.Name = name;
         }
 
-        public void ReceiveAndPrintData(TenxunGame txGame)
+
+        public void ReceiveAndPrint(TenXun tenxun)
         {
-          Console.WriteLine("Notified {0} of {1}'s" + " Info is: {2}", Name, txGame.Symbol, txGame.Info);
+            Console.WriteLine("Notified {0} of {1}'s" + " Info is: {2}", Name, tenxun.Symbol, tenxun.Info);
         }
-            
-         
-
-
-}
+    }
 }

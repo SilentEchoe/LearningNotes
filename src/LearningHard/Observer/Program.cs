@@ -6,12 +6,15 @@ namespace Observer
     {
         static void Main(string[] args)
         {
-            Subscriber LearningHardSub = new Subscriber("LearningHard");
-                        TenxunGame txGame = new TenxunGame(); 
-            txGame.Subscriber = LearningHardSub;
-                         txGame.Symbol = "TenXun Game";
-                         txGame.Info = "Have a new game published ....";
-             txGame.Update();
+            TenXun tenXun = new TenxunGame("TenXun Game", "Have a new game published...");
+
+            // 添加订阅者
+            tenXun.AddObserver(new Subscriber("Tim"));
+            tenXun.AddObserver(new Subscriber("Tom"));
+
+            tenXun.Update();
+
+
             Console.ReadLine();
         }
     }
