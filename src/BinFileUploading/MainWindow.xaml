@@ -3,12 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BinFileUploading"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="Btn_Upload" Content="Button" HorizontalAlignment="Left" Margin="180,60,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Upload_Click"/>
-        <Button x:Name="Btn_selectPath" Content="Button" HorizontalAlignment="Left" Margin="85,60,0,0" VerticalAlignment="Top" Width="75" Click="Btn_selectPath_Click"/>
+        Title="设置" Height="450" Width="800">
 
+    <Grid Margin="108,56,0,0">
+        <Button x:Name="Btn_Upload" Content="上传" HorizontalAlignment="Left" Margin="260,60,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Upload_Click"/>
+        <Button x:Name="Btn_selectPath" Content="选择文件夹路径" HorizontalAlignment="Left" Margin="85,60,0,0" VerticalAlignment="Top" Width="145" Click="Btn_selectPath_Click"/>
+        <materialDesign:TimePicker materialDesign:HintAssist.Hint="Validates" IsInvalidTextAllowed="True" Is24Hours="{Binding IsChecked, ElementName=Is24HourCheckbox}" Width="100">
+        </materialDesign:TimePicker>
+
+        <materialDesign:TimePicker
+  materialDesign:HintAssist.Hint="With Seconds"
+  Is24Hours="{Binding IsChecked, ElementName=Is24HourCheckbox}"
+  x:Name="WithSecondsTimePicker"
+  WithSeconds="True"
+  Width="100" />
     </Grid>
 </Window>
