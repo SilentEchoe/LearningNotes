@@ -16,12 +16,16 @@ namespace BinFileUploading
 
         System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
         System.Windows.Forms.FolderBrowserDialog folder = new System.Windows.Forms.FolderBrowserDialog();
+
+        int SetTimeSpan = 1;
+
         public MainWindow()
         {
             InitializeComponent();
             #region 定义定时器
             dispatcherTimer.Tick += DispatcherTimer_Tick;
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 1, 0);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, SetTimeSpan, 0);
+            
             #endregion
         }
 
@@ -103,6 +107,20 @@ namespace BinFileUploading
 
         }
 
+        private void Btn_timerRun_Click(object sender, RoutedEventArgs e)
+        {
+            dispatcherTimer.Start();
+        }
 
+        private void Btn_timerStop_Click(object sender, RoutedEventArgs e)
+        {
+            dispatcherTimer.Stop();
+        }
+
+        private void Btn_SetTimer_Click(object sender, RoutedEventArgs e)
+        {
+            SetTimeSpan = int.Parse(Time.Text);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, SetTimeSpan, 0);
+        }
     }
 }

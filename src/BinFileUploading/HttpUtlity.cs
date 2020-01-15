@@ -12,7 +12,7 @@ namespace BinFileUploading
     {
         public bool HttpFileUpload(string fileName) 
         {
-            Uri url = new Uri("http://localhost:7934/images/Upload/Pic");
+            Uri url = new Uri("http://54.245.72.232:5008/UploadBinFile");
             var client = new RestClient(url);
             RestRequest request = new RestRequest(Method.POST);
             request.AddFile("file", fileName);

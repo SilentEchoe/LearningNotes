@@ -12,13 +12,20 @@
         <Button x:Name="Btn_Upload" Content="上传" HorizontalAlignment="Left" Margin="250,25,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Upload_Click"/>
         <Button x:Name="Btn_selectPath" Content="选择文件夹路径" HorizontalAlignment="Left" Margin="70,25,0,0" VerticalAlignment="Top" Width="145" Click="Btn_selectPath_Click"/>
 
-        <materialDesign:TimePicker
-  materialDesign:HintAssist.Hint="第一次上传时间"
-  Is24Hours="{Binding IsChecked, ElementName=Is24HourCheckbox}"
-  x:Name="WithSecondsTimePicker"
-  WithSeconds="True" Margin="281,174,364.286,216.714" Height="31" />
-        <Label Content="请选择上传文件时间段：" HorizontalAlignment="Left"  FontSize="18" Margin="70,170,0,0" VerticalAlignment="Top"/>
+        <!--<materialDesign:TimePicker materialDesign:HintAssist.Hint="第一次上传时间"
+                Is24Hours="{Binding IsChecked, ElementName=Is24HourCheckbox}"
+                x:Name="WithSecondsTimePicker"
+                WithSeconds="True" Margin="281,174,364.286,216.714" Height="31" />
+        <Label Content="请选择上传文件时间段：" HorizontalAlignment="Left"  FontSize="18" Margin="70,170,0,0" VerticalAlignment="Top"/>-->
         <Label HorizontalAlignment="Left" Margin="95,130,0,0" VerticalAlignment="Top"/>
         <Label FontSize="18" x:Name="BinFilePath" Content="待上传文件路径" Margin="74,73,364.286,306.714"/>
+     
+        <Button x:Name="Btn_timerRun" Content="开启定时器" HorizontalAlignment="Left" Margin="74,213,0,0" VerticalAlignment="Top" Width="116" Click="Btn_timerRun_Click"/>
+        <Button x:Name="Btn_timerStop" Content="关闭定时器" HorizontalAlignment="Left" Margin="235,213,0,0" VerticalAlignment="Top" Width="116" Click="Btn_timerStop_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="74,138,0,0" TextWrapping="Wrap" Text="设置定时器间隔时间" VerticalAlignment="Top"/>
+        <TextBox x:Name="Time" HorizontalAlignment="Left" Height="23" Margin="205,134,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.208,0.652"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,138,0,0" TextWrapping="Wrap" Text="/分" VerticalAlignment="Top" RenderTransformOrigin="10.568,0.722"/>
+        <Button x:Name="Btn_SetTimer" Content="设置" HorizontalAlignment="Left" Margin="400,130,0,0" VerticalAlignment="Top" Width="75" Click="Btn_SetTimer_Click"/>
+
     </Grid>
 </Window>
