@@ -8,17 +8,17 @@
         mc:Ignorable="d"
         Title="设置" Height="450" Width="800">
 
-    <Grid Margin="108,56,0,0">
-        <Button x:Name="Btn_Upload" Content="上传" HorizontalAlignment="Left" Margin="260,60,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Upload_Click"/>
-        <Button x:Name="Btn_selectPath" Content="选择文件夹路径" HorizontalAlignment="Left" Margin="85,60,0,0" VerticalAlignment="Top" Width="145" Click="Btn_selectPath_Click"/>
-        <materialDesign:TimePicker materialDesign:HintAssist.Hint="Validates" IsInvalidTextAllowed="True" Is24Hours="{Binding IsChecked, ElementName=Is24HourCheckbox}" Width="100">
-        </materialDesign:TimePicker>
+    <Grid>
+        <Button x:Name="Btn_Upload" Content="上传" HorizontalAlignment="Left" Margin="250,25,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Upload_Click"/>
+        <Button x:Name="Btn_selectPath" Content="选择文件夹路径" HorizontalAlignment="Left" Margin="70,25,0,0" VerticalAlignment="Top" Width="145" Click="Btn_selectPath_Click"/>
 
         <materialDesign:TimePicker
-  materialDesign:HintAssist.Hint="With Seconds"
+  materialDesign:HintAssist.Hint="第一次上传时间"
   Is24Hours="{Binding IsChecked, ElementName=Is24HourCheckbox}"
   x:Name="WithSecondsTimePicker"
-  WithSeconds="True"
-  Width="100" />
+  WithSeconds="True" Margin="281,174,364.286,216.714" Height="31" />
+        <Label Content="请选择上传文件时间段：" HorizontalAlignment="Left"  FontSize="18" Margin="70,170,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="95,130,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="18" x:Name="BinFilePath" Content="待上传文件路径" Margin="74,73,364.286,306.714"/>
     </Grid>
 </Window>
