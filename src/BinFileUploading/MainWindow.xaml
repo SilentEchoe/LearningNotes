@@ -26,6 +26,7 @@
         <TextBox x:Name="Time" HorizontalAlignment="Left" Height="23" Margin="205,134,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.208,0.652"/>
         <TextBlock HorizontalAlignment="Left" Margin="350,138,0,0" TextWrapping="Wrap" Text="/分" VerticalAlignment="Top" RenderTransformOrigin="10.568,0.722"/>
         <Button x:Name="Btn_SetTimer" Content="设置" HorizontalAlignment="Left" Margin="400,130,0,0" VerticalAlignment="Top" Width="75" Click="Btn_SetTimer_Click"/>
+        <!--<Button Content="获取日志" HorizontalAlignment="Left" Margin="400,213,0,0" VerticalAlignment="Top" Width="75"/>-->
 
     </Grid>
 </Window>

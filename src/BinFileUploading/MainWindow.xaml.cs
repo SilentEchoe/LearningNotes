@@ -87,6 +87,8 @@ namespace BinFileUploading
                     Count++;
                     // 清理已上传的BIN文件
                     fileUtility.DeleteFolder(BinPath + "BinFile");
+                    // 删除残留的ZIP
+                    fileUtility.DeleteFolder(zipPath);
                 }
                 else
                 {
