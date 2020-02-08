@@ -6,10 +6,8 @@ using API.Core.AOP;
 using API.Core.Common.Helper;
 using API.Core.Common.MemoryCache;
 using API.Core.IServices;
-using API.Core.Services;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
-using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -38,7 +36,7 @@ namespace API.Core
             services.AddControllers();
             services.AddScoped<ICaching, MemoryCaching>();
 
-            services.AddAutoMapper(typeof(Startup));//这是AutoMapper的2.0新特性
+            //services.AddAutoMapper(typeof(Startup));//这是AutoMapper的2.0新特性
 
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
             services.AddSwaggerGen(c =>
@@ -69,8 +67,8 @@ namespace API.Core
 
             //直接注册某一个类和接口
             //左边的是实现类，右边的As是接口
-            builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
-            builder.RegisterType<BinServices>().As<IBinServices>();
+            //builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
+            //builder.RegisterType<BinServices>().As<IBinServices>();
 
             #region 注册拦截器
             builder.RegisterType<BlogCacheAOP>();

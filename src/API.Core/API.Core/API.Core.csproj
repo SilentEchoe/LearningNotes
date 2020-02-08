@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\API.Core.Common\API.Core.Common.csproj" />
     <ProjectReference Include="..\API.Core.IServices\API.Core.IServices.csproj" />
-    <ProjectReference Include="..\API.Core.Services\API.Core.Services.csproj" />
   </ItemGroup>
 
 

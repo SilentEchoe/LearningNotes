@@ -34,7 +34,6 @@ namespace BinFileUploading
             Uri url = new Uri("http://54.245.72.232:5008/GetLogInfo");
             var client = new RestClient(url);
             RestRequest request = new RestRequest(Method.GET);
-            
             var response = client.Execute(request);
 
             // 判断返回值是否为200

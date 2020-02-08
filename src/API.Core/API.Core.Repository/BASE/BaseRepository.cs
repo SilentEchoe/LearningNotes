@@ -1,4 +1,5 @@
 ﻿using API.Core.IRepository.BASE;
+using API.Core.Model;
 using API.Core.Repository.sugar;
 using SqlSugar;
 using System;

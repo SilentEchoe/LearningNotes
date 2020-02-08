@@ -33,7 +33,7 @@ namespace API.Core.Services
         {
             throw new System.Exception("Throw Exception");
 
-            var blogArticle = await base.FedEx<BinInfo, OrderInfo>("order_id", "Id");
+            //var blogArticle = await base.FedEx<BinInfo, OrderInfo>("order_id", "Id");
 
             return null;
 

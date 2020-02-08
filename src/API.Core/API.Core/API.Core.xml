@@ -36,6 +36,11 @@
             面向切面的缓存使用
             </summary>
         </member>
+        <member name="T:API.Core.AOP.BlogLogAOP">
+            <summary>
+            拦截器BlogLogAOP 继承IInterceptor接口
+            </summary>
+        </member>
         <member name="M:API.Core.AOP.BlogLogAOP.Intercept(Castle.DynamicProxy.IInvocation)">
             <summary>
             实例化IInterceptor唯一方法 

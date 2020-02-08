@@ -3,7 +3,6 @@ using Castle.DynamicProxy;
 using Newtonsoft.Json;
 using StackExchange.Profiling;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -11,10 +10,10 @@ using System.Threading.Tasks;
 namespace API.Core.AOP
 {
 
-        /// <summary>
-        /// 拦截器BlogLogAOP 继承IInterceptor接口
-        /// </summary>
-        public class BlogLogAOP : IInterceptor
+    /// <summary>
+    /// 拦截器BlogLogAOP 继承IInterceptor接口
+    /// </summary>
+    public class BlogLogAOP : IInterceptor
         {
             /// <summary>
             /// 实例化IInterceptor唯一方法 
