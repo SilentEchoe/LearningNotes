@@ -1,4 +1,5 @@
 ﻿using Grpc.Core;
+using GrpcServer.Web.Data;
 using GrpcServer.Web.Protos;
 using Microsoft.Extensions.Logging;
 using System;
@@ -17,9 +18,22 @@ namespace GrpcServer.Web.Services
             _logger = logger;
         }
 
-        public override Task<EmployeeResponse> GetByNo(GetByNoRequest request, ServerCallContext context)
+        public override  Task<EmployeeResponse> GetByNo(GetByNoRequest request, ServerCallContext context)
         {
-            return base.GetByNo(request, context);
+            var employee = InMemoryData.Employees.SingleOrDefault(x => x.No == request.No);
+            if (employee!=null)
+            {
+                var response = new EmployeeResponse
+                {
+                    Employee = employee
+                };
+
+                return Task.FromResult(response);
+            }
+
+            throw new Exception($"Employee not found with no :{request.No}");   
+           
+
         }
 
 
