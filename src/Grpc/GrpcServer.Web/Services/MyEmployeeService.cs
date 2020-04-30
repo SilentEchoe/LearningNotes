@@ -20,6 +20,11 @@ namespace GrpcServer.Web.Services
 
         public override  Task<EmployeeResponse> GetByNo(GetByNoRequest request, ServerCallContext context)
         {
+            var md = context.RequestHeaders;
+            foreach (var pair in md)
+            {
+                _logger.LogInformation($"{pair.Key}:{pair.Value}");
+            }
             var employee = InMemoryData.Employees.SingleOrDefault(x => x.No == request.No);
             if (employee!=null)
             {
@@ -36,7 +41,10 @@ namespace GrpcServer.Web.Services
 
         }
 
-
+        public override Task SaveAll(IAsyncStreamReader<EmployeeRequest> requestStream, IServerStreamWriter<EmployeeResponse> responseStream, ServerCallContext context)
+        {
+            return base.SaveAll(requestStream, responseStream, context);
+        }
 
     }
 }
