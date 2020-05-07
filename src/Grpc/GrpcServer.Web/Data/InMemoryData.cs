@@ -12,24 +12,21 @@ namespace GrpcServer.Web.Data
                 Id =1 ,
                 No=1994,
                 FirstName = "Chandler",
-                LastName = "Bing",
-                Salary = 2200
+                LastName = "Bing"
             },
         new Employee
             {
                 Id =2 ,
                 No=1995,
                 FirstName = "LASH",
-                LastName = "ROAP",
-                Salary = 2500
+                LastName = "ROAP"
             },
         new Employee
             {
                 Id =3 ,
                 No=1996,
                 FirstName = "AWDhandler",
-                LastName = "AGAWg",
-                Salary = 2800
+                LastName = "AGAWg"
             },
         };
 
