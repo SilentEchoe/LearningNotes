@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoregRpcService", "As
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreGrpcClient", "..\AspNetCoreGrpcClient\AspNetCoreGrpcClient.csproj", "{365E1201-D0BB-48FE-B45E-5F24CB8737DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServer.Web", "..\GrpcServer.Web\GrpcServer.Web.csproj", "{3745E47C-70BF-4204-AB76-CE7B3C33E054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServer.Web", "..\GrpcServer.Web\GrpcServer.Web.csproj", "{3745E47C-70BF-4204-AB76-CE7B3C33E054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcClient", "..\GrpcClient\GrpcClient.csproj", "{F575FCA9-9AE9-4BFF-9F65-8E52480E077B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcClient", "..\GrpcClient\GrpcClient.csproj", "{F575FCA9-9AE9-4BFF-9F65-8E52480E077B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

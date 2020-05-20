@@ -16,13 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="protos\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Protobuf Include="..\GrpcServer.Web\Portos\Messages.proto" GrpcServices="Client">
-      <Link>Protos\Messages.proto</Link>
-    </Protobuf>
+    <Folder Include="Protos\" />
   </ItemGroup>
 
 </Project>

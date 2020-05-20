@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Portos\Messages.proto" />
+    <None Remove="Protos\Enums.proto" />
+    <None Remove="Protos\Messages.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -13,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Portos\Messages.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\Enums.proto" GrpcServices="None" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\Messages.proto" GrpcServices="Server" ProtoRoot="Protos\" />
   </ItemGroup>
 
 </Project>

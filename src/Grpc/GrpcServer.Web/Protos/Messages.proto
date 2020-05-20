@@ -3,7 +3,7 @@
 
 option csharp_namespace = "GrpcServer.Web.Protos";
 //option go_package = "pb";
-//import "protos/Enums.proto";
+import "Enums.proto";
 //import "goole/protobuf/timestamp.proto";
 
 message Employee {
@@ -12,12 +12,12 @@ message Employee {
     string firstName = 3;
     string lastName = 4;
 
-    MonthSalary monthSalay =6;
-    //EmployeeStatus status = 7;
+    MonthSalary monthSalay = 6;
+    EmployeeStatus status = 7;
     //google.protobuf.Timestamp lastModfied =8;
 
+    // 保留tag
     reserved 5;
-    reserved "salary";
 
 
 }
